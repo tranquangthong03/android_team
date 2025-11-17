@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PayMentActivity"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".PayCongratActivity"></activity>
     </application>
 
 </manifest>
