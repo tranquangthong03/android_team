@@ -1,6 +1,8 @@
 package com.example.android_project;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +66,7 @@ public class OnboardingAdapter extends PagerAdapter {
         ImageView img = view.findViewById(R.id.imageView);
         TextView title = view.findViewById(R.id.title);
         TextView desc = view.findViewById(R.id.description);
-        Button nextBtn = view.findViewById(R.id.nextBtn);   // <- lấy nút
+        Button nextBtn = view.findViewById(R.id.nextBtn);
 
         img.setImageResource(images[position]);
         title.setText(titles[position]);
@@ -77,10 +79,11 @@ public class OnboardingAdapter extends PagerAdapter {
                 // sang slide kế tiếp
                 viewPager.setCurrentItem(current + 1, true);
             } else {
-                // đang ở slide cuối cùng
-                // sau này bạn có thể chuyển sang LoginActivity ở đây
-                // ví dụ:
-                // context.startActivity(new Intent(context, LoginActivity.class));
+                Intent intent = new Intent(context, HomeActivity.class);
+                context.startActivity(intent);
+                if (context instanceof Activity) {
+                    ((Activity) context).finish();
+                }
             }
         });
 
