@@ -79,7 +79,7 @@ public class OnboardingAdapter extends PagerAdapter {
                 // sang slide kế tiếp
                 viewPager.setCurrentItem(current + 1, true);
             } else {
-                Intent intent = new Intent(context, HomeActivity.class);
+                Intent intent = new Intent(context, LogInActivity.class);
                 context.startActivity(intent);
                 if (context instanceof Activity) {
                     ((Activity) context).finish();
