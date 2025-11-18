@@ -20,6 +20,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
+
+            <!-- ===== Thanh trên cùng: menu + deliver to + cart + profile ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,6 +62,7 @@
                         android:textColor="#000000"/>
                 </LinearLayout>
 
+                <!-- Icon cart -->
                 <TextView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
@@ -67,7 +70,17 @@
                     android:text="🛒"
                     android:textSize="16sp"
                     android:layout_marginStart="8dp"/>
+
+                <!-- Icon profile mới thêm -->
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:text="👤"
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp"/>
             </LinearLayout>
+            <!-- ===== Hết thanh trên cùng ===== -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -162,6 +175,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutBurger"
                     android:layout_width="0dp"
                     android:layout_height="130dp"
                     android:layout_weight="1"
@@ -218,9 +232,7 @@
             </LinearLayout>
 
             <include layout="@layout/item_restaurant" />
-
             <include layout="@layout/item_restaurant" />
-
             <include layout="@layout/item_restaurant" />
 
         </LinearLayout>

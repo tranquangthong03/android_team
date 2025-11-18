@@ -26,6 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.FoodDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CartActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

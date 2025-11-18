@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary brand (FastBite Orange) -->
+    <color name="primary">#FF8A00</color>
+    <color name="primary_dark">#CC6E00</color>
+    <color name="primary_light">#FFE1B8</color>
+
+    <!-- Secondary (xanh lá, vẫn để để tránh lỗi theme) -->
+    <color name="secondary">#45E58A</color>
+    <color name="secondary_dark">#2DB266</color>
+    <color name="secondary_light">#CFFFE5</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#707070</color>
+    <color name="text_light">#FFFFFF</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_light">#F3F4F6</color>     <!-- nền app -->
+    <color name="bg_card">#FFFFFF</color>      <!-- card trắng -->
+    <color name="bg_dark">#111222</color>      <!-- nền tối (cart) -->
+    <color name="bg_gray_light">#E5E7EB</color>
+
+    <!-- Icon tint -->
+    <color name="icon_tint_dark">#1A1A1A</color>
+    <color name="icon_tint_light">#FFFFFF</color>
+
+    <!-- Borders -->
+    <color name="stroke_light">#DDDDDD</color>
+
+    <!-- Status colors -->
+    <color name="error">#FF4D4D</color>
+    <color name="warning">#FFCC33</color>
+    <color name="success">#4CAF50</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+
 </resources>
