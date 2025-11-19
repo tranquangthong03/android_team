@@ -23,11 +23,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Payment"
-            android:textSize="18sp"
-            android:textColor="#000000"
             android:layout_centerInParent="true"
-            android:textStyle="bold"/>
+            android:text="Thanh toán"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <ScrollView
@@ -67,9 +67,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cash"
-                        android:textSize="12sp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp"
+                        android:text="Thanh toán khi nhận hàng"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Visa -->
@@ -90,9 +91,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Visa"
-                        android:textSize="12sp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp"
+                        android:text="Tài khoản ngân hàng"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Mastercard (Selected) -->
@@ -125,9 +127,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mastercard"
-                        android:textSize="12sp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp"
+                        android:text="Ví điện tử"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- PayPal -->
@@ -148,9 +150,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PayPal"
-                        android:textSize="12sp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp"
+                        android:text="Mã giảm giá"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
             </GridLayout>
@@ -214,19 +216,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No master card added"
-                    android:textSize="16sp"
+                    android:text="Chưa thêm thẻ"
                     android:textColor="#000000"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="You can add a mastercard and\nsave it for later"
-                    android:textSize="14sp"
-                    android:textColor="#888888"
+                    android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:layout_marginTop="8dp"/>
+                    android:text="Bạn có thể thêm và lưu sau"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -235,12 +237,12 @@
                 android:id="@+id/btnAddNew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+ ADD NEW"
-                android:textColor="#FF6B35"
-                android:background="@android:color/transparent"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:textStyle="bold"/>
+                android:background="@android:color/transparent"
+                android:text="+ Thêm mới"
+                android:textColor="#FF6B35"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -265,14 +267,14 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TOTAL:"
+                android:text="Tổng tiền:"
                 android:textColor="#888888"
                 android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$96"
+                android:text="100.000vnđ"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
