@@ -42,27 +42,29 @@
             android:padding="16dp">
 
             <!-- Payment Methods -->
+
+            <!-- Card Display -->
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
                 android:columnCount="4"
-                android:rowCount="1"
-                android:alignmentMode="alignMargins">
+                android:rowCount="1">
 
                 <!-- Cash -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="8dp">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/cash_on_delivery"
-                        android:background="@drawable/payment_method_bg"/>
+                        android:background="@drawable/payment_method_bg"
+                        android:src="@drawable/cash_on_delivery" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -78,15 +80,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="48dp"
+                        android:layout_width="47dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/ic_visa"
-                        android:background="@drawable/payment_method_bg"/>
+                        android:background="@drawable/payment_method_bg"
+                        android:src="@drawable/ic_bank_account" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -100,10 +102,10 @@
                 <!-- Mastercard (Selected) -->
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_columnWeight="1"
-                    android:orientation="vertical"
                     android:gravity="center"
+                    android:orientation="vertical"
                     android:padding="8dp">
 
                     <FrameLayout
@@ -113,15 +115,14 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_mastercard"
-                            android:background="@drawable/payment_method_selected_bg"/>
+                            android:src="@drawable/ic_digital_wallet" />
 
                         <ImageView
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_check"
                             android:layout_gravity="top|end"
-                            android:layout_margin="4dp"/>
+                            android:layout_margin="4dp"
+                            android:src="@drawable/ic_check" />
                     </FrameLayout>
 
                     <TextView
@@ -133,31 +134,9 @@
                 </LinearLayout>
 
                 <!-- PayPal -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/ic_paypal"
-                        android:background="@drawable/payment_method_bg"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Mã giảm giá"
-                        android:textSize="12sp" />
-                </LinearLayout>
 
             </GridLayout>
 
-            <!-- Card Display -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
@@ -216,7 +195,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chưa thêm thẻ"
+                    android:text="Chưa thêm tài khoản ngân hàng"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
