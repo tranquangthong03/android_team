@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Project">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -22,11 +28,26 @@
         </activity>
 
         <activity
-            android:name=".PayMentActivity"
-            android:exported="true">
-        </activity>
+            android:name=".ui.FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.FoodDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".AddressActivity" />
+        <activity android:name=".PayMentActivity" />
+        <activity android:name=".PayCongratActivity" />
 
-        <activity android:name=".PayCongratActivity"></activity>
+
     </application>
 
 </manifest>

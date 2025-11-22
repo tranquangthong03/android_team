@@ -1,5 +1,6 @@
 package com.example.android_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.payment_activity);
+        startActivity(new Intent(this, OnboardingActivity.class));
+        finish();
     }
 }
