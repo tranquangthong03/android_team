@@ -21,7 +21,6 @@ public class PayMentActivity extends AppCompatActivity {
 
         // Initialize views
         btnBack = findViewById(R.id.btnBack);
-        btnAddNew = findViewById(R.id.btnAddNew);
         btnPayConfirm = findViewById(R.id.btnPayConfirm);
 
 

@@ -30,129 +30,50 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
+    <!-- Bottom Section -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="353dp"
+        android:layout_height="338dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal">
 
-            <!-- Payment Methods -->
-
-            <!-- Card Display -->
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:text="Xin mời bạn chọn phương thức thanh toán!"
-                android:textAlignment="center"
-                android:textColor="@color/black"
+                android:id="@+id/textView2"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:paddingStart="10dp"
+                android:text="Tóm tắt đơn hàng"
                 android:textSize="18sp" />
 
-            <GridLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:columnCount="4"
-                android:rowCount="1">
-
-                <!-- Cash -->
-
-                <!-- Visa -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/payment_method_bg"
-                        android:src="@drawable/cash_on_delivery" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Thanh toán khi nhận hàng"
-                        android:textAlignment="center"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="47dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/payment_method_bg"
-                        android:src="@drawable/ic_bank_account" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Tài khoản ngân hàng"
-                        android:textAlignment="center"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <!-- Mastercard (Selected) -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <FrameLayout
-                        android:layout_width="48dp"
-                        android:layout_height="48dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_digital_wallet" />
-
-                    </FrameLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Ví điện tử"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <!-- PayPal -->
-
-            </GridLayout>
-
-            <!-- No card message -->
-
-            <!-- Add New Button -->
-
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thêm món"
+                android:textSize="18sp" />
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFoods"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
-    <!-- Bottom Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:orientation="vertical"></LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -191,11 +112,10 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@drawable/button_bg"
-            android:text="PAY &amp; CONFIRM"
+            android:text="Đặt đơn"
             android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
