@@ -1,8 +1,9 @@
-plugins {
+plugins {alias(libs.plugins.android.application) // <-- Thêm dòng này
 }
 
 android {
     namespace = "com.example.android_project"
+    compileSdk =36
 
     defaultConfig {
         applicationId = "com.example.android_project"
