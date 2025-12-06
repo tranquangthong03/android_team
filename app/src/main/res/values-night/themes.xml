@@ -1,22 +1,18 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.FastBite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
-        <item name="colorPrimary">@color/primary_light</item>
-        <item name="colorOnPrimary">@color/text_primary</item>
-
-        <item name="android:windowBackground">@color/bg_dark</item>
-
-        <item name="android:textColor">@color/text_light</item>
-    </style>
-</resources>
-=======
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Android_Project" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Theme.Android_Project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryVariant">#000000</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSecondary">#000000</item>
+        <item name="colorSecondaryVariant">#000000</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+
+        <item name="colorAccent">#000000</item>
     </style>
+
 </resources>
->>>>>>> fdc25bd3ffa2a4dd2f5063cfe4b59cea4dc69414

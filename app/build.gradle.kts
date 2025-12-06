@@ -1,21 +1,13 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.application")
 }
 
 android {
-
-    namespace = "com.example.fastbite"
-    compileSdk = 36
-
-    defaultConfig {
-        applicationId = "com.example.fastbite"
-
     namespace = "com.example.android_project"
-    compileSdk = 36
+    compileSdk = 36   // Nếu sync lỗi vì chưa cài SDK 36 thì tạm đổi thành 35 hoặc 34
 
     defaultConfig {
         applicationId = "com.example.android_project"
-
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -33,6 +25,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -41,11 +34,18 @@ android {
 
 dependencies {
 
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.activity)
-    implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    // Thư viện UI cơ bản
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.activity:activity:1.9.3")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+
+    // Navigation Component
+    implementation("androidx.navigation:navigation-fragment:2.7.7")
+    implementation("androidx.navigation:navigation-ui:2.7.7")
+
+    // Test
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 }

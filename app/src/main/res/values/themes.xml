@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- App theme -->
-<<<<<<< HEAD
-    <style name="Theme.FastBite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-=======
-    <style name="Theme.android_project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
->>>>>>> fdc25bd3ffa2a4dd2f5063cfe4b59cea4dc69414
-        <!-- Primary branding -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primary_dark</item>
-        <item name="colorOnPrimary">@color/text_light</item>
+    <style name="Theme.Android_Project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <!-- Secondary -->
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryVariant">@color/secondary_dark</item>
-        <item name="colorOnSecondary">@color/text_light</item>
+        <!-- ===== Primary branding ===== -->
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryVariant">#FFFFFF</item>
+        <item name="colorOnPrimary">#000000</item>
 
-        <!-- Backgrounds -->
+        <!-- ===== Secondary ===== -->
+        <item name="colorSecondary">#FFFFFF</item>
+        <item name="colorSecondaryVariant">#FFFFFF</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- ===== Background ===== -->
         <item name="android:windowBackground">@color/bg_light</item>
 
-        <!-- Status bar -->
-        <item name="android:statusBarColor">@color/primary_dark</item>
-        <item name="android:navigationBarColor">@color/bg_light</item>
+        <!-- ===== System bars ===== -->
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
 
-        <!-- Typography -->
+        <!-- ===== Typography ===== -->
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:fontFamily">@font/sf_pro_display</item>
+
+        <!-- ===== Material Accent ===== -->
+        <item name="colorAccent">#FFFFFF</item>
+
     </style>
 
 </resources>
