@@ -19,6 +19,9 @@ dependencyResolutionManagement {
     }
 }
 
+ HEAD
 rootProject.name = "FastBite"
 include(":app")
- 
+rootProject.name = "Android_Project"
+include(":app")
+39bd72e92c08224b4e75e78fdc92cb1d41202416
