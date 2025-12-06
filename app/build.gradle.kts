@@ -3,11 +3,19 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.fastbite"
     compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.fastbite"
+
+    namespace = "com.example.android_project"
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "com.example.android_project"
+
         minSdk = 24
         targetSdk = 36
         versionCode = 1

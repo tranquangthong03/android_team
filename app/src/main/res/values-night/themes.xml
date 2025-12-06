@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.FastBite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -10,3 +11,12 @@
         <item name="android:textColor">@color/text_light</item>
     </style>
 </resources>
+=======
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Android_Project" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+</resources>
+>>>>>>> fdc25bd3ffa2a4dd2f5063cfe4b59cea4dc69414

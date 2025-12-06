@@ -2,7 +2,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- App theme -->
+<<<<<<< HEAD
     <style name="Theme.FastBite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+=======
+    <style name="Theme.android_project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+>>>>>>> fdc25bd3ffa2a4dd2f5063cfe4b59cea4dc69414
         <!-- Primary branding -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>

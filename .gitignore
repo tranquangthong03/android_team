@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   HEAD
 *.iml
 .gradle
@@ -14,6 +15,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+=======
+fdc25bd3ffa2a4dd2f5063cfe4b59cea4dc69414
 # Gradle files
 .gradle/
 build/
@@ -47,5 +50,9 @@ render.experimental.xml
 google-services.json
 
 # Android Profiling
+HEAD
 *.hprof
->>>>>>> 39bd72e92c08224b4e75e78fdc92cb1d41202416
+39bd72e92c08224b4e75e78fdc92cb1d41202416
+=======
+*.hprof
+fdc25bd3ffa2a4dd2f5063cfe4b59cea4dc69414
