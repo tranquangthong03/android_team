@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="260dp"
         android:orientation="vertical"
         android:padding="32dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,13 +24,13 @@
             android:src="@drawable/ic_arrow_back"
             android:background="@android:color/transparent"
             android:tint="@android:color/white"
-            android:contentDescription="Back" />
+            android:contentDescription="Quay lại" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Sign Up"
+            android:text="Đăng ký"
             android:textColor="@android:color/white"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Please sign up to get started"
+            android:text="Vui lòng đăng ký để bắt đầu"
             android:textColor="#C0C0C0"
             android:textSize="16sp" />
     </LinearLayout>
@@ -65,14 +65,15 @@
                 style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NAME"
+                android:text="HỌ VÀ TÊN"
                 android:textColor="#808080" />
 
             <EditText
                 android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="textPersonName" android:hint="john doe"
+                android:inputType="textPersonName"
+                android:hint="ví dụ: Nguyễn Văn A"
                 android:background="@drawable/edittext_background"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
@@ -90,7 +91,8 @@
                 android:id="@+id/et_email_signup"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="textEmailAddress" android:hint="example@gmail.com"
+                android:inputType="textEmailAddress"
+                android:hint="ví dụ: email@gmail.com"
                 android:background="@drawable/edittext_background"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
@@ -101,14 +103,15 @@
                 style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PASSWORD"
+                android:text="MẬT KHẨU"
                 android:textColor="#808080" />
 
             <EditText
                 android:id="@+id/et_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="textPassword" android:background="@drawable/edittext_background"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_background"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:layout_marginBottom="24dp"
@@ -118,14 +121,15 @@
                 style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RE-TYPE PASSWORD"
+                android:text="NHẬP LẠI MẬT KHẨU"
                 android:textColor="#808080" />
 
             <EditText
                 android:id="@+id/et_retype_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="textPassword" android:background="@drawable/edittext_background"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_background"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:layout_marginBottom="32dp"
@@ -135,7 +139,7 @@
                 android:id="@+id/btn_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SIGN UP"
+                android:text="ĐĂNG KÝ"
                 android:textColor="@android:color/white"
                 android:backgroundTint="#FF6600"
                 android:padding="16dp"
@@ -144,4 +148,5 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

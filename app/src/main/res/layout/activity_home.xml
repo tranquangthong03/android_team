@@ -21,7 +21,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- ===== Thanh trên cùng: menu + deliver to + cart + profile ===== -->
+            <!-- ===== Thanh trên cùng ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="DELIVER TO"
+                        android:text="GIAO TỚI"
                         android:textAllCaps="true"
                         android:textSize="10sp"
                         android:textColor="#FF7A26"/>
@@ -57,7 +57,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Halal Lab office"
+                        android:text="Văn phòng Halal Lab"
                         android:textSize="14sp"
                         android:textColor="#000000"/>
                 </LinearLayout>
@@ -72,7 +72,7 @@
                     android:textSize="16sp"
                     android:layout_marginStart="8dp"/>
 
-                <!-- Icon profile mới thêm -->
+                <!-- Icon profile -->
                 <TextView
                     android:id="@+id/icon_profile"
                     android:layout_width="32dp"
@@ -88,11 +88,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hey Halal, Good Afternoon!"
+                android:text="Xin chào Halal, chúc buổi chiều vui vẻ!"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 
+            <!-- Ô tìm kiếm -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -113,10 +114,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Search dishes, restaurants"
+                    android:text="Tìm món ăn, nhà hàng"
                     android:textColor="#999999"/>
             </LinearLayout>
 
+            <!-- Danh mục -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,14 +130,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="All Categories"
+                    android:text="Danh mục"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See All"
+                    android:text="Xem tất cả"
                     android:textSize="12sp"
                     android:textColor="#FF7A26"/>
             </LinearLayout>
@@ -172,7 +174,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Starting  $70"
+                        android:text="Giá từ 70$"
                         android:textSize="12sp"
                         android:textColor="#777777"/>
                 </LinearLayout>
@@ -204,12 +206,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Starting  $50"
+                        android:text="Giá từ 50$"
                         android:textSize="12sp"
                         android:textColor="#777777"/>
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- Nhà hàng đang mở -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -222,14 +225,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Open Restaurants"
+                    android:text="Nhà hàng đang mở"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See All"
+                    android:text="Xem tất cả"
                     android:textSize="12sp"
                     android:textColor="#FF7A26"/>
             </LinearLayout>
