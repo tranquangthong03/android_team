@@ -32,7 +32,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:background="@drawable/bg_circle_dark"
-                android:src="@drawable/ic_arrow_back"
+                android:src="@drawable/ic_arrow_back__vector"
                 android:contentDescription="@null"
                 app:tint="#ffffff"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

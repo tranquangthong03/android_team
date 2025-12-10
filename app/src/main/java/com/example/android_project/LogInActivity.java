@@ -2,65 +2,82 @@ package com.example.android_project;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LogInActivity extends AppCompatActivity {
+
+    private FirebaseAuth auth;
+    private EditText emailInput, passwordInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
+        // Firebase Auth
+        auth = FirebaseAuth.getInstance();
+
+        // Ánh xạ input email + password
+        emailInput = findViewById(R.id.et_email_login);
+        passwordInput = findViewById(R.id.et_password_login);
+
         Button logInButton = findViewById(R.id.btn_log_in);
         TextView signUpPrompt = findViewById(R.id.tv_switch_to_signup);
         ImageButton backButton = findViewById(R.id.btn_back_login);
 
-        // 1. Xử lý nút LOG IN
-        logInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleLogin();
-            }
+        // 1️⃣ Xử lý nút LOG IN
+        logInButton.setOnClickListener(v -> handleLogin());
+
+        // 2️⃣ Chuyển sang SIGN UP
+        signUpPrompt.setOnClickListener(v -> {
+            Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
+            startActivity(intent);
         });
 
-        // 2. Xử lý chuyển sang màn hình SIGN UP
-        signUpPrompt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
-                startActivity(intent);
-            }
+        // 3️⃣ Back về Onboarding
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(LogInActivity.this, OnboardingActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
         });
 
-        // 3. Xử lý nút Back
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LogInActivity.this, OnboardingActivity.class);
-                // Nếu Onboarding đã có trong back stack thì xóa các màn phía trên
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-
-                // Đóng màn hiện tại để không quay ngược lại nữa
-                finish();
-            }
-        });
-
-        // 4. Xử lý nút Quên Mật khẩu (Forgot Password)
-        findViewById(R.id.tv_forgot_password).setOnClickListener(v -> {
-            Toast.makeText(LogInActivity.this, "Chuyển đến màn hình Quên Mật khẩu", Toast.LENGTH_SHORT).show();
-        });
+        // 4️⃣ Quên mật khẩu
+        findViewById(R.id.tv_forgot_password).setOnClickListener(v ->
+                Toast.makeText(LogInActivity.this, "Tính năng này đang phát triển", Toast.LENGTH_SHORT).show()
+        );
     }
 
     private void handleLogin() {
-        Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-        // Sửa thành HomeActivity.class khi đã phát triển
-        navigateToMainScreen();
+        String email = emailInput.getText().toString().trim();
+        String password = passwordInput.getText().toString().trim();
+
+        // Kiểm tra dữ liệu
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Vui lòng nhập đầy đủ email và mật khẩu!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Đăng nhập Firebase
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(LogInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                        navigateToMainScreen();
+                    } else {
+                        Toast.makeText(LogInActivity.this,
+                                "Đăng nhập thất bại: " + task.getException().getMessage(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 
     private void navigateToMainScreen() {
