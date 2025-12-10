@@ -13,14 +13,16 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Tiêu đề -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="Hồ sơ"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
 
+        <!-- Thông tin người dùng -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,20 +41,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginStart="16dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lee Sang-hyeok"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="I love Fast Food"
+                    android:text="Tôi thích đồ ăn nhanh"
                     android:textColor="@android:color/darker_gray"/>
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Khối 1: Thông tin tài khoản -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,6 +66,7 @@
             android:layout_marginBottom="16dp"
             android:padding="8dp">
 
+            <!-- Thông tin cá nhân -->
             <LinearLayout
                 android:id="@+id/btn_personal_info"
                 android:layout_width="match_parent"
@@ -78,7 +84,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Personal Info"
+                    android:text="Thông tin cá nhân"
                     android:textSize="16sp"
                     android:layout_marginStart="16dp"/>
 
@@ -95,6 +101,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+            <!-- Địa chỉ -->
             <LinearLayout
                 android:id="@+id/btn_addresses"
                 android:layout_width="match_parent"
@@ -112,7 +119,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Addresses"
+                    android:text="Địa chỉ"
                     android:textSize="16sp"
                     android:layout_marginStart="16dp"/>
 
@@ -123,6 +130,7 @@
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Khối 2: Hoạt động -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,6 +139,7 @@
             android:layout_marginBottom="16dp"
             android:padding="8dp">
 
+            <!-- Giỏ hàng -->
             <LinearLayout
                 android:id="@+id/btn_cart"
                 android:layout_width="match_parent"
@@ -138,16 +147,20 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/cart" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cart"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/cart" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Giỏ hàng"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -161,6 +174,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+            <!-- Yêu thích -->
             <LinearLayout
                 android:id="@+id/btn_favourite"
                 android:layout_width="match_parent"
@@ -168,16 +182,20 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/favourite" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Favourite"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/favourite" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yêu thích"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -191,6 +209,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+            <!-- Thông báo -->
             <LinearLayout
                 android:id="@+id/btn_notifications"
                 android:layout_width="match_parent"
@@ -198,16 +217,20 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/notification" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Notifications"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/notification" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Thông báo"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -221,6 +244,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+            <!-- Phương thức thanh toán -->
             <LinearLayout
                 android:id="@+id/btn_payment"
                 android:layout_width="match_parent"
@@ -228,24 +252,28 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/payment" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Payment Method"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/payment" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Phương thức thanh toán"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/arrow_right" />
             </LinearLayout>
-
         </LinearLayout>
 
+        <!-- Khối 3: Thông tin & hỗ trợ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -254,6 +282,7 @@
             android:layout_marginBottom="16dp"
             android:padding="8dp">
 
+            <!-- FAQ -->
             <LinearLayout
                 android:id="@+id/btn_faq"
                 android:layout_width="match_parent"
@@ -261,16 +290,20 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/faq" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="FAQs"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/faq" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Câu hỏi thường gặp"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -284,6 +317,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+            <!-- Đánh giá của người dùng -->
             <LinearLayout
                 android:id="@+id/btn_reviews"
                 android:layout_width="match_parent"
@@ -291,16 +325,20 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/review" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="User Reviews"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/review" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Đánh giá của người dùng"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -314,6 +352,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+            <!-- Cài đặt -->
             <LinearLayout
                 android:id="@+id/btn_settings"
                 android:layout_width="match_parent"
@@ -321,25 +360,28 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:padding="12dp">
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/setting" /> <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Settings"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"/>
+                    android:src="@drawable/setting" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cài đặt"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"/>
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/arrow_right" />
             </LinearLayout>
-
         </LinearLayout>
 
-
+        <!-- Đăng xuất -->
         <LinearLayout
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
@@ -358,7 +400,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Log Out"
+                android:text="Đăng xuất"
                 android:textSize="16sp"
                 android:layout_marginStart="16dp"/>
 

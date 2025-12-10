@@ -1,6 +1,5 @@
 package com.example.android_project;
 
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
