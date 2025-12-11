@@ -135,6 +135,7 @@
 
         <!-- Thẻ -->
         <RelativeLayout
+            android:id="@+id/the_ngan_hang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
