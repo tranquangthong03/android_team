@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -54,7 +53,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         txtDesc = findViewById(R.id.txtDesc);
         txtQuantity = findViewById(R.id.txtQuantity);
         txtTotal = findViewById(R.id.txtTotal);
-        btnBack = findViewById(R.id.btnBack);
+        btnBack = findViewById(R.id.btnBackNHLienKet);
         btnMinus = findViewById(R.id.btnMinus);
         btnPlus = findViewById(R.id.btnPlus);
         btnAddToCart = findViewById(R.id.btnAddToCart);

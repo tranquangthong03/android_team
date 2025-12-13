@@ -45,6 +45,7 @@
         <activity android:name=".AddressActivity" />
         <activity android:name=".PayMentActivity" />
         <activity android:name=".PayCongratActivity" />
+        <activity android:name=".DanhSachNganHangActivity" />
 
 
     </application>

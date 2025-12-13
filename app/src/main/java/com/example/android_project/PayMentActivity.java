@@ -11,19 +11,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PayMentActivity extends AppCompatActivity {
 
-    private ImageView btnBack;
-    private Button btnAddNew, btnPayConfirm;
+    private ImageView btnBack, btntt_TheNganHang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.payment_activity);
+        setContentView(R.layout.tatca_phuongthuc_thanhtoan_activity);
 
         // Initialize views
-        btnBack = findViewById(R.id.btnBack);
-        btnAddNew = findViewById(R.id.btnAddNew);
-        btnPayConfirm = findViewById(R.id.btnPayConfirm);
-
+        btnBack = findViewById(R.id.btnBackPTTToan);
+        btntt_TheNganHang = findViewById(R.id.btntt_TheNganHang);
+        btntt_TheNganHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PayMentActivity.this, DanhSachNganHangActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Back button
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -33,22 +37,5 @@ public class PayMentActivity extends AppCompatActivity {
             }
         });
 
-        // Add new card button
-        btnAddNew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Mở màn hình thêm thẻ mới
-                Toast.makeText(PayMentActivity.this, "Add new card", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Pay & Confirm button
-        btnPayConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PayMentActivity.this, PayCongratActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
