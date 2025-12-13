@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PayMentActivity extends AppCompatActivity {
 
-    private ImageView btnBack;
+    private ImageView btnBack, btntt_TheNganHang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,14 @@ public class PayMentActivity extends AppCompatActivity {
 
         // Initialize views
         btnBack = findViewById(R.id.btnBackPTTToan);
+        btntt_TheNganHang = findViewById(R.id.btntt_TheNganHang);
+        btntt_TheNganHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PayMentActivity.this, DanhSachNganHangActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Back button
         btnBack.setOnClickListener(new View.OnClickListener() {
