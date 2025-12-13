@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageButton
-            android:id="@+id/btnBack"
+            android:id="@+id/btnBackNHLienKet"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:background="@drawable/bg_circle_light"
