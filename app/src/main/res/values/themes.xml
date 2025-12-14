@@ -25,7 +25,8 @@
         <item name="android:fontFamily">@font/sf_pro_display</item>
 
         <!-- ===== Material Accent ===== -->
-        <item name="colorAccent">#FFFFFF</item>
+        <!-- FIX CURSOR -->
+        <item name="colorControlActivated">#000000</item>
 
     </style>
 
