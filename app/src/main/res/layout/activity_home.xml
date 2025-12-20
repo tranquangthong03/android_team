@@ -43,14 +43,29 @@
                 android:textStyle="bold"
                 android:textSize="18sp"/>
                 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deliver to: Home"
-                android:drawableStart="@drawable/address"
-                android:drawablePadding="4dp"
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"/>
+            <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginTop="2dp">
+
+    <ImageView
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/address"
+        android:contentDescription="Address Icon"
+        app:tint="@color/text_secondary"/>
+
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Deliver to: Home"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"/>
+</LinearLayout>
         </LinearLayout>
 
         <FrameLayout
