@@ -2,6 +2,7 @@ package com.example.android_project.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -25,47 +26,49 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buger_food); // Layout mới đã cập nhật
+        setContentView(R.layout.buger_food); // Kết nối với layout vừa tạo
 
-        initView();
+        initViews();
         setupData();
         setupRecyclerView();
     }
 
-    private void initView() {
+    private void initViews() {
         rvPopular = findViewById(R.id.rvPopular);
         ImageButton btnBack = findViewById(R.id.btnBackMain);
         
+        // Sự kiện nút Back: Quay về Home
         btnBack.setOnClickListener(v -> finish());
     }
 
     private void setupData() {
         foodList = new ArrayList<>();
         
-        // Dùng ảnh có sẵn trong drawable của bạn (sample_burger)
+        // Dữ liệu mẫu (Bạn có thể thay hình khác nếu muốn)
         int imgBurger = R.drawable.sample_burger; 
 
-        // Thêm dữ liệu giả lập (Hardcode)
         foodList.add(new Food("1", "Cheese Burger", "Rose Garden", 40, imgBurger));
         foodList.add(new Food("2", "Smokin' Burger", "Cafenio Resto", 60, imgBurger));
         foodList.add(new Food("3", "Buffalo Burger", "Kaji Kitchen", 75, imgBurger));
         foodList.add(new Food("4", "Big Mac", "McDonald's", 95, imgBurger));
-        foodList.add(new Food("5", "Spicy Chicken", "KFC", 55, imgBurger)); // Thêm món để thấy danh sách cuộn
-        foodList.add(new Food("6", "Fish Burger", "Lotteria", 45, imgBurger));
+        foodList.add(new Food("5", "Chicken Spicy", "KFC", 50, imgBurger));
+        foodList.add(new Food("6", "Double Cheese", "Lotteria", 65, imgBurger));
     }
 
     private void setupRecyclerView() {
-        // Sử dụng Grid 2 cột
+        // Cấu hình Grid Layout 2 cột
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         rvPopular.setLayoutManager(layoutManager);
         
-        // Quan trọng: Set setHasFixedSize(true) để tối ưu hiệu năng
+        // Tối ưu hiệu năng
         rvPopular.setHasFixedSize(true);
+        rvPopular.setNestedScrollingEnabled(false); // Để scroll mượt cùng NestedScrollView
         
         adapter = new FoodAdapter(foodList, this);
         rvPopular.setAdapter(adapter);
     }
 
+    // Xử lý khi click vào từng món ăn
     @Override
     public void onFoodClick(Food food) {
         Intent intent = new Intent(FoodActivity.this, FoodDetailActivity.class);
@@ -73,6 +76,7 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
         startActivity(intent);
     }
 
+    // Xử lý khi click nút Add (+)
     @Override
     public void onAddToCartClick(Food food) {
         CartManager.addToCart(food, 1);
