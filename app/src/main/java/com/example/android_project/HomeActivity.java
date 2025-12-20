@@ -19,6 +19,7 @@ import com.example.android_project.ui.FoodActivity;
 import com.example.android_project.ui.FoodAdapter;
 import com.example.android_project.ui.FoodDetailActivity;
 import com.example.android_project.ui.RestaurantAdapter;
+import com.example.android_project.data.CartManager;
 
 import java.util.ArrayList;
 
@@ -86,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // --- PHẦN 2: POPULAR FOOD (NGANG) ---
-    private void setupPopularFood() {
+  private void setupPopularFood() {
         ArrayList<Food> foodList = new ArrayList<>();
         int imgDefault = R.drawable.sample_burger;
 
@@ -95,19 +96,20 @@ public class HomeActivity extends AppCompatActivity {
         foodList.add(new Food("3", "Spicy Chicken", "KFC", 35, imgDefault));
         foodList.add(new Food("4", "Iced Coffee", "Highlands", 15, imgDefault));
 
-        FoodAdapter adapter = new FoodAdapter(foodList, new FoodAdapter.FoodListener() {
+        // Dùng Constructor mới: Truyền layout R.layout.item_food_home (Bản nhỏ)
+        FoodAdapter adapter = new FoodAdapter(foodList, R.layout.item_food_home, new FoodAdapter.FoodListener() {
             @Override
             public void onFoodClick(Food food) {
-                // Mở màn hình chi tiết món ăn
                 Intent intent = new Intent(HomeActivity.this, FoodDetailActivity.class);
-                intent.putExtra("object", food); // Đảm bảo key là "object" hoặc hằng số
+                intent.putExtra(FoodDetailActivity.EXTRA_FOOD, food);
                 startActivity(intent);
             }
 
             @Override
             public void onAddToCartClick(Food food) {
+                // --- LOGIC THÊM VÀO GIỎ HÀNG ---
+                CartManager.addToCart(food, 1);
                 Toast.makeText(HomeActivity.this, "Đã thêm " + food.getName() + " vào giỏ!", Toast.LENGTH_SHORT).show();
-                // Logic thêm vào CartManager ở đây nếu cần
             }
         });
 
