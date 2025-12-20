@@ -21,7 +21,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- ===== Thanh trên cùng ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,7 +61,6 @@
                         android:textColor="#000000"/>
                 </LinearLayout>
 
-                <!-- Icon cart -->
                 <TextView
                     android:id="@+id/cartIcon"
                     android:layout_width="32dp"
@@ -72,7 +70,6 @@
                     android:textSize="16sp"
                     android:layout_marginStart="8dp"/>
 
-                <!-- Icon profile -->
                 <TextView
                     android:id="@+id/icon_profile"
                     android:layout_width="32dp"
@@ -83,8 +80,6 @@
                     android:layout_marginStart="8dp"/>
 
             </LinearLayout>
-            <!-- ===== Hết thanh trên cùng ===== -->
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +88,6 @@
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 
-            <!-- Ô tìm kiếm -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -118,7 +112,6 @@
                     android:textColor="#999999"/>
             </LinearLayout>
 
-            <!-- Danh mục -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,7 +205,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Nhà hàng đang mở -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -237,9 +229,11 @@
                     android:textColor="#FF7A26"/>
             </LinearLayout>
 
-            <include layout="@layout/item_restaurant" />
-            <include layout="@layout/item_restaurant" />
-            <include layout="@layout/item_restaurant" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRestaurants"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
 
         </LinearLayout>
     </ScrollView>
