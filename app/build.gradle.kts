@@ -5,12 +5,12 @@
     
     android {
         namespace = "com.example.android_project"
-        compileSdk = 36   // Nếu sync lỗi vì chưa cài SDK 36 thì tạm đổi thành 35 hoặc 34
+        compileSdk = 34   // Nếu sync lỗi vì chưa cài SDK 36 thì tạm đổi thành 35 hoặc 34
     
         defaultConfig {
             applicationId = "com.example.android_project"
             minSdk = 24
-            targetSdk = 36
+            targetSdk = 34
             versionCode = 1
             versionName = "1.0"
     
