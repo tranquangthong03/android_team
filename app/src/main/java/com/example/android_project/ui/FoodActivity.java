@@ -25,35 +25,43 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.buger_food); // Layout mới đã cập nhật
 
-        // DÙNG ĐÚNG layout này
-        setContentView(R.layout.buger_food);
-
-        rvPopular = findViewById(R.id.rvPopular);
-        ImageButton btnBack = findViewById(R.id.btnBackMain);
-        btnBack.setOnClickListener(v -> {
-            // quay lại màn trước (HomeActivity)
-            finish();
-            // hoặc: onBackPressed();
-        });
+        initView();
         setupData();
         setupRecyclerView();
     }
 
+    private void initView() {
+        rvPopular = findViewById(R.id.rvPopular);
+        ImageButton btnBack = findViewById(R.id.btnBackMain);
+        
+        btnBack.setOnClickListener(v -> finish());
+    }
+
     private void setupData() {
         foodList = new ArrayList<>();
+        
+        // Dùng ảnh có sẵn trong drawable của bạn (sample_burger)
+        int imgBurger = R.drawable.sample_burger; 
 
-        // Nếu bạn CHƯA có sample_burger, tạm dùng ic_launcher_foreground
-        int img = R.drawable.sample_burger; // hoặc R.drawable.ic_launcher_foreground
-
-        foodList.add(new Food("1", "Burger Bistro", "Rose Garden", 40, img));
-        foodList.add(new Food("2", "Smokin' Burger", "Cafenio Restaurant", 60, img));
-        foodList.add(new Food("3", "Buffalo Burgers", "Kaji Firm Kitchen", 75, img));
-        foodList.add(new Food("4", "Bullseye Burgers", "Kabab Restaurant", 94, img));
+        // Thêm dữ liệu giả lập (Hardcode)
+        foodList.add(new Food("1", "Cheese Burger", "Rose Garden", 40, imgBurger));
+        foodList.add(new Food("2", "Smokin' Burger", "Cafenio Resto", 60, imgBurger));
+        foodList.add(new Food("3", "Buffalo Burger", "Kaji Kitchen", 75, imgBurger));
+        foodList.add(new Food("4", "Big Mac", "McDonald's", 95, imgBurger));
+        foodList.add(new Food("5", "Spicy Chicken", "KFC", 55, imgBurger)); // Thêm món để thấy danh sách cuộn
+        foodList.add(new Food("6", "Fish Burger", "Lotteria", 45, imgBurger));
     }
 
     private void setupRecyclerView() {
-        rvPopular.setLayoutManager(new GridLayoutManager(this, 2));
+        // Sử dụng Grid 2 cột
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        rvPopular.setLayoutManager(layoutManager);
+        
+        // Quan trọng: Set setHasFixedSize(true) để tối ưu hiệu năng
+        rvPopular.setHasFixedSize(true);
+        
         adapter = new FoodAdapter(foodList, this);
         rvPopular.setAdapter(adapter);
     }
@@ -68,8 +76,6 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
     @Override
     public void onAddToCartClick(Food food) {
         CartManager.addToCart(food, 1);
-        Toast.makeText(this,
-                "Đã thêm " + food.getName() + " vào giỏ",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đã thêm " + food.getName() + " vào giỏ", Toast.LENGTH_SHORT).show();
     }
 }

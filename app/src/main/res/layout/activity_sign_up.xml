@@ -23,7 +23,7 @@
             android:layout_height="32dp"
             android:src="@drawable/ic_arrow_back__vector"
             android:background="@android:color/transparent"
-            android:tint="@android:color/white"
+            android:textColor="@android:color/white"
             android:contentDescription="Quay lại" />
 
         <TextView
