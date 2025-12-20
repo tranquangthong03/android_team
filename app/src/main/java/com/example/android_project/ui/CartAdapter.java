@@ -1,5 +1,6 @@
 package com.example.android_project.ui;
 
+import android.content.Context; // 1. Import Context
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide; // 2. Import Glide
 import com.example.android_project.R;
 import com.example.android_project.data.CartManager;
 import com.example.android_project.models.CartItem;
@@ -24,8 +26,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private List<CartItem> list;
     private CartListener listener;
+    private Context context; // 3. Khai báo biến Context
 
-    public CartAdapter(List<CartItem> list, CartListener listener) {
+    // 4. Cập nhật Constructor để nhận Context
+    public CartAdapter(Context context, List<CartItem> list, CartListener listener) {
+        this.context = context;
         this.list = list;
         this.listener = listener;
     }
@@ -42,7 +47,16 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = list.get(position);
 
-        holder.imgFood.setImageResource(item.getFood().getImageResId());
+        // --- ĐOẠN NÀY LÀ CHỖ SỬA LỖI ---
+        // Code cũ (gây lỗi): holder.imgFood.setImageResource(item.getFood().getImageResId());
+
+        // Code mới (Dùng Glide load ảnh từ URL):
+        Glide.with(context)
+                .load(item.getFood().getImagePath()) // Dùng getImagePath()
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .into(holder.imgFood);
+        // -------------------------------
+
         holder.txtName.setText(item.getFood().getName());
         holder.txtPrice.setText("$" + (int) item.getFood().getPrice());
         holder.txtQty.setText(String.valueOf(item.getQuantity()));
@@ -73,7 +87,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return list != null ? list.size() : 0;
     }
 
     static class CartViewHolder extends RecyclerView.ViewHolder {

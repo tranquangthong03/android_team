@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide; // Import Glide
 import com.example.android_project.R;
 import com.example.android_project.data.CartManager;
 import com.example.android_project.models.Food;
@@ -33,15 +34,17 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         mapViews();
 
-        // nhận Food từ Intent
+        // Nhận object Food
         food = (Food) getIntent().getSerializableExtra(EXTRA_FOOD);
-        if (food == null) {
-            // demo tạm nếu chưa truyền từ list
-            food = new Food("1", "Burger Bistro",
-                    "Rose Garden", 40, R.drawable.sample_burger);
+
+        // Kiểm tra null để tránh crash ứng dụng
+        if (food != null) {
+            bindData();
+        } else {
+            Toast.makeText(this, "Không tìm thấy dữ liệu món ăn!", Toast.LENGTH_SHORT).show();
+            finish(); // Đóng màn hình nếu lỗi
         }
 
-        bindData();
         setupEvents();
     }
 
@@ -53,23 +56,28 @@ public class FoodDetailActivity extends AppCompatActivity {
         txtDesc = findViewById(R.id.txtDesc);
         txtQuantity = findViewById(R.id.txtQuantity);
         txtTotal = findViewById(R.id.txtTotal);
-        btnBack = findViewById(R.id.btnBackNHLienKet);
+        btnBack = findViewById(R.id.btnBackNHLienKet); // Đảm bảo ID này đúng trong XML
         btnMinus = findViewById(R.id.btnMinus);
         btnPlus = findViewById(R.id.btnPlus);
         btnAddToCart = findViewById(R.id.btnAddToCart);
     }
 
     private void bindData() {
-        imgFood.setImageResource(food.getImageResId());
+        // Dùng Glide load ảnh chi tiết
+        Glide.with(this)
+                .load(food.getImagePath())
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .into(imgFood);
+
         txtFoodName.setText(food.getName());
-        txtRestaurant.setText(food.getRestaurant());
+        txtRestaurant.setText(food.getRestaurantName());
         txtPrice.setText("$" + (int) food.getPrice());
-        txtDesc.setText("Delicious food specially made for you.");
+        txtDesc.setText("Delicious food specially made for you."); // Hoặc lấy từ food.getDescription() nếu có
         updateTotal();
     }
 
     private void setupEvents() {
-        btnBack.setOnClickListener(v -> onBackPressed());
+        btnBack.setOnClickListener(v -> onBackPressed()); // Hoặc finish()
 
         btnMinus.setOnClickListener(v -> {
             if (quantity > 1) {
@@ -87,7 +95,6 @@ public class FoodDetailActivity extends AppCompatActivity {
             CartManager.addToCart(food, quantity);
             Toast.makeText(this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
 
-            // mở CartActivity luôn (tùy bạn)
             Intent intent = new Intent(FoodDetailActivity.this, CartActivity.class);
             startActivity(intent);
         });
