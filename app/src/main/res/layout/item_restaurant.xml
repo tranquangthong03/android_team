@@ -34,17 +34,34 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/tvResName"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="McDonald's - Fast Food"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="McDonald's - Fast Food"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/txtDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burger - Chicken - Wings"
+                        android:textSize="12sp"
+                        android:textColor="#757575"
+                        android:layout_marginTop="2dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -53,22 +70,22 @@
                     android:gravity="center"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="4dp">
-                    
+
                     <ImageView
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:src="@drawable/ic_star"
                         app:tint="#FFC107"/>
-                        
+
                     <TextView
-                        android:id="@+id/tvRating"
+                        android:id="@+id/txtRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:text="4.8"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        android:textColor="@color/text_primary"/>
+                        android:textColor="#000000"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -82,15 +99,15 @@
                     android:layout_width="14dp"
                     android:layout_height="14dp"
                     android:src="@drawable/ic_time"
-                    app:tint="@color/text_secondary"/>
-                    
+                    app:tint="#757575"/>
+
                 <TextView
-                    android:id="@+id/tvTime"
+                    android:id="@+id/txtTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:text="15-25 min"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="#757575"
                     android:textSize="13sp"/>
 
                 <View
@@ -103,14 +120,15 @@
                     android:layout_width="14dp"
                     android:layout_height="14dp"
                     android:src="@drawable/ic_delivery"
-                    app:tint="@color/text_secondary"/>
+                    app:tint="#757575"/>
 
                 <TextView
+                    android:id="@+id/txtFee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:text="Free Ship"
-                    android:textColor="@color/primary"
+                    android:textColor="#FF5722"
                     android:textStyle="bold"
                     android:textSize="13sp"/>
             </LinearLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:background="#F8F9FA"
     tools:context=".HomeActivity">
-    
-    <!-- HEADER -->
+
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
@@ -34,16 +33,16 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_marginStart="12dp">
-            
+
             <TextView
                 android:id="@+id/txtGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hi, User!"
+                android:text="Xin chào, bạn!"
                 android:textColor="@color/primary"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
-                
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="Deliver to: Home"
+                    android:text="Giao tới: Nhà riêng"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp"/>
             </LinearLayout>
@@ -74,7 +73,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:background="@drawable/bg_circle_light">
-            
+
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -96,7 +95,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="80dp">
-            
+
             <LinearLayout
                 android:id="@+id/layoutSearch"
                 android:layout_width="match_parent"
@@ -118,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:text="Find your food or restaurant..."
+                    android:text="Tìm kiếm món ăn, nhà hàng..."
                     android:textColor="#9E9E9E"
                     android:textSize="14sp"/>
             </LinearLayout>
@@ -128,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:text="Categories"
+                android:text="Danh mục"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary"/>
@@ -148,21 +147,21 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
                 android:gravity="center_vertical">
-                
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Popular Now"
+                    android:text="Món ngon phổ biến"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/text_primary"/>
-                
+
                 <TextView
                     android:id="@+id/txtSeeAllCategories"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See All"
+                    android:text="Xem thêm"
                     android:textColor="@color/primary"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -180,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:text="Open Restaurants"
+                android:text="Nhà hàng đang mở"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary"/>
@@ -190,7 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:nestedScrollingEnabled="false"/> 
+                android:nestedScrollingEnabled="false"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
