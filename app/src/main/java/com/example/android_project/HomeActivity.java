@@ -2,26 +2,24 @@ package com.example.android_project;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_project.models.CategoryDomain;
 import com.example.android_project.models.Food;
-import com.example.android_project.ui.FoodActivity; // Trang "bên phải"
+import com.example.android_project.ui.CategoryAdapter;
+import com.example.android_project.ui.FoodActivity; // Trang "See All"
 import com.example.android_project.ui.FoodAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private RecyclerView rvPopularHome;
-    private FoodAdapter foodAdapter;
-    private List<Food> popularFoodList;
+    private RecyclerView rvPopularHome, rvCategories;
     private TextView txtGreeting;
 
     @Override
@@ -30,69 +28,78 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         initViews();
-        setupUserData(); // Hàm nhận tên người dùng
-        setupEvents();   // Hàm xử lý See All
+        setupUserData();
+        
+        // 1. Setup Danh mục (Categories)
+        setupCategories();
+        
+        // 2. Setup Món ăn phổ biến (Popular)
         setupPopularData();
+        
+        // 3. Setup Sự kiện Click
+        setupEvents();
     }
 
     private void initViews() {
         rvPopularHome = findViewById(R.id.rvPopularHome);
+        rvCategories = findViewById(R.id.rvCategories);
         txtGreeting = findViewById(R.id.txtGreeting);
     }
 
-    // 1. NHẬN DỮ LIỆU TỪ LOGIN
     private void setupUserData() {
         String username = getIntent().getStringExtra("USER_NAME");
-        if (username != null && !username.isEmpty()) {
-            txtGreeting.setText("Hi, " + username + "!");
-        } else {
-            txtGreeting.setText("Hi, Hungry User!");
-        }
+        txtGreeting.setText(username != null ? "Hi, " + username + "!" : "Hi, User!");
     }
 
-    // 2. SỰ KIỆN BẤM "SEE ALL"
+    // --- PHẦN 1: ĐỔ DỮ LIỆU CATEGORY ---
+    private void setupCategories() {
+        ArrayList<CategoryDomain> categoryList = new ArrayList<>();
+        // Tên ảnh phải trùng với tên file trong drawable (vd: pizza_image.png -> "pizza_image")
+        categoryList.add(new CategoryDomain("Pizza", "pizza_image"));
+        categoryList.add(new CategoryDomain("Burger", "burger_image"));
+        categoryList.add(new CategoryDomain("Chicken", "sample_burger")); // Tạm dùng ảnh này
+        categoryList.add(new CategoryDomain("Drink", "burger_image"));
+
+        CategoryAdapter adapter = new CategoryAdapter(categoryList);
+        rvCategories.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rvCategories.setAdapter(adapter);
+    }
+
+    // --- PHẦN 2: ĐỔ DỮ LIỆU POPULAR ---
+    private void setupPopularData() {
+        ArrayList<Food> foodList = new ArrayList<>();
+        int img = R.drawable.sample_burger;
+        
+        // Ở trang Home, ta để list ngang cho đẹp
+        foodList.add(new Food("1", "Cheese Burger", "Rose Garden", 45, img));
+        foodList.add(new Food("2", "Pizza Hut", "Pizza Hut", 80, R.drawable.pizza_image));
+        foodList.add(new Food("3", "Fried Chicken", "KFC", 30, img));
+
+        FoodAdapter adapter = new FoodAdapter(foodList, new FoodAdapter.FoodListener() {
+            @Override
+            public void onFoodClick(Food food) { } // Xử lý mở chi tiết sau
+            @Override
+            public void onAddToCartClick(Food food) {
+                Toast.makeText(HomeActivity.this, "Đã thêm vào giỏ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rvPopularHome.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rvPopularHome.setAdapter(adapter);
+    }
+
+    // --- PHẦN 3: SỰ KIỆN SEE ALL ---
     private void setupEvents() {
         TextView txtSeeAll = findViewById(R.id.txtSeeAllCategories);
         txtSeeAll.setOnClickListener(v -> {
-            // Chuyển sang màn hình FoodActivity (Hình bên phải)
+            // Chuyển sang FoodActivity (Trang này có Grid món ăn + Nhà hàng bên dưới)
             Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
             startActivity(intent);
         });
-        
-        // Sự kiện click vào thanh tìm kiếm (nếu cần)
-        findViewById(R.id.layoutSearch).setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng tìm kiếm đang phát triển", Toast.LENGTH_SHORT).show();
+
+        findViewById(R.id.btnCart).setOnClickListener(v -> {
+            // Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            // startActivity(intent);
         });
-    }
-
-    private void setupPopularData() {
-        popularFoodList = new ArrayList<>();
-        int img = R.drawable.sample_burger; 
-
-        // Thêm 4 món hiển thị ở màn hình chính
-        popularFoodList.add(new Food("1", "Cheese Burger", "Rose Garden", 45, img));
-        popularFoodList.add(new Food("2", "Pizza Hut", "Pizza Hut", 80, img));
-        popularFoodList.add(new Food("3", "Fried Chicken", "KFC", 30, img));
-        popularFoodList.add(new Food("4", "Pepsi Zero", "Drink Store", 10, img));
-
-        // Dùng lại FoodAdapter nhưng có thể ẩn nút Add nếu muốn gọn
-        foodAdapter = new FoodAdapter(popularFoodList, new FoodAdapter.FoodListener() {
-            @Override
-            public void onFoodClick(Food food) {
-               // Mở chi tiết món ăn
-               // Intent intent = new Intent(HomeActivity.this, FoodDetailActivity.class);
-               // intent.putExtra("object", food);
-               // startActivity(intent);
-            }
-
-            @Override
-            public void onAddToCartClick(Food food) {
-                 Toast.makeText(HomeActivity.this, "Đã thêm " + food.getName(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        rvPopularHome.setLayoutManager(new GridLayoutManager(this, 2));
-        rvPopularHome.setNestedScrollingEnabled(false); // Để cuộn mượt cùng màn hình chính
-        rvPopularHome.setAdapter(foodAdapter);
     }
 }
