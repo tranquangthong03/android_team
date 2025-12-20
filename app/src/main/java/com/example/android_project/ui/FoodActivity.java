@@ -2,6 +2,7 @@ package com.example.android_project.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
     private RecyclerView rvPopular;
     private FoodAdapter adapter;
     private List<Food> foodList;
-    private FirebaseFirestore db; // Khai báo Firebase
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +44,17 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
 
     private void setupRecyclerView() {
         foodList = new ArrayList<>();
+        
+        // Cấu hình Grid Layout 2 cột
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        rvPopular.setLayoutManager(layoutManager);
+        
+        // Tối ưu hiệu năng
+        rvPopular.setHasFixedSize(true);
+        rvPopular.setNestedScrollingEnabled(false); 
+
         // Truyền 'this' (Context) vào Adapter mới
         adapter = new FoodAdapter(this, foodList, this);
-        rvPopular.setLayoutManager(new GridLayoutManager(this, 2));
         rvPopular.setAdapter(adapter);
     }
 
