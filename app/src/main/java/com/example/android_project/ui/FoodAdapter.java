@@ -17,62 +17,68 @@ import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
-    public interface FoodListener {
-        void onFoodClick(Food food);
-        void onAddToCartClick(Food food);
+    private List<Food> mListFood;
+    private FoodListener mListener;
+    private int layoutId; // Biến lưu layout muốn dùng
+
+    // Constructor mặc định (Dùng cho trang FoodActivity - Grid to)
+    public FoodAdapter(List<Food> mListFood, FoodListener mListener) {
+        this.mListFood = mListFood;
+        this.mListener = mListener;
+        this.layoutId = R.layout.item_food; // Mặc định dùng layout to
     }
 
-    private final List<Food> foods;
-    private final FoodListener listener;
-
-    public FoodAdapter(List<Food> foods, FoodListener listener) {
-        this.foods = foods;
-        this.listener = listener;
+    // Constructor mở rộng (Dùng cho trang Home - List nhỏ)
+    public FoodAdapter(List<Food> mListFood, int layoutId, FoodListener mListener) {
+        this.mListFood = mListFood;
+        this.mListener = mListener;
+        this.layoutId = layoutId; // Dùng layout nhỏ (item_food_home)
     }
 
     @NonNull
     @Override
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_food, parent, false);
-        return new FoodViewHolder(v);
+        View view = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
+        return new FoodViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        Food food = foods.get(position);
+        Food food = mListFood.get(position);
+        if (food == null) return;
 
         holder.txtName.setText(food.getName());
-        holder.txtRestaurant.setText(food.getRestaurant());
-        holder.txtPrice.setText("$" + (int) food.getPrice());
+        holder.txtPrice.setText("$" + food.getPrice());
         holder.imgFood.setImageResource(food.getImageResId());
 
-        holder.itemView.setOnClickListener(v -> {
-            if (listener != null) listener.onFoodClick(food);
-        });
+        // Sự kiện click vào ảnh -> Xem chi tiết
+        holder.itemView.setOnClickListener(v -> mListener.onFoodClick(food));
 
-        holder.btnAdd.setOnClickListener(v -> {
-            if (listener != null) listener.onAddToCartClick(food);
-        });
+        // Sự kiện click dấu cộng -> Thêm vào giỏ
+        holder.btnAdd.setOnClickListener(v -> mListener.onAddToCartClick(food));
     }
 
     @Override
     public int getItemCount() {
-        return foods != null ? foods.size() : 0;
+        return mListFood != null ? mListFood.size() : 0;
     }
 
-    static class FoodViewHolder extends RecyclerView.ViewHolder {
+    public static class FoodViewHolder extends RecyclerView.ViewHolder {
         ImageView imgFood;
-        TextView txtName, txtRestaurant, txtPrice;
+        TextView txtName, txtPrice;
         ImageButton btnAdd;
 
-        FoodViewHolder(@NonNull View itemView) {
+        public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
             txtName = itemView.findViewById(R.id.txtName);
-            txtRestaurant = itemView.findViewById(R.id.txtRestaurant);
             txtPrice = itemView.findViewById(R.id.txtPrice);
             btnAdd = itemView.findViewById(R.id.btnAdd);
         }
+    }
+
+    public interface FoodListener {
+        void onFoodClick(Food food);
+        void onAddToCartClick(Food food);
     }
 }

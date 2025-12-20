@@ -1,14 +1,18 @@
 package com.example.android_project.ui;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.android_project.R;
-import com.example.android_project.models.CategoryDomain; // Bạn có thể tạo model này hoặc dùng class nội bộ
+import com.example.android_project.models.CategoryDomain;
+
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
@@ -30,11 +34,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         holder.title.setText(items.get(position).getTitle());
         String picUrl = items.get(position).getPic();
         
-        // Map tên ảnh sang Drawable ID
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
-        
-        // Load ảnh (Dùng Glide sẽ tốt hơn, nhưng đây là cách cơ bản dùng Drawable có sẵn)
         holder.pic.setImageResource(drawableResourceId);
+
+        // --- SỰ KIỆN CLICK VÀO DANH MỤC ---
+        holder.itemView.setOnClickListener(v -> {
+            // Chuyển sang trang FoodActivity (Trang Burger)
+            Intent intent = new Intent(holder.itemView.getContext(), FoodActivity.class);
+            // Có thể truyền thêm tên danh mục để lọc nếu muốn: intent.putExtra("CAT_NAME", items.get(position).getTitle());
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override
