@@ -37,18 +37,22 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
         btnBackCart = findViewById(R.id.btnBackCart);
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
 
+        // Lấy dữ liệu giỏ hàng
         cartItems = CartManager.getCartItems();
 
-        adapter = new CartAdapter(cartItems, this);
+        // --- SỬA LỖI TẠI ĐÂY ---
+        // Thêm từ khóa 'this' vào đầu để truyền Context cho Adapter
+        adapter = new CartAdapter(this, cartItems, this);
+
         rcCart.setLayoutManager(new LinearLayoutManager(this));
         rcCart.setAdapter(adapter);
 
         updateTotal();
 
-        // nút back
+        // Nút back
         btnBackCart.setOnClickListener(v -> onBackPressed());
 
-        // ⭐ CHUYỂN QUA TRANG PAYMENT
+        // Chuyển qua trang Payment
         btnPlaceOrder.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, PayMentActivity.class);
             startActivity(intent);

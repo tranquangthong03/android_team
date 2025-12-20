@@ -1,5 +1,6 @@
 package com.example.android_project.ui;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide; // Nhớ import thư viện Glide
 import com.example.android_project.R;
 import com.example.android_project.models.Food;
 
@@ -24,8 +26,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     private final List<Food> foods;
     private final FoodListener listener;
+    private final Context context; // Thêm biến Context
 
-    public FoodAdapter(List<Food> foods, FoodListener listener) {
+    // Cập nhật Constructor để nhận Context
+    public FoodAdapter(Context context, List<Food> foods, FoodListener listener) {
+        this.context = context;
         this.foods = foods;
         this.listener = listener;
     }
@@ -43,9 +48,14 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         Food food = foods.get(position);
 
         holder.txtName.setText(food.getName());
-        holder.txtRestaurant.setText(food.getRestaurant());
+        holder.txtRestaurant.setText(food.getRestaurantName()); // Dùng getRestaurantName
         holder.txtPrice.setText("$" + (int) food.getPrice());
-        holder.imgFood.setImageResource(food.getImageResId());
+
+        // Dùng Glide để load ảnh từ URL thay vì setImageResource
+        Glide.with(context)
+                .load(food.getImagePath())
+                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh hiển thị khi đang tải
+                .into(holder.imgFood);
 
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onFoodClick(food);
@@ -69,7 +79,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
-            txtName = itemView.findViewById(R.id.txtName);
+            txtName = itemView.findViewById(R.id.txtName); // Lưu ý ID phải khớp với item_food.xml (ví dụ: tvFoodName hay txtName)
             txtRestaurant = itemView.findViewById(R.id.txtRestaurant);
             txtPrice = itemView.findViewById(R.id.txtPrice);
             btnAdd = itemView.findViewById(R.id.btnAdd);

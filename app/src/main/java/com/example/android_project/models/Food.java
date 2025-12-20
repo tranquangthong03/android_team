@@ -3,58 +3,37 @@ package com.example.android_project.models;
 import java.io.Serializable;
 
 public class Food implements Serializable {
-
     private String id;
     private String name;
-    private String restaurant;
+    private String restaurantName; // Đổi từ 'restaurant' sang 'restaurantName' cho khớp Firebase
     private double price;
-    private int imageResId;
+    private String imagePath;      // Đổi từ 'int' sang 'String' để chứa URL
 
-    public Food(String id, String name, String restaurant, double price, int imageResId) {
+    // Constructor rỗng (BẮT BUỘC cho Firebase)
+    public Food() { }
+
+    // Constructor đầy đủ
+    public Food(String id, String name, String restaurantName, double price, String imagePath) {
         this.id = id;
         this.name = name;
-        this.restaurant = restaurant;
+        this.restaurantName = restaurantName;
         this.price = price;
-        this.imageResId = imageResId;
+        this.imagePath = imagePath;
     }
 
-    public String getId() {
-        return id;
-    }
+    // Getter & Setter
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getRestaurant() {
-        return restaurant;
-    }
+    public String getRestaurantName() { return restaurantName; }
+    public void setRestaurantName(String restaurantName) { this.restaurantName = restaurantName; }
 
-    public double getPrice() {
-        return price;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public int getImageResId() {
-        return imageResId;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setRestaurant(String restaurant) {
-        this.restaurant = restaurant;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setImageResId(int imageResId) {
-        this.imageResId = imageResId;
-    }
+    public String getImagePath() { return imagePath; }
+    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
 }

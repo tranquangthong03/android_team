@@ -1,5 +1,6 @@
 package com.example.android_project.ui;
 
+import android.content.Context; // 1. Import Context
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide; // 2. Import Glide
 import com.example.android_project.R;
 import com.example.android_project.models.Food;
 
@@ -18,8 +20,11 @@ import java.util.List;
 public class PaymentFoodAdapter extends RecyclerView.Adapter<PaymentFoodAdapter.PaymentFoodViewHolder> {
 
     private final List<Food> foods;
+    private final Context context; // 3. Khai báo Context
 
-    public PaymentFoodAdapter(List<Food> foods) {
+    // 4. Cập nhật Constructor để nhận Context
+    public PaymentFoodAdapter(Context context, List<Food> foods) {
+        this.context = context;
         this.foods = foods;
     }
 
@@ -36,13 +41,20 @@ public class PaymentFoodAdapter extends RecyclerView.Adapter<PaymentFoodAdapter.
         Food food = foods.get(position);
 
         holder.txtName.setText(food.getName());
-        holder.txtRestaurant.setText(food.getRestaurant());
-        holder.txtPrice.setText("$" + (int) food.getPrice());
-        holder.imgFood.setImageResource(food.getImageResId());
 
-        // Nút thêm món có thể ẩn hoặc xử lý logic thêm vào giỏ hàng
+        // --- SỬA LỖI TÊN HÀM ---
+        holder.txtRestaurant.setText(food.getRestaurantName()); // Dùng getRestaurantName()
+        holder.txtPrice.setText("$" + (int) food.getPrice());
+
+        // --- SỬA LỖI ẢNH (Dùng Glide) ---
+        Glide.with(context)
+                .load(food.getImagePath())
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .into(holder.imgFood);
+
+        // Logic click nút add (nếu cần)
         holder.btnAdd.setOnClickListener(v -> {
-            // Có thể thêm logic xử lý ở đây nếu cần
+            // Xử lý logic
         });
     }
 
@@ -60,10 +72,9 @@ public class PaymentFoodAdapter extends RecyclerView.Adapter<PaymentFoodAdapter.
             super(itemView);
             imgFood = itemView.findViewById(R.id.imgFood);
             txtName = itemView.findViewById(R.id.txtName);
-            txtRestaurant = itemView.findViewById(R.id.txtRestaurant);
+            txtRestaurant = itemView.findViewById(R.id.txtRestaurant); // Đảm bảo ID này đúng trong item_food.xml
             txtPrice = itemView.findViewById(R.id.txtPrice);
             btnAdd = itemView.findViewById(R.id.btnAdd);
         }
     }
 }
-
