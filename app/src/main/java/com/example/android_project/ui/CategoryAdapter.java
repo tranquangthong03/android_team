@@ -1,6 +1,7 @@
 package com.example.android_project.ui;
 
-import android.content.Intent; // Cần import cái này để chuyển màn hình
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,15 @@ import com.bumptech.glide.Glide;
 import com.example.android_project.R;
 import com.example.android_project.models.CategoryDomain;
 
-import java.util.List;
+import java.util.List; // Dùng List cho linh hoạt
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
     List<CategoryDomain> items;
+    Context context; // Biến Context để dùng Glide và Intent
 
-    public CategoryAdapter(List<CategoryDomain> items) {
+    // --- CẬP NHẬT: Hàm khởi tạo nhận 2 tham số ---
+    public CategoryAdapter(Context context, List<CategoryDomain> items) {
+        this.context = context;
         this.items = items;
     }
 
@@ -34,27 +38,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CategoryDomain category = items.get(position);
 
-        // 1. Gán tên danh mục
-        // LƯU Ý: Kiểm tra file CategoryDomain.java, nếu biến là 'name' thì sửa getTitle() thành getName()
-        holder.categoryName.setText(category.getName()); 
+        holder.categoryName.setText(category.getName());
 
-        // 2. Xử lý hình ảnh
-        String picUrl = category.getImagePath(); // LƯU Ý: Kiểm tra lại tên hàm get này bên Model
-        
-        int drawableResourceId = holder.itemView.getContext().getResources()
-                .getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
-
-        Glide.with(holder.itemView.getContext())
-                .load(drawableResourceId)
+        // Dùng context đã truyền vào để load ảnh
+        Glide.with(context)
+                .load(category.getImagePath())
+                .placeholder(R.drawable.sample_burger)
                 .into(holder.categoryPic);
 
-        // 3. --- QUAN TRỌNG: BẮT SỰ KIỆN CLICK ĐỂ SANG MÀN HÌNH MÓN ĂN ---
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(holder.itemView.getContext(), FoodActivity.class);
-            // Truyền ID danh mục sang để bên kia biết đường mà lọc
-            intent.putExtra("CategoryId", category.getId()); 
+            Intent intent = new Intent(context, FoodActivity.class);
+            intent.putExtra("CategoryId", category.getId());
             intent.putExtra("CategoryName", category.getName());
-            holder.itemView.getContext().startActivity(intent);
+            context.startActivity(intent);
         });
     }
 
@@ -69,7 +65,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Ánh xạ ID theo file layout item_category.xml mới
             categoryName = itemView.findViewById(R.id.categoryName);
             categoryPic = itemView.findViewById(R.id.categoryPic);
         }

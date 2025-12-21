@@ -1,5 +1,6 @@
 package com.example.android_project.ui;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.android_project.R;
 import com.example.android_project.models.Food;
 
@@ -18,8 +20,10 @@ import java.util.List;
 public class PaymentFoodAdapter extends RecyclerView.Adapter<PaymentFoodAdapter.PaymentFoodViewHolder> {
 
     private final List<Food> foods;
+    private final Context context;
 
-    public PaymentFoodAdapter(List<Food> foods) {
+    public PaymentFoodAdapter(Context context, List<Food> foods) {
+        this.context = context;
         this.foods = foods;
     }
 
@@ -36,13 +40,22 @@ public class PaymentFoodAdapter extends RecyclerView.Adapter<PaymentFoodAdapter.
         Food food = foods.get(position);
 
         holder.txtName.setText(food.getName());
-        holder.txtRestaurant.setText(food.getRestaurant());
-        holder.txtPrice.setText("$" + (int) food.getPrice());
-        holder.imgFood.setImageResource(food.getImageResId());
 
-        // Nút thêm món có thể ẩn hoặc xử lý logic thêm vào giỏ hàng
+        // --- SỬA LỖI TẠI ĐÂY ---
+        // Phải gọi đúng tên hàm trong Food.java là getRestaurantName()
+        holder.txtRestaurant.setText(food.getRestaurantName());
+
+        holder.txtPrice.setText("$" + (int) food.getPrice());
+
+        // Load ảnh bằng Glide
+        Glide.with(context)
+                .load(food.getImagePath())
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .into(holder.imgFood);
+
+        // Sự kiện click nút Add (nếu cần)
         holder.btnAdd.setOnClickListener(v -> {
-            // Có thể thêm logic xử lý ở đây nếu cần
+            // Xử lý logic thêm món hoặc hiển thị thông báo
         });
     }
 
@@ -66,4 +79,3 @@ public class PaymentFoodAdapter extends RecyclerView.Adapter<PaymentFoodAdapter.
         }
     }
 }
-

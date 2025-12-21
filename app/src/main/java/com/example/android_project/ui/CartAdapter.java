@@ -1,5 +1,6 @@
 package com.example.android_project.ui;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide; // Import Glide
 import com.example.android_project.R;
 import com.example.android_project.data.CartManager;
 import com.example.android_project.models.CartItem;
@@ -24,8 +26,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private List<CartItem> list;
     private CartListener listener;
+    private Context context; // Biến Context để dùng Glide
 
-    public CartAdapter(List<CartItem> list, CartListener listener) {
+    // Constructor nhận Context
+    public CartAdapter(Context context, List<CartItem> list, CartListener listener) {
+        this.context = context;
         this.list = list;
         this.listener = listener;
     }
@@ -42,7 +47,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = list.get(position);
 
-        holder.imgFood.setImageResource(item.getFood().getImageResId());
+        // --- SỬA LỖI Ở ĐÂY ---
+        // Dùng Glide tải ảnh từ URL (item.getFood().getImagePath())
+        Glide.with(context)
+                .load(item.getFood().getImagePath()) 
+                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh chờ
+                .error(R.drawable.ic_launcher_background)       // Ảnh lỗi
+                .into(holder.imgFood);
+        
+        // Các phần khác giữ nguyên
         holder.txtName.setText(item.getFood().getName());
         holder.txtPrice.setText("$" + (int) item.getFood().getPrice());
         holder.txtQty.setText(String.valueOf(item.getQuantity()));
@@ -73,7 +86,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return list != null ? list.size() : 0;
     }
 
     static class CartViewHolder extends RecyclerView.ViewHolder {
@@ -83,6 +96,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Đảm bảo các ID này khớp với file res/layout/item_cart.xml
             imgFood = itemView.findViewById(R.id.imgFoodCart);
             txtName = itemView.findViewById(R.id.txtNameCart);
             txtPrice = itemView.findViewById(R.id.txtPriceCart);

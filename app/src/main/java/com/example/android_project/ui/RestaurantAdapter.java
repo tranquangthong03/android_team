@@ -1,59 +1,76 @@
 package com.example.android_project.ui;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.android_project.R;
-import com.example.android_project.models.CategoryDomain; // Tạm dùng model này hoặc tạo RestaurantDomain
+import com.example.android_project.models.Restaurant; // Đảm bảo import đúng đường dẫn Model
+
 import java.util.List;
 
-// Lưu ý: Để nhanh, mình dùng tạm class CategoryDomain (title, pic) để chứa tên và ảnh nhà hàng
-// Bạn có thể tạo class RestaurantDomain riêng nếu cần thêm rating, time...
-public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.ViewHolder> {
-    List<CategoryDomain> items; 
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder> {
 
-    public RestaurantAdapter(List<CategoryDomain> items) {
-        this.items = items;
+    private Context context;
+    private List<Restaurant> mList;
+
+    // --- SỬA LỖI Ở ĐÂY: Thêm Context vào Constructor ---
+    // Bây giờ nó nhận 2 tham số: Context và List -> Khớp với HomeActivity
+    public RestaurantAdapter(Context context, List<Restaurant> mList) {
+        this.context = context;
+        this.mList = mList;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RestaurantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_restaurant, parent, false);
-        return new ViewHolder(view);
+        return new RestaurantViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvName.setText(items.get(position).getTitle());
-        
-        // Random số liệu giả lập cho đẹp
-        holder.tvRating.setText("4." + (5 + position)); 
-        holder.tvTime.setText((15 + position * 5) + " min");
+    public void onBindViewHolder(@NonNull RestaurantViewHolder holder, int position) {
+        Restaurant restaurant = mList.get(position);
+        if (restaurant == null) return;
 
-        String picUrl = items.get(position).getPic();
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
-        
-        holder.img.setImageResource(drawableResourceId);
+        holder.txtName.setText(restaurant.getName());
+        holder.txtRating.setText(String.valueOf(restaurant.getRating()));
+        holder.txtTime.setText(restaurant.getDeliveryTime());
+        // holder.txtFee.setText(restaurant.getDeliveryFee()); // Uncomment nếu có field này
+
+        // Dùng biến context để load ảnh với Glide
+        Glide.with(context)
+                .load(restaurant.getImagePath())
+                .placeholder(R.drawable.sample_restaurant)
+                .into(holder.imgRes);
     }
 
     @Override
-    public int getItemCount() { return items.size(); }
+    public int getItemCount() {
+        if (mList != null) {
+            return mList.size();
+        }
+        return 0;
+    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvRating, tvTime;
-        ImageView img;
+    public class RestaurantViewHolder extends RecyclerView.ViewHolder {
+        ImageView imgRes;
+        TextView txtName, txtRating, txtTime, txtFee;
 
-        public ViewHolder(@NonNull View itemView) {
+        public RestaurantViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tvResName);
-            tvRating = itemView.findViewById(R.id.tvRating);
-            tvTime = itemView.findViewById(R.id.tvTime);
-            img = itemView.findViewById(R.id.imgRes);
+            imgRes = itemView.findViewById(R.id.imgRes);
+            txtName = itemView.findViewById(R.id.txtName);
+            txtRating = itemView.findViewById(R.id.txtRating);
+            txtTime = itemView.findViewById(R.id.txtTime);
+            txtFee = itemView.findViewById(R.id.txtFee);
         }
     }
 }
