@@ -1,14 +1,19 @@
 package com.example.android_project.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_project.R;
+import com.example.android_project.data.CartManager;
 import com.example.android_project.models.Food;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -22,47 +27,74 @@ public class FoodActivity extends AppCompatActivity {
     private FoodAdapter adapter;
     private ArrayList<Food> foodList;
     private FirebaseFirestore db;
-    private String categoryId; // Biến lưu ID danh mục được chọn
+    private String categoryId;
     private String categoryName;
+    private TextView txtTitle;
+    private ImageView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food); // Đảm bảo file xml này có RecyclerView id là recyclerViewFood
+        setContentView(R.layout.activity_food); // Đảm bảo bạn đã có layout này
 
-        // 1. Nhận dữ liệu từ màn hình Home gửi sang
+        // 1. Nhận dữ liệu từ HomeActivity
         categoryId = getIntent().getStringExtra("CategoryId");
         categoryName = getIntent().getStringExtra("CategoryName");
 
-        // (Tuỳ chọn) Đổi tiêu đề app bar thành tên danh mục
-        if (categoryName != null) {
-            getSupportActionBar().setTitle(categoryName);
-        }
-
-        initView();
+        initViews();
+        setupEvents();
         loadFoodsFromFirestore();
     }
 
-    private void initView() {
-        recyclerViewFood = findViewById(R.id.recyclerViewFood); // Check lại ID trong xml của bạn
-        recyclerViewFood.setLayoutManager(new GridLayoutManager(this, 2)); // Hiển thị 2 cột
-        
+    private void initViews() {
+        // Ánh xạ View (kiểm tra ID trong file xml của bạn)
+        recyclerViewFood = findViewById(R.id.recyclerViewFood);
+        // txtTitle = findViewById(R.id.txtTitle); // Nếu có tiêu đề
+        // btnBack = findViewById(R.id.btnBack);   // Nếu có nút back
+
+        // Setup RecyclerView dạng lưới (2 cột)
+        recyclerViewFood.setLayoutManager(new GridLayoutManager(this, 2));
+
         foodList = new ArrayList<>();
-        // Lưu ý: FoodAdapter của bạn cần constructor phù hợp. 
-        // Nếu adapter của bạn khác, hãy sửa dòng dưới cho khớp.
-        adapter = new FoodAdapter(this, foodList); 
+        // Sử dụng FoodAdapter (với layout item to hoặc nhỏ tùy bạn chọn)
+        adapter = new FoodAdapter(this, foodList, R.layout.item_food, new FoodAdapter.FoodListener() {
+            @Override
+            public void onFoodClick(Food food) {
+                Intent intent = new Intent(FoodActivity.this, FoodDetailActivity.class);
+                intent.putExtra(FoodDetailActivity.EXTRA_FOOD, food);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAddToCartClick(Food food) {
+                CartManager.addToCart(food, 1);
+                Toast.makeText(FoodActivity.this, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+            }
+        });
         recyclerViewFood.setAdapter(adapter);
+
+        // Set tiêu đề nếu có
+        if (categoryName != null && txtTitle != null) {
+            txtTitle.setText(categoryName);
+        }
+    }
+
+    private void setupEvents() {
+        if (btnBack != null) {
+            btnBack.setOnClickListener(v -> finish());
+        }
     }
 
     private void loadFoodsFromFirestore() {
         db = FirebaseFirestore.getInstance();
         Query query;
 
+        // LOGIC LỌC QUAN TRỌNG
         if (categoryId != null && !categoryId.isEmpty()) {
-            // LỌC: Chỉ lấy món ăn có categoryId trùng với cái vừa bấm
+            // Nếu có ID danh mục -> Lọc các món có categoryId trùng khớp
             query = db.collection("foods").whereEqualTo("categoryId", categoryId);
         } else {
-            // Nếu không có categoryId (trường hợp xem tất cả) -> Lấy hết
+            // Nếu không có ID (xem tất cả) -> Lấy hết
             query = db.collection("foods");
         }
 
@@ -71,18 +103,16 @@ public class FoodActivity extends AppCompatActivity {
                 foodList.clear();
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Food food = document.toObject(Food.class);
-                    // Gán ID của document vào object để dùng sau này (nếu cần)
-                    food.setId(document.getId());
+                    food.setId(document.getId()); // Lưu ID document
                     foodList.add(food);
                 }
                 adapter.notifyDataSetChanged();
 
-                // Kiểm tra nếu danh sách rỗng
                 if (foodList.isEmpty()) {
                     Toast.makeText(FoodActivity.this, "Chưa có món nào trong danh mục này", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(FoodActivity.this, "Lỗi khi tải dữ liệu: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(FoodActivity.this, "Lỗi tải dữ liệu: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
