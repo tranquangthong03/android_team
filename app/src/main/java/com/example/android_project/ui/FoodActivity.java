@@ -35,31 +35,40 @@ public class FoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food); // Đảm bảo bạn đã có layout này
+        // Đảm bảo bạn đã tạo file xml này như hướng dẫn trước (activity_food.xml)
+        setContentView(R.layout.activity_food);
 
         // 1. Nhận dữ liệu từ HomeActivity
         categoryId = getIntent().getStringExtra("CategoryId");
         categoryName = getIntent().getStringExtra("CategoryName");
 
+        // 2. Ánh xạ và xử lý giao diện
         initViews();
-        setupEvents();
+
+        // 3. Tải dữ liệu từ Firebase
         loadFoodsFromFirestore();
+
+        // 4. Sự kiện click nút Back
+        setupEvents();
     }
 
     private void initViews() {
-        // Ánh xạ View (kiểm tra ID trong file xml của bạn)
+        // Ánh xạ View (kiểm tra kỹ ID trong file activity_food.xml của bạn)
         recyclerViewFood = findViewById(R.id.recyclerViewFood);
-        // txtTitle = findViewById(R.id.txtTitle); // Nếu có tiêu đề
-        // btnBack = findViewById(R.id.btnBack);   // Nếu có nút back
+        txtTitle = findViewById(R.id.txtTitle);
+        btnBack = findViewById(R.id.btnBack);
 
         // Setup RecyclerView dạng lưới (2 cột)
         recyclerViewFood.setLayoutManager(new GridLayoutManager(this, 2));
 
         foodList = new ArrayList<>();
-        // Sử dụng FoodAdapter (với layout item to hoặc nhỏ tùy bạn chọn)
-        adapter = new FoodAdapter(this, foodList, R.layout.item_food, new FoodAdapter.FoodListener() {
+
+        // --- SỬA LỖI Ở ĐÂY: Dùng Constructor 3 tham số ---
+        // Không truyền R.layout.item_food nữa, Adapter sẽ tự dùng mặc định
+        adapter = new FoodAdapter(this, foodList, new FoodAdapter.FoodListener() {
             @Override
             public void onFoodClick(Food food) {
+                // Chuyển sang màn hình chi tiết món ăn
                 Intent intent = new Intent(FoodActivity.this, FoodDetailActivity.class);
                 intent.putExtra(FoodDetailActivity.EXTRA_FOOD, food);
                 startActivity(intent);
@@ -67,13 +76,15 @@ public class FoodActivity extends AppCompatActivity {
 
             @Override
             public void onAddToCartClick(Food food) {
+                // Thêm vào giỏ hàng
                 CartManager.addToCart(food, 1);
-                Toast.makeText(FoodActivity.this, "Đã thêm vào giỏ!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FoodActivity.this, "Đã thêm " + food.getName() + " vào giỏ!", Toast.LENGTH_SHORT).show();
             }
         });
+
         recyclerViewFood.setAdapter(adapter);
 
-        // Set tiêu đề nếu có
+        // Set tiêu đề cho màn hình (nếu có tên danh mục)
         if (categoryName != null && txtTitle != null) {
             txtTitle.setText(categoryName);
         }
@@ -81,7 +92,7 @@ public class FoodActivity extends AppCompatActivity {
 
     private void setupEvents() {
         if (btnBack != null) {
-            btnBack.setOnClickListener(v -> finish());
+            btnBack.setOnClickListener(v -> finish()); // Đóng màn hình hiện tại để quay lại
         }
     }
 
@@ -89,12 +100,13 @@ public class FoodActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         Query query;
 
-        // LOGIC LỌC QUAN TRỌNG
+        // LOGIC LỌC DỮ LIỆU
         if (categoryId != null && !categoryId.isEmpty()) {
             // Nếu có ID danh mục -> Lọc các món có categoryId trùng khớp
+            // Lưu ý: Trên Firebase bảng 'foods' phải có trường 'categoryId'
             query = db.collection("foods").whereEqualTo("categoryId", categoryId);
         } else {
-            // Nếu không có ID (xem tất cả) -> Lấy hết
+            // Nếu không có ID (ví dụ bấm nút 'Xem tất cả') -> Lấy hết
             query = db.collection("foods");
         }
 
@@ -103,11 +115,12 @@ public class FoodActivity extends AppCompatActivity {
                 foodList.clear();
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Food food = document.toObject(Food.class);
-                    food.setId(document.getId()); // Lưu ID document
+                    food.setId(document.getId()); // Lưu ID document để dùng sau này
                     foodList.add(food);
                 }
                 adapter.notifyDataSetChanged();
 
+                // Kiểm tra nếu danh sách rỗng
                 if (foodList.isEmpty()) {
                     Toast.makeText(FoodActivity.this, "Chưa có món nào trong danh mục này", Toast.LENGTH_SHORT).show();
                 }

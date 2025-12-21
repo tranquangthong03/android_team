@@ -14,12 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.android_project.data.CartManager;
 import com.example.android_project.models.CategoryDomain;
 import com.example.android_project.models.Food;
-import com.example.android_project.models.Restaurant; // Đảm bảo đã có model này
+import com.example.android_project.models.Restaurant; // ⚠️ Quan trọng: Import Model Restaurant
 import com.example.android_project.ui.CartActivity;
 import com.example.android_project.ui.CategoryAdapter;
 import com.example.android_project.ui.FoodActivity;
 import com.example.android_project.ui.FoodAdapter;
 import com.example.android_project.ui.FoodDetailActivity;
+import com.example.android_project.ProfileActivity; // ⚠️ Quan trọng: Import ProfileActivity
 import com.example.android_project.ui.RestaurantAdapter;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -28,26 +29,31 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
+    // Khai báo các biến giao diện
     private RecyclerView rvCategories, rvPopularHome, rvRestaurants;
     private TextView txtGreeting, txtSeeAll;
     private View btnCart, layoutSearch;
-    private FirebaseFirestore db; // Biến Firestore
+    private ImageView imgProfile;
+
+    // Khai báo Firebase
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        db = FirebaseFirestore.getInstance(); // Khởi tạo Firebase
+        // Khởi tạo Firestore
+        db = FirebaseFirestore.getInstance();
 
         initViews();
         setupUserData();
-        
-        // Setup các danh sách dùng dữ liệu từ Firebase
+
+        // Setup các danh sách
         setupCategories();
         setupPopularFood();
         setupRestaurants();
-        
+
         setupEvents();
     }
 
@@ -60,40 +66,48 @@ public class HomeActivity extends AppCompatActivity {
         txtSeeAll = findViewById(R.id.txtSeeAllCategories);
         btnCart = findViewById(R.id.btnCart);
         layoutSearch = findViewById(R.id.layoutSearch);
+        imgProfile = findViewById(R.id.imgProfile);
     }
 
     private void setupUserData() {
         String username = getIntent().getStringExtra("USER_NAME");
-        txtGreeting.setText(username != null ? "Hi, " + username + "!" : "Hi, Hungry User!");
+        if (txtGreeting != null) {
+            if (username != null && !username.isEmpty()) {
+                txtGreeting.setText("Xin chào, " + username + "!");
+            } else {
+                txtGreeting.setText("Xin chào, bạn!");
+            }
+        }
     }
 
-    // --- 1. CATEGORIES (Tải từ Firebase) ---
+    // --- PHẦN 1: CATEGORIES ---
     private void setupCategories() {
         ArrayList<CategoryDomain> categoryList = new ArrayList<>();
-        CategoryAdapter adapter = new CategoryAdapter(categoryList); // Adapter cũ của bạn
+        CategoryAdapter adapter = new CategoryAdapter(this, categoryList);
 
         rvCategories.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rvCategories.setAdapter(adapter);
 
-        db.collection("categories").get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                categoryList.clear();
-                for (QueryDocumentSnapshot document : task.getResult()) {
-                    CategoryDomain cat = document.toObject(CategoryDomain.class);
-                    // QUAN TRỌNG: Lấy ID từ document để truyền sang màn hình món ăn
-                    cat.setId(document.getId()); 
-                    categoryList.add(cat);
-                }
-                adapter.notifyDataSetChanged();
-            }
-        });
+        db.collection("categories")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        categoryList.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            CategoryDomain category = document.toObject(CategoryDomain.class);
+                            category.setId(document.getId()); // Lấy ID document
+                            categoryList.add(category);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                });
     }
 
-    // --- 2. POPULAR FOOD (Tải từ Firebase) ---
+    // --- PHẦN 2: POPULAR FOOD ---
     private void setupPopularFood() {
         ArrayList<Food> foodList = new ArrayList<>();
-        
-        // Adapter hỗ trợ click và add to cart
+
+        // Sử dụng FoodAdapter layout nhỏ (item_food_home)
         FoodAdapter adapter = new FoodAdapter(this, foodList, R.layout.item_food_home, new FoodAdapter.FoodListener() {
             @Override
             public void onFoodClick(Food food) {
@@ -112,45 +126,59 @@ public class HomeActivity extends AppCompatActivity {
         rvPopularHome.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rvPopularHome.setAdapter(adapter);
 
-        // Lấy 5 món bất kỳ làm "Món phổ biến"
-        db.collection("foods").limit(5).get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                foodList.clear();
-                for (QueryDocumentSnapshot document : task.getResult()) {
-                    Food food = document.toObject(Food.class);
-                    food.setId(document.getId()); // Lấy ID món ăn
-                    foodList.add(food);
-                }
-                adapter.notifyDataSetChanged();
-            }
-        });
+        db.collection("foods")
+                .limit(5)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        foodList.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Food food = document.toObject(Food.class);
+                            food.setId(document.getId());
+                            foodList.add(food);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                });
     }
 
-    // --- 3. RESTAURANTS (Tải từ Firebase) ---
+    // --- PHẦN 3: RESTAURANTS ---
     private void setupRestaurants() {
-        // Lưu ý: Cần đảm bảo bạn đã có Model Restaurant.java
-        // Nếu chưa có, hãy tạo nó giống như Food.java
         ArrayList<Restaurant> resList = new ArrayList<>();
         RestaurantAdapter adapter = new RestaurantAdapter(this, resList);
 
         rvRestaurants.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvRestaurants.setAdapter(adapter);
 
-        db.collection("restaurants").get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                resList.clear();
-                for (QueryDocumentSnapshot document : task.getResult()) {
-                    Restaurant res = document.toObject(Restaurant.class);
-                    resList.add(res);
-                }
-                adapter.notifyDataSetChanged();
-            }
-        });
+        db.collection("restaurants")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        resList.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Restaurant res = document.toObject(Restaurant.class);
+                            resList.add(res);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                });
     }
 
     private void setupEvents() {
-        txtSeeAll.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, FoodActivity.class)));
-        btnCart.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, CartActivity.class)));
-        layoutSearch.setOnClickListener(v -> Toast.makeText(this, "Tìm kiếm đang phát triển", Toast.LENGTH_SHORT).show());
+        if (txtSeeAll != null) {
+            txtSeeAll.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, FoodActivity.class)));
+        }
+
+        if (btnCart != null) {
+            btnCart.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, CartActivity.class)));
+        }
+
+        if (layoutSearch != null) {
+            layoutSearch.setOnClickListener(v -> Toast.makeText(HomeActivity.this, "Chức năng tìm kiếm đang phát triển", Toast.LENGTH_SHORT).show());
+        }
+
+        if (imgProfile != null) {
+            imgProfile.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ProfileActivity.class)));
+        }
     }
 }
