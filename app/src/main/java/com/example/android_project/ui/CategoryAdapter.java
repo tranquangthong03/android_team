@@ -1,6 +1,5 @@
 package com.example.android_project.ui;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide; // Import Glide
 import com.example.android_project.R;
 import com.example.android_project.models.CategoryDomain;
 
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
-    List<CategoryDomain> items;
+    List<CategoryDomain> items; // Tên biến là 'items'
 
     public CategoryAdapter(List<CategoryDomain> items) {
         this.items = items;
@@ -31,31 +31,37 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(items.get(position).getTitle());
-        String picUrl = items.get(position).getPic();
-        
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
-        holder.pic.setImageResource(drawableResourceId);
+        // Sửa lỗi: dùng biến 'items' thay vì 'categoryDomains'
+        CategoryDomain category = items.get(position);
 
-        // --- SỰ KIỆN CLICK VÀO DANH MỤC ---
-        holder.itemView.setOnClickListener(v -> {
-            // Chuyển sang trang FoodActivity (Trang Burger)
-            Intent intent = new Intent(holder.itemView.getContext(), FoodActivity.class);
-            // Có thể truyền thêm tên danh mục để lọc nếu muốn: intent.putExtra("CAT_NAME", items.get(position).getTitle());
-            holder.itemView.getContext().startActivity(intent);
-        });
+        // Gán tên danh mục
+        holder.categoryName.setText(category.getTitle()); 
+
+        // Xử lý hình ảnh (Lấy hình từ thư mục drawable dựa trên tên hình)
+        String picUrl = category.getPic();
+        int drawableResourceId = holder.itemView.getContext().getResources()
+                .getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
+
+        Glide.with(holder.itemView.getContext())
+                .load(drawableResourceId)
+                .into(holder.categoryPic);
     }
 
     @Override
-    public int getItemCount() { return items.size(); }
+    public int getItemCount() {
+        return items.size();
+    }
 
+    // Class ViewHolder chuẩn (chỉ giữ 1 cái)
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title;
-        ImageView pic;
+        TextView categoryName;
+        ImageView categoryPic;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.tvCatName);
-            pic = itemView.findViewById(R.id.imgCat);
+            // Ánh xạ đúng ID mới trong file XML
+            categoryName = itemView.findViewById(R.id.categoryName);
+            categoryPic = itemView.findViewById(R.id.categoryPic);
         }
     }
 }

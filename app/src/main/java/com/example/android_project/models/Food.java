@@ -3,58 +3,40 @@ package com.example.android_project.models;
 import java.io.Serializable;
 
 public class Food implements Serializable {
-
     private String id;
     private String name;
-    private String restaurant;
+    private String restaurantName;
     private double price;
-    private int imageResId;
+    private String imagePath;
+    
+    // --- THÊM BIẾN NÀY ĐỂ LỌC ---
+    private String categoryId; 
 
-    public Food(String id, String name, String restaurant, double price, int imageResId) {
+    public Food() { }
+
+    // Constructor cập nhật thêm categoryId
+    public Food(String id, String name, String restaurantName, double price, String imagePath, String categoryId) {
         this.id = id;
         this.name = name;
-        this.restaurant = restaurant;
+        this.restaurantName = restaurantName;
         this.price = price;
-        this.imageResId = imageResId;
+        this.imagePath = imagePath;
+        this.categoryId = categoryId;
     }
 
-    public String getId() {
-        return id;
-    }
+    // Getter & Setter cho categoryId
+    public String getCategoryId() { return categoryId; }
+    public void setCategoryId(String categoryId) { this.categoryId = categoryId; }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getRestaurant() {
-        return restaurant;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getImageResId() {
-        return imageResId;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setRestaurant(String restaurant) {
-        this.restaurant = restaurant;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setImageResId(int imageResId) {
-        this.imageResId = imageResId;
-    }
+    // ... Các getter/setter cũ giữ nguyên
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getRestaurantName() { return restaurantName; }
+    public void setRestaurantName(String restaurantName) { this.restaurantName = restaurantName; }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
+    public String getImagePath() { return imagePath; }
+    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
 }
