@@ -1,6 +1,10 @@
 package com.example.android_project.ui;
 
+<<<<<<< HEAD
 import android.content.Context; // 1. Import Context
+=======
+import android.content.Context;
+>>>>>>> huuhung
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +15,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
 import com.bumptech.glide.Glide; // 2. Import Glide
+=======
+import com.bumptech.glide.Glide; // Import Glide
+>>>>>>> huuhung
 import com.example.android_project.R;
 import com.example.android_project.data.CartManager;
 import com.example.android_project.models.CartItem;
@@ -26,9 +34,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private List<CartItem> list;
     private CartListener listener;
+<<<<<<< HEAD
     private Context context; // 3. Khai báo biến Context
 
     // 4. Cập nhật Constructor để nhận Context
+=======
+    private Context context; // Biến Context để dùng Glide
+
+    // Constructor nhận Context
+>>>>>>> huuhung
     public CartAdapter(Context context, List<CartItem> list, CartListener listener) {
         this.context = context;
         this.list = list;
@@ -47,6 +61,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = list.get(position);
 
+<<<<<<< HEAD
         // --- ĐOẠN NÀY LÀ CHỖ SỬA LỖI ---
         // Code cũ (gây lỗi): holder.imgFood.setImageResource(item.getFood().getImageResId());
 
@@ -57,6 +72,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 .into(holder.imgFood);
         // -------------------------------
 
+=======
+        // --- SỬA LỖI Ở ĐÂY ---
+        // Dùng Glide tải ảnh từ URL (item.getFood().getImagePath())
+        Glide.with(context)
+                .load(item.getFood().getImagePath()) 
+                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh chờ
+                .error(R.drawable.ic_launcher_background)       // Ảnh lỗi
+                .into(holder.imgFood);
+        
+        // Các phần khác giữ nguyên
+>>>>>>> huuhung
         holder.txtName.setText(item.getFood().getName());
         holder.txtPrice.setText("$" + (int) item.getFood().getPrice());
         holder.txtQty.setText(String.valueOf(item.getQuantity()));
@@ -97,6 +123,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Đảm bảo các ID này khớp với file res/layout/item_cart.xml
             imgFood = itemView.findViewById(R.id.imgFoodCart);
             txtName = itemView.findViewById(R.id.txtNameCart);
             txtPrice = itemView.findViewById(R.id.txtPriceCart);

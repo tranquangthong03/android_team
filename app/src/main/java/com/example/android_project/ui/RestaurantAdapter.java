@@ -12,16 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.android_project.R;
-import com.example.android_project.Restaurant; // Import class Restaurant của bạn
+import com.example.android_project.models.Restaurant;
 
 import java.util.List;
 
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder> {
 
     private Context context;
-    private List<Restaurant> mList; // Dùng List<Restaurant> thay vì CategoryDomain
-
-    // Constructor nhận Context và List<Restaurant>
+    private List<Restaurant> mList;
     public RestaurantAdapter(Context context, List<Restaurant> mList) {
         this.context = context;
         this.mList = mList;
@@ -30,7 +28,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     @NonNull
     @Override
     public RestaurantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_restaurant, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_restaurant, parent, false);
         return new RestaurantViewHolder(view);
     }
 
@@ -39,21 +37,20 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         Restaurant restaurant = mList.get(position);
         if (restaurant == null) return;
 
-        // Gán dữ liệu (Code này khớp với ID trong XML bạn vừa sửa)
         holder.txtName.setText(restaurant.getName());
-        holder.txtRating.setText(String.valueOf(restaurant.getRating())); // Chuyển double sang string
+
+        // Convert các số sang String để tránh lỗi
+        holder.txtRating.setText(String.valueOf(restaurant.getRating()));
+
         holder.txtTime.setText(restaurant.getDeliveryTime());
         holder.txtFee.setText(restaurant.getDeliveryFee());
-
-        // Kiểm tra xem trong XML có txtDesc không, nếu có thì set, không thì bỏ qua
         if (holder.txtDesc != null) {
             holder.txtDesc.setText(restaurant.getDescription());
         }
 
-        // Dùng Glide tải ảnh từ URL
         Glide.with(context)
                 .load(restaurant.getImagePath())
-                .placeholder(R.drawable.sample_restaurant) // Ảnh chờ
+                .placeholder(R.drawable.sample_restaurant)
                 .into(holder.imgRes);
     }
 
@@ -63,15 +60,18 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         return 0;
     }
 
-    // Ánh xạ View (ViewHolder)
+
     public class RestaurantViewHolder extends RecyclerView.ViewHolder {
         ImageView imgRes;
         TextView txtName, txtRating, txtTime, txtFee, txtDesc;
 
         public RestaurantViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Ánh xạ ID (Phải khớp với file item_restaurant.xml)
             imgRes = itemView.findViewById(R.id.imgRes);
             txtName = itemView.findViewById(R.id.txtName);
+
+            // 3 biến bạn đang bị lỗi đây:
             txtRating = itemView.findViewById(R.id.txtRating);
             txtTime = itemView.findViewById(R.id.txtTime);
             txtFee = itemView.findViewById(R.id.txtFee);
