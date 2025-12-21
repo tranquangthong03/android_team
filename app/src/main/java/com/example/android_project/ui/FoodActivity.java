@@ -1,9 +1,7 @@
 package com.example.android_project.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,75 +9,81 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_project.R;
-import com.example.android_project.data.CartManager;
 import com.example.android_project.models.Food;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodListener {
+public class FoodActivity extends AppCompatActivity {
 
-    private RecyclerView rvPopular;
+    private RecyclerView recyclerViewFood;
     private FoodAdapter adapter;
-    private List<Food> foodList;
+    private ArrayList<Food> foodList;
+    private FirebaseFirestore db;
+    private String categoryId; // Biến lưu ID danh mục được chọn
+    private String categoryName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buger_food); // Kết nối với layout vừa tạo
+        setContentView(R.layout.activity_food); // Đảm bảo file xml này có RecyclerView id là recyclerViewFood
 
-        initViews();
-        setupData();
-        setupRecyclerView();
+        // 1. Nhận dữ liệu từ màn hình Home gửi sang
+        categoryId = getIntent().getStringExtra("CategoryId");
+        categoryName = getIntent().getStringExtra("CategoryName");
+
+        // (Tuỳ chọn) Đổi tiêu đề app bar thành tên danh mục
+        if (categoryName != null) {
+            getSupportActionBar().setTitle(categoryName);
+        }
+
+        initView();
+        loadFoodsFromFirestore();
     }
 
-    private void initViews() {
-        rvPopular = findViewById(R.id.rvPopular);
-        ImageButton btnBack = findViewById(R.id.btnBackMain);
+    private void initView() {
+        recyclerViewFood = findViewById(R.id.recyclerViewFood); // Check lại ID trong xml của bạn
+        recyclerViewFood.setLayoutManager(new GridLayoutManager(this, 2)); // Hiển thị 2 cột
         
-        // Sự kiện nút Back: Quay về Home
-        btnBack.setOnClickListener(v -> finish());
-    }
-
-    private void setupData() {
         foodList = new ArrayList<>();
-        
-        // Dữ liệu mẫu (Bạn có thể thay hình khác nếu muốn)
-        int imgBurger = R.drawable.sample_burger; 
-
-        foodList.add(new Food("1", "Cheese Burger", "Rose Garden", 40, imgBurger));
-        foodList.add(new Food("2", "Smokin' Burger", "Cafenio Resto", 60, imgBurger));
-        foodList.add(new Food("3", "Buffalo Burger", "Kaji Kitchen", 75, imgBurger));
-        foodList.add(new Food("4", "Big Mac", "McDonald's", 95, imgBurger));
-        foodList.add(new Food("5", "Chicken Spicy", "KFC", 50, imgBurger));
-        foodList.add(new Food("6", "Double Cheese", "Lotteria", 65, imgBurger));
+        // Lưu ý: FoodAdapter của bạn cần constructor phù hợp. 
+        // Nếu adapter của bạn khác, hãy sửa dòng dưới cho khớp.
+        adapter = new FoodAdapter(this, foodList); 
+        recyclerViewFood.setAdapter(adapter);
     }
 
-    private void setupRecyclerView() {
-        // Cấu hình Grid Layout 2 cột
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        rvPopular.setLayoutManager(layoutManager);
-        
-        // Tối ưu hiệu năng
-        rvPopular.setHasFixedSize(true);
-        rvPopular.setNestedScrollingEnabled(false); // Để scroll mượt cùng NestedScrollView
-        
-        adapter = new FoodAdapter(foodList, this);
-        rvPopular.setAdapter(adapter);
-    }
+    private void loadFoodsFromFirestore() {
+        db = FirebaseFirestore.getInstance();
+        Query query;
 
-    // Xử lý khi click vào từng món ăn
-    @Override
-    public void onFoodClick(Food food) {
-        Intent intent = new Intent(FoodActivity.this, FoodDetailActivity.class);
-        intent.putExtra(FoodDetailActivity.EXTRA_FOOD, food);
-        startActivity(intent);
-    }
+        if (categoryId != null && !categoryId.isEmpty()) {
+            // LỌC: Chỉ lấy món ăn có categoryId trùng với cái vừa bấm
+            query = db.collection("foods").whereEqualTo("categoryId", categoryId);
+        } else {
+            // Nếu không có categoryId (trường hợp xem tất cả) -> Lấy hết
+            query = db.collection("foods");
+        }
 
-    // Xử lý khi click nút Add (+)
-    @Override
-    public void onAddToCartClick(Food food) {
-        CartManager.addToCart(food, 1);
-        Toast.makeText(this, "Đã thêm " + food.getName() + " vào giỏ", Toast.LENGTH_SHORT).show();
+        query.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                foodList.clear();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    Food food = document.toObject(Food.class);
+                    // Gán ID của document vào object để dùng sau này (nếu cần)
+                    food.setId(document.getId());
+                    foodList.add(food);
+                }
+                adapter.notifyDataSetChanged();
+
+                // Kiểm tra nếu danh sách rỗng
+                if (foodList.isEmpty()) {
+                    Toast.makeText(FoodActivity.this, "Chưa có món nào trong danh mục này", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(FoodActivity.this, "Lỗi khi tải dữ liệu: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
