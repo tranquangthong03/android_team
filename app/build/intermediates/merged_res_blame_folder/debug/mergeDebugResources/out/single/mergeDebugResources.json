@@ -1,118 +1,534 @@
 [
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_dot_unselected.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\dot_unselected.xml"
     },
     {
-        "merged": "com.example.android_project.app-debug-34:/drawable_facebook.png.flat",
-        "source": "com.example.android_project.app-main-36:/drawable/facebook.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_ic_arrow_back.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\ic_arrow_back.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_pizza_image.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\pizza_image.webp"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_edittext_background.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\edittext_background.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\layout_activity_log_in.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\layout\\activity_log_in.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_to_right.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_to_right.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_search_input.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_search_input.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_time.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_time.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_twitter.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\twitter.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_buger_food.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\buger_food.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_notification.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\notification.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_cart.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\cart.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_apple.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\apple.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_rounded_button_orange.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\rounded_button_orange.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_facebook.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\facebook.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_image_card.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_image_card.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_minus.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_minus.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_circle_light.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_circle_light.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_onboarding.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_onboarding.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_social_button_background.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\social_button_background.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_category_modern.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_category_modern.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_sign_up.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_cart.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\drawable_logo_facebook.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\drawable\\logo_facebook.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_circle.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\circle.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_payment_method_bg.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\payment_method_bg.xml"
     },
     {
-        "merged": "com.example.android_project.app-debug-34:/drawable_twitter.png.flat",
-        "source": "com.example.android_project.app-main-36:/drawable/twitter.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_black_italic.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_black_italic.otf"
     },
     {
-        "merged": "com.example.android_project.app-debug-34:/drawable_apple.png.flat",
-        "source": "com.example.android_project.app-main-36:/drawable/apple.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_restaurant_image.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\restaurant_image.webp"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_sample_burger.jpg.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\sample_burger.jpg"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_fragment_address.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\fragment_address.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_bottom_bar.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_bottom_bar.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_profile_placeholder.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\profile_placeholder.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-34:\\layout_activity_sign_up.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-36:\\layout\\activity_sign_up.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_payment_method_selected_bg.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\payment_method_selected_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_person.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\person.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_mastercard.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_mastercard.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_onboarding3.jpg.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\onboarding3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_category.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_star.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_star.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_search_bar_background.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\search_bar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_onboarding.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_onboarding.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_twitter.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\twitter.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_open_restaurant.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\open_restaurant.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_onboarding2.jpg.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\onboarding2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_social_button_background.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\social_button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_search_list_bank.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\search_list_bank.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_faq.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\faq.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_right.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_apple.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\apple.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_circle_back.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_circle_back.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_maps_osm.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_maps_osm.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_cart.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_viewholder_category.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\viewholder_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_arrow_back__vector.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_arrow_back__vector.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_chevron_right.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_chevron_right.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_light.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_light.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_danh_sach_ngan_hang_activity.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\danh_sach_ngan_hang_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_food_home.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_food_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_favourite.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\favourite.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_setting.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\setting.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_heavy_italic.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_heavy_italic.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_food_detail.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_food_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_rounded_card.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_rounded_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_food.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_paypal.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_paypal.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_bold.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_bold.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_bank_account.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_bank_account.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_review.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\review.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_delete.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\delete.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_success_wallet.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\success_wallet.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_address.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\address.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_digital_wallet.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_digital_wallet.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_sample_restaurant.jpg.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\sample_restaurant.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_find.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_find.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_dot_selected.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\dot_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_summary_round.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_summary_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_plus.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_plus.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_restaurant.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_restaurant.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_log_in.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_log_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_edit.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\edit.png"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/layout_activity_sign_up.xml.flat",
+        "source": "com.example.android_project.app-main-63:/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sf_pro_display.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sf_pro_display.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_burger_image.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\burger_image.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_edittext_background.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\edittext_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_momo_icon.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\momo_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_home.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\home.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_payment_activity.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\payment_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_food.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_circle_red.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_circle_red.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_address.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_address.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_medium.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_medium.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_rounded_image_bg.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\rounded_image_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_circle_dark.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_circle_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_work.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\work.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_payment.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\payment.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bank_card.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bank_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_back_button_circlegray.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_back_button_circlegray.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_chip.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_chip.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_payment_congrat.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\payment_congrat.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_address.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_address.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_facebook.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\facebook.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_semibold.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_semibold.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_circle_primary.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_circle_primary.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_delivery.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_delivery.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_qty_box.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_qty_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_ultralight_italic.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_ultralight_italic.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_tatca_phuongthuc_thanhtoan_activity.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\tatca_phuongthuc_thanhtoan_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_onboarding4.jpg.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\onboarding4.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_regular.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_regular.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_logout.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\logout.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_back.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_button_bg.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\button_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_thin.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_thin.otf"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_cash_on_delivery.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\cash_on_delivery.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_visa.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_visa.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_onboarding1.jpg.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\onboarding1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_card_gradient_bg.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\card_gradient_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_bank.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_bank.xml"
     }
 ]
