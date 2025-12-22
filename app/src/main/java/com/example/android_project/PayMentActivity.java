@@ -21,6 +21,8 @@ import com.example.android_project.models.CartItem;
 import com.example.android_project.models.Food;
 import com.example.android_project.models.Order;
 import com.example.android_project.ui.PaymentFoodAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -37,13 +39,8 @@ public class PayMentActivity extends AppCompatActivity {
     private TextView txtTotalPayment;
     private PaymentFoodAdapter adapter;
 
-    // Các layout từng phương thức
     private RelativeLayout layoutMomo, layoutBank, layoutCash;
-
-    // Các hộp chứa (Container)
     private LinearLayout containerLinked, containerOther;
-
-    // Text chi tiết
     private TextView txtMomoDetail, txtBankDetail, txtSelectedMethod;
     private ImageView imgCashCheck;
 
@@ -67,7 +64,6 @@ public class PayMentActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Mỗi khi quay lại màn hình này, kiểm tra và sắp xếp lại vị trí
         refreshPaymentLayouts();
     }
 
@@ -76,16 +72,13 @@ public class PayMentActivity extends AppCompatActivity {
         rcPayment = findViewById(R.id.rcPayment);
         txtTotalPayment = findViewById(R.id.txtTotalPayment);
 
-        // Layout phương thức
         layoutMomo = findViewById(R.id.layout_momo);
         layoutBank = findViewById(R.id.layout_bank);
         layoutCash = findViewById(R.id.layout_cash);
 
-        // Container
         containerLinked = findViewById(R.id.container_linked);
         containerOther = findViewById(R.id.container_other);
 
-        // Text chi tiết
         txtMomoDetail = findViewById(R.id.txt_momo_detail);
         txtBankDetail = findViewById(R.id.txt_bank_detail);
         txtSelectedMethod = findViewById(R.id.txt_selected_method);
@@ -109,34 +102,26 @@ public class PayMentActivity extends AppCompatActivity {
         }
     }
 
-    // --- HÀM SẮP XẾP GIAO DIỆN ---
     private void refreshPaymentLayouts() {
         SharedPreferences prefs = getSharedPreferences("PaymentData", MODE_PRIVATE);
         boolean isMomoLinked = prefs.getBoolean("IS_MOMO_LINKED", false);
         boolean isBankLinked = prefs.getBoolean("IS_BANK_LINKED", false);
 
-        // 1. Gỡ các view ra khỏi vị trí cũ để tránh lỗi
         removeViewFromParent(layoutMomo);
         removeViewFromParent(layoutBank);
         removeViewFromParent(layoutCash);
 
-        // 2. Xử lý MOMO
         if (isMomoLinked) {
-            // Đã liên kết -> Đưa lên trên (containerLinked)
             containerLinked.addView(layoutMomo);
             String number = prefs.getString("MOMO_NUMBER", "••8888");
             txtMomoDetail.setText("Đã liên kết: " + number);
-            // SỬA LỖI MÀU Ở ĐÂY: Dùng android.R.color.holo_green_dark
             txtMomoDetail.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
         } else {
-            // Chưa liên kết -> Đưa xuống dưới (containerOther)
             containerOther.addView(layoutMomo);
             txtMomoDetail.setText("Nhấn để liên kết");
-            // SỬA LỖI MÀU Ở ĐÂY: Dùng android.R.color.darker_gray thay vì R.color.gray
             txtMomoDetail.setTextColor(getResources().getColor(android.R.color.darker_gray));
         }
 
-        // 3. Xử lý BANK
         if (isBankLinked) {
             containerLinked.addView(layoutBank);
             String number = prefs.getString("BANK_NUMBER", "••VISA");
@@ -148,7 +133,6 @@ public class PayMentActivity extends AppCompatActivity {
             txtBankDetail.setTextColor(getResources().getColor(android.R.color.darker_gray));
         }
 
-        // 4. Xử lý TIỀN MẶT (Luôn nằm ở dưới)
         containerOther.addView(layoutCash);
     }
 
@@ -161,20 +145,16 @@ public class PayMentActivity extends AppCompatActivity {
     private void setupEvents() {
         btnBack.setOnClickListener(v -> finish());
 
-        // CLICK MOMO
         layoutMomo.setOnClickListener(v -> {
             SharedPreferences prefs = getSharedPreferences("PaymentData", MODE_PRIVATE);
             if (prefs.getBoolean("IS_MOMO_LINKED", false)) {
-                // Đã liên kết -> Chọn thanh toán
                 selectedMethod = "MoMo";
                 updateSelectedUI();
             } else {
-                // Chưa liên kết -> Mở trang nhập thông tin
                 openLinkActivity("MOMO");
             }
         });
 
-        // CLICK BANK
         layoutBank.setOnClickListener(v -> {
             SharedPreferences prefs = getSharedPreferences("PaymentData", MODE_PRIVATE);
             if (prefs.getBoolean("IS_BANK_LINKED", false)) {
@@ -185,26 +165,19 @@ public class PayMentActivity extends AppCompatActivity {
             }
         });
 
-        // CLICK TIỀN MẶT
         layoutCash.setOnClickListener(v -> {
             selectedMethod = "Cash";
             updateSelectedUI();
         });
 
-        // NÚT THANH TOÁN
-        btnPayNow.setOnClickListener(v -> {
-            processPayment();
-        });
+        btnPayNow.setOnClickListener(v -> processPayment());
     }
 
     private void updateSelectedUI() {
         txtSelectedMethod.setText(selectedMethod);
-
-        // Hiện icon check nếu chọn tiền mặt (bạn có thể mở rộng logic này cho các phương thức khác)
         if (imgCashCheck != null) {
             imgCashCheck.setVisibility(selectedMethod.equals("Cash") ? View.VISIBLE : View.GONE);
         }
-
         Toast.makeText(this, "Đã chọn: " + selectedMethod, Toast.LENGTH_SHORT).show();
     }
 
@@ -220,6 +193,12 @@ public class PayMentActivity extends AppCompatActivity {
             return;
         }
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, "Vui lòng đăng nhập để thanh toán", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String orderId = UUID.randomUUID().toString();
         double total = CartManager.getTotal();
         String currentDate = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(new Date());
@@ -229,7 +208,7 @@ public class PayMentActivity extends AppCompatActivity {
             items.add(item.getFood());
         }
 
-        Order newOrder = new Order(orderId, total, selectedMethod, currentDate, "Success", items);
+        Order newOrder = new Order(orderId, total, selectedMethod, currentDate, "Success", items, user.getUid());
 
         db.collection("orders").document(orderId)
                 .set(newOrder)
