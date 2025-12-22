@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_project.models.Order;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -34,23 +36,22 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
         btnBack.setOnClickListener(v -> finish());
 
-        // Setup RecyclerView
         orderList = new ArrayList<>();
         adapter = new OrderHistoryAdapter(this, orderList);
         rcOrders.setLayoutManager(new LinearLayoutManager(this));
         rcOrders.setAdapter(adapter);
 
-        // Load Data
         loadOrders();
     }
 
     private void loadOrders() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) return;
+
         db = FirebaseFirestore.getInstance();
 
-        // Lấy dữ liệu từ bảng 'orders', sắp xếp ngày mới nhất lên đầu
-        // Lưu ý: Nếu muốn lọc theo User, cần thêm .whereEqualTo("userId", currentUserId)
         db.collection("orders")
-                .orderBy("date", Query.Direction.DESCENDING) // Cần tạo Index trong Firebase Console nếu báo lỗi
+                .whereEqualTo("userId", user.getUid())
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
