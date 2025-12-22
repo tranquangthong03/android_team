@@ -205,8 +205,13 @@ public class HomeActivity extends AppCompatActivity {
             btnCart.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, CartActivity.class)));
         }
         if (layoutSearch != null) {
-            layoutSearch.setOnClickListener(v -> Toast.makeText(HomeActivity.this, "Chức năng tìm kiếm đang phát triển", Toast.LENGTH_SHORT).show());
+            layoutSearch.setOnClickListener(v -> {
+                // Chuyển sang màn hình tìm kiếm
+                Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+                startActivity(intent);
+            });
         }
+
         if (imgProfile != null) {
             imgProfile.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ProfileActivity.class)));
         }

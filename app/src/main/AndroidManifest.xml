@@ -62,6 +62,7 @@
         <activity android:name=".PayCongratActivity" />
         <activity android:name=".DanhSachNganHangActivity" />
         <activity android:name=".MapsOsmActivity" />
+        <activity android:name=".SearchActivity" />
     </application>
 
 </manifest>
