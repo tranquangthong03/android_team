@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Xin chào, bạn!"
-                android:textColor="@color/primary"
+                android:textColor="#FF5722"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
@@ -55,7 +55,7 @@
                     android:layout_height="14dp"
                     android:src="@drawable/address"
                     android:contentDescription="Address Icon"
-                    app:tint="@color/text_secondary"/>
+                    app:tint="#757575"/>
 
                 <TextView
                     android:id="@+id/txtAddress"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:text="Giao tới: Nhà riêng"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="#757575"
                     android:textSize="12sp"/>
             </LinearLayout>
         </LinearLayout>
@@ -79,7 +79,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/cart"
-                app:tint="@color/primary"/>
+                app:tint="#FF5722"/>
         </FrameLayout>
     </LinearLayout>
 
@@ -130,7 +130,7 @@
                 android:text="Danh mục"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/text_primary"/>
+                android:textColor="#000000"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCategories"
@@ -155,14 +155,14 @@
                     android:text="Món ngon phổ biến"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_primary"/>
+                    android:textColor="#000000"/>
 
                 <TextView
                     android:id="@+id/txtSeeAllCategories"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Xem thêm"
-                    android:textColor="@color/primary"
+                    android:textColor="#FF5722"
                     android:textStyle="bold"/>
             </LinearLayout>
 
@@ -182,7 +182,7 @@
                 android:text="Nhà hàng đang mở"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/text_primary"/>
+                android:textColor="#000000"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRestaurants"

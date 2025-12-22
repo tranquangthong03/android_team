@@ -23,7 +23,9 @@ public class CartManager {
         }
         cartItems.add(new CartItem(food, quantity));
     }
-
+    public static void clearCart() {
+        cartItems.clear();
+    }
     public static void removeItem(CartItem item) {
         cartItems.remove(item);
     }
