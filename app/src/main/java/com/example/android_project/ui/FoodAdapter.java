@@ -4,18 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton; // Hoặc ImageView tùy layout của bạn
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< HEAD
-import com.bumptech.glide.Glide; 
-=======
 import com.bumptech.glide.Glide;
->>>>>>> huuhung
 import com.example.android_project.R;
 import com.example.android_project.models.Food;
 
@@ -26,30 +21,19 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     private Context context;
     private List<Food> mListFood;
     private FoodListener mListener;
-<<<<<<< HEAD
-    private Context context;
-    private int layoutId; 
-
-    // Constructor mặc định (Dùng cho trang FoodActivity - Grid to)
-=======
     private int layoutId;
 
-    // --- CONSTRUCTOR 1: Dùng cho FoodActivity (Mặc định layout to) ---
-    // Nhận 3 tham số: Context, List, Listener
->>>>>>> huuhung
+    // --- CONSTRUCTOR 1: Mặc định ---
+    // Dùng cho trang FoodActivity (dùng layout item_food mặc định)
     public FoodAdapter(Context context, List<Food> mListFood, FoodListener mListener) {
         this.context = context;
         this.mListFood = mListFood;
         this.mListener = mListener;
-        this.layoutId = R.layout.item_food; // Mặc định dùng layout item_food
+        this.layoutId = R.layout.item_food; // Mặc định layout to
     }
 
-<<<<<<< HEAD
-    // Constructor mở rộng (Dùng cho trang Home - List nhỏ)
-=======
-    // --- CONSTRUCTOR 2: Dùng cho HomeActivity (Layout nhỏ tùy chỉnh) ---
-    // Nhận 4 tham số: Context, List, layoutId, Listener
->>>>>>> huuhung
+    // --- CONSTRUCTOR 2: Tùy chỉnh Layout ---
+    // Dùng cho trang Home (truyền R.layout.item_food_home vào đây)
     public FoodAdapter(Context context, List<Food> mListFood, int layoutId, FoodListener mListener) {
         this.context = context;
         this.mListFood = mListFood;
@@ -69,44 +53,30 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         Food food = mListFood.get(position);
         if (food == null) return;
 
-        // 1. Gán dữ liệu text
+        // 1. Gán dữ liệu Text
         holder.txtName.setText(food.getName());
-<<<<<<< HEAD
-        
-        if (holder.txtRestaurant != null) {
-            holder.txtRestaurant.setText(food.getRestaurantName()); 
-        }
 
+        // Format giá tiền (ép kiểu int cho gọn hoặc dùng %.2f nếu muốn hiển thị số lẻ)
         holder.txtPrice.setText("$" + (int) food.getPrice());
 
-        // Dùng Glide để load ảnh từ URL thay vì setImageResource
-        Glide.with(context)
-                .load(food.getImagePath())
-                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh hiển thị khi đang tải
-                .into(holder.imgFood);
-=======
-        holder.txtPrice.setText(String.format("$%.2f", food.getPrice())); // Định dạng giá tiền
->>>>>>> huuhung
-
-        // Kiểm tra null để tránh lỗi nếu layout home không có view này
+        // Kiểm tra null vì layout nhỏ ở Home có thể không có TextView này
         if (holder.txtRestaurant != null) {
             holder.txtRestaurant.setText(food.getRestaurantName());
         }
 
-        // 2. Load ảnh bằng Glide (Cần Context)
-        if (context != null) {
-            Glide.with(context)
-                    .load(food.getImagePath())
-                    .placeholder(R.drawable.ic_launcher_foreground) // Ảnh chờ
-                    .error(R.drawable.ic_launcher_background)       // Ảnh lỗi
-                    .into(holder.imgFood);
-        }
+        // 2. Load ảnh bằng Glide
+        Glide.with(context)
+                .load(food.getImagePath())
+                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh chờ
+                .error(R.drawable.ic_launcher_background)       // Ảnh lỗi
+                .into(holder.imgFood);
 
-        // 3. Bắt sự kiện click
+        // 3. Sự kiện Click vào cả dòng -> Xem chi tiết
         holder.itemView.setOnClickListener(v -> {
             if (mListener != null) mListener.onFoodClick(food);
         });
 
+        // 4. Sự kiện Click nút Add (+) -> Thêm vào giỏ
         if (holder.btnAdd != null) {
             holder.btnAdd.setOnClickListener(v -> {
                 if (mListener != null) mListener.onAddToCartClick(food);
@@ -123,21 +93,16 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
         ImageView imgFood;
         TextView txtName, txtPrice, txtRestaurant;
-<<<<<<< HEAD
-        ImageButton btnAdd;
-=======
-        View btnAdd; // Dùng View để có thể là Button hoặc ImageButton/ImageView
->>>>>>> huuhung
+        View btnAdd; // Dùng View để linh hoạt (có thể là ImageView hoặc Button)
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Ánh xạ ID (Đảm bảo các ID này có trong file xml item_food và item_food_home)
+            // Ánh xạ ID (Đảm bảo các ID này tồn tại trong các file xml item_food và item_food_home)
             imgFood = itemView.findViewById(R.id.imgFood);
             txtName = itemView.findViewById(R.id.txtName);
-            txtRestaurant = itemView.findViewById(R.id.txtRestaurant);
             txtPrice = itemView.findViewById(R.id.txtPrice);
             txtRestaurant = itemView.findViewById(R.id.txtRestaurant); // Có thể null ở layout nhỏ
-            btnAdd = itemView.findViewById(R.id.btnAdd); // Có thể null
+            btnAdd = itemView.findViewById(R.id.btnAdd); // Nút cộng (+)
         }
     }
 

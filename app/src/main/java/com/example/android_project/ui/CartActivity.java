@@ -26,7 +26,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
     private Button btnPlaceOrder;
 
     private CartAdapter adapter;
-    private List<CartItem> cartItems; // Tên biến đúng là cartItems
+    private List<CartItem> cartItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +46,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
     }
 
-<<<<<<< HEAD
-        // Lấy dữ liệu giỏ hàng
-        cartItems = CartManager.getCartItems();
-
-        // --- SỬA LỖI TẠI ĐÂY ---
-        // Thêm từ khóa 'this' vào đầu để truyền Context cho Adapter
-        adapter = new CartAdapter(this, cartItems, this);
-
-=======
     private void setupCart() {
-        // 1. Lấy dữ liệu
+        // 1. Lấy dữ liệu từ CartManager
         cartItems = CartManager.getCartItems();
 
         // 2. Khởi tạo Adapter
@@ -66,24 +57,11 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
         adapter = new CartAdapter(this, cartItems, this);
 
         // 3. Setup RecyclerView
->>>>>>> huuhung
         rcCart.setLayoutManager(new LinearLayoutManager(this));
         rcCart.setAdapter(adapter);
 
         // 4. Cập nhật tổng tiền ban đầu
         updateTotal();
-<<<<<<< HEAD
-
-        // Nút back
-        btnBackCart.setOnClickListener(v -> onBackPressed());
-
-        // Chuyển qua trang Payment
-        btnPlaceOrder.setOnClickListener(v -> {
-            Intent intent = new Intent(CartActivity.this, PayMentActivity.class);
-            startActivity(intent);
-        });
-=======
->>>>>>> huuhung
     }
 
     private void setupEvents() {
@@ -92,7 +70,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
             btnBackCart.setOnClickListener(v -> finish());
         }
 
-        // Chuyển qua trang Payment
+        // Chuyển qua trang Payment (Thanh toán)
         if (btnPlaceOrder != null) {
             btnPlaceOrder.setOnClickListener(v -> {
                 Intent intent = new Intent(CartActivity.this, PayMentActivity.class);
@@ -101,10 +79,11 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
         }
     }
 
-    // Hàm tính tổng tiền (Tên đúng là updateTotal)
+    // Hàm tính tổng tiền
     private void updateTotal() {
         double total = CartManager.getTotal();
         if (txtTotalCart != null) {
+            // Hiển thị tổng tiền (Bạn có thể format thêm nếu muốn)
             txtTotalCart.setText("$" + (int) total);
         }
     }
@@ -112,6 +91,6 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
     // Sự kiện khi tăng/giảm số lượng trong Adapter gọi về
     @Override
     public void onCartChanged() {
-        updateTotal(); // Gọi hàm cập nhật lại giá tiền
+        updateTotal(); // Gọi hàm cập nhật lại giá tiền hiển thị
     }
 }

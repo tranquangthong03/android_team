@@ -69,7 +69,6 @@ public class PayMentActivity extends AppCompatActivity {
         // Lấy danh sách từ Giỏ hàng
         List<CartItem> cartItems = CartManager.getCartItems();
 
-        // Chuyển đổi từ CartItem sang Food (vì Adapter của bạn đang nhận List<Food>)
         List<Food> foodsToPay = new ArrayList<>();
         for (CartItem item : cartItems) {
             foodsToPay.add(item.getFood());

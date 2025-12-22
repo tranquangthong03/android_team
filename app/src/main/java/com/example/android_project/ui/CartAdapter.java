@@ -1,10 +1,6 @@
 package com.example.android_project.ui;
 
-<<<<<<< HEAD
-import android.content.Context; // 1. Import Context
-=======
 import android.content.Context;
->>>>>>> huuhung
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< HEAD
-import com.bumptech.glide.Glide; // 2. Import Glide
-=======
-import com.bumptech.glide.Glide; // Import Glide
->>>>>>> huuhung
+import com.bumptech.glide.Glide;
 import com.example.android_project.R;
 import com.example.android_project.data.CartManager;
 import com.example.android_project.models.CartItem;
@@ -28,21 +20,16 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
+    // Interface để báo lại cho Activity khi số lượng thay đổi (để tính lại tổng tiền)
     public interface CartListener {
         void onCartChanged();
     }
 
+    private Context context; // Biến Context để dùng thư viện Glide
     private List<CartItem> list;
     private CartListener listener;
-<<<<<<< HEAD
-    private Context context; // 3. Khai báo biến Context
 
-    // 4. Cập nhật Constructor để nhận Context
-=======
-    private Context context; // Biến Context để dùng Glide
-
-    // Constructor nhận Context
->>>>>>> huuhung
+    // Constructor đầy đủ
     public CartAdapter(Context context, List<CartItem> list, CartListener listener) {
         this.context = context;
         this.list = list;
@@ -61,49 +48,39 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = list.get(position);
 
-<<<<<<< HEAD
-        // --- ĐOẠN NÀY LÀ CHỖ SỬA LỖI ---
-        // Code cũ (gây lỗi): holder.imgFood.setImageResource(item.getFood().getImageResId());
-
-        // Code mới (Dùng Glide load ảnh từ URL):
+        // 1. Sử dụng Glide để tải ảnh từ URL (item.getFood().getImagePath())
         Glide.with(context)
-                .load(item.getFood().getImagePath()) // Dùng getImagePath()
-                .placeholder(R.drawable.ic_launcher_foreground)
+                .load(item.getFood().getImagePath())
+                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh hiển thị khi đang tải
+                .error(R.drawable.ic_launcher_background)       // Ảnh hiển thị nếu link lỗi
                 .into(holder.imgFood);
-        // -------------------------------
 
-=======
-        // --- SỬA LỖI Ở ĐÂY ---
-        // Dùng Glide tải ảnh từ URL (item.getFood().getImagePath())
-        Glide.with(context)
-                .load(item.getFood().getImagePath()) 
-                .placeholder(R.drawable.ic_launcher_foreground) // Ảnh chờ
-                .error(R.drawable.ic_launcher_background)       // Ảnh lỗi
-                .into(holder.imgFood);
-        
-        // Các phần khác giữ nguyên
->>>>>>> huuhung
+        // 2. Gán dữ liệu Text
         holder.txtName.setText(item.getFood().getName());
         holder.txtPrice.setText("$" + (int) item.getFood().getPrice());
         holder.txtQty.setText(String.valueOf(item.getQuantity()));
 
+        // 3. Sự kiện nút Tăng (+)
         holder.btnPlus.setOnClickListener(v -> {
             item.setQuantity(item.getQuantity() + 1);
-            notifyItemChanged(holder.getAdapterPosition());
-            if (listener != null) listener.onCartChanged();
+            notifyItemChanged(holder.getAdapterPosition()); // Cập nhật giao diện dòng này
+            if (listener != null) listener.onCartChanged(); // Báo Activity tính lại tiền
         });
 
+        // 4. Sự kiện nút Giảm (-)
         holder.btnMinus.setOnClickListener(v -> {
             if (item.getQuantity() > 1) {
                 item.setQuantity(item.getQuantity() - 1);
                 notifyItemChanged(holder.getAdapterPosition());
             } else {
+                // Nếu còn 1 mà bấm trừ -> Xóa luôn
                 CartManager.removeItem(item);
                 notifyItemRemoved(holder.getAdapterPosition());
             }
             if (listener != null) listener.onCartChanged();
         });
 
+        // 5. Sự kiện nút Xóa hẳn
         holder.btnRemove.setOnClickListener(v -> {
             CartManager.removeItem(item);
             notifyItemRemoved(holder.getAdapterPosition());
@@ -123,7 +100,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Đảm bảo các ID này khớp với file res/layout/item_cart.xml
+            // Ánh xạ View (Đảm bảo ID khớp với layout item_cart.xml)
             imgFood = itemView.findViewById(R.id.imgFoodCart);
             txtName = itemView.findViewById(R.id.txtNameCart);
             txtPrice = itemView.findViewById(R.id.txtPriceCart);
