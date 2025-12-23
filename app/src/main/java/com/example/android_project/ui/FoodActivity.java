@@ -99,91 +99,99 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
         setupBannerInfo(currentCategoryId, categoryName);
     }
 
-   private void setupBannerInfo(String id, String name) {
-        String displayTitle = (name != null) ? name : "Thực Đơn";
+    private void setupBannerInfo(String id, String nameFromIntent) {
+        // 1. Xác định tên hiển thị
+        String displayTitle = (nameFromIntent != null && !nameFromIntent.isEmpty()) 
+                              ? nameFromIntent 
+                              : "Thực Đơn";
         String slogan = "Thưởng thức món ngon mỗi ngày";
         
-        // Mặc định là ảnh nhà hàng chung chung
+        // Ảnh mặc định
         int bannerRes = R.drawable.restaurant_image; 
 
-        if (id != null) {
-            // Chuyển ID về chữ thường để so sánh cho dễ
-            String lowerId = id.toLowerCase();
+        // 2. Tạo chuỗi để kiểm tra (Gộp cả ID và Tên vào để tìm từ khóa)
+        // Ví dụ: checkString = "7gSt3... Burger" -> Chứa chữ "burger" -> OK
+        String checkString = "";
+        if (id != null) checkString += id.toLowerCase();
+        if (nameFromIntent != null) checkString += " " + nameFromIntent.toLowerCase();
+
+        // 3. Logic chọn ảnh
+        if (checkString.contains("buger") || checkString.contains("burger")) {
+            displayTitle = "Thế Giới Burger";
+            slogan = "Bò nướng than hoa, phô mai tan chảy 🍔";
+            bannerRes = R.drawable.burger_image;
             
-            // LOGIC CHỌN ẢNH VÀ SLOGAN THEO ID
-            if (lowerId.contains("buger") || lowerId.contains("burger")) {
-                displayTitle = "Thế Giới Burger";
-                slogan = "Bò nướng than hoa, phô mai tan chảy đậm đà 🍔";
-                bannerRes = R.drawable.burger_image; // Dùng ảnh burger_image.webp
-                
-            } else if (lowerId.contains("pizza")) {
-                displayTitle = "Pizza Ý Thượng Hạng";
-                slogan = "Đế mỏng giòn tan, topping ngập tràn 🍕";
-                bannerRes = R.drawable.pizza_image; // Dùng ảnh pizza_image.webp
-                
-            } else if (lowerId.contains("chicken") || lowerId.contains("ga")) {
-                displayTitle = "Gà Rán Giòn Tan";
-                slogan = "Vỏ giòn rụm, thịt mềm ngọt khó cưỡng 🍗";
-                // Nếu chưa có ảnh gà, bạn có thể tạm dùng ảnh này hoặc tải thêm
-                bannerRes = R.drawable.restaurant_image; 
-                
-            } else if (lowerId.contains("drink") || lowerId.contains("nuoc")) {
-                displayTitle = "Đồ Uống Mát Lạnh";
-                slogan = "Giải nhiệt cuộc sống, sảng khoái tức thì 🥤";
-                // bannerRes = R.drawable.drink_image; 
-            }
+        } else if (checkString.contains("pizza")) {
+            displayTitle = "Pizza Ý Thượng Hạng";
+            slogan = "Đế mỏng giòn tan, topping ngập tràn 🍕";
+            bannerRes = R.drawable.pizza_image;
+            
+        } else if (checkString.contains("chicken") || checkString.contains("ga") || checkString.contains("gà")) {
+            displayTitle = "Gà Rán Giòn Tan";
+            slogan = "Vỏ giòn rụm, thịt mềm ngọt khó cưỡng 🍗";
+            // LƯU Ý: Bạn cần có ảnh gà trong drawable, nếu chưa có thì tải về và bỏ comment dòng dưới
+            // bannerRes = R.drawable.chicken_image; 
+            
+        } else if (checkString.contains("drink") || checkString.contains("nuoc") || checkString.contains("nước")) {
+            displayTitle = "Đồ Uống Mát Lạnh";
+            slogan = "Giải nhiệt cuộc sống, sảng khoái tức thì 🥤";
+            // bannerRes = R.drawable.drink_image; 
         }
 
-        // Cập nhật lên giao diện
+        // 4. Cập nhật giao diện
         if (collapsingToolbar != null) collapsingToolbar.setTitle(displayTitle);
         if (txtSlogan != null) txtSlogan.setText(slogan);
         
-        // Load ảnh bằng Glide
         Glide.with(this)
              .load(bannerRes)
+             .placeholder(R.drawable.restaurant_image)
              .centerCrop()
              .into(imgBanner);
     }
 
     private void fetchFoodData() {
-        if (currentCategoryId == null || currentCategoryId.isEmpty()) {
-            Toast.makeText(this, "Lỗi: Không tìm thấy ID danh mục!", Toast.LENGTH_SHORT).show();
-            Log.e("DEBUG_FIREBASE", "CategoryId is NULL");
-            return;
+        Query query;
+
+        // --- FIX LỖI Ở ĐÂY ---
+        // Không return khi null nữa, mà chia làm 2 trường hợp:
+        
+        if (currentCategoryId != null && !currentCategoryId.isEmpty()) {
+            // Trường hợp 1: Có ID -> Lọc theo danh mục (Ví dụ chỉ lấy Burger)
+            Log.d("DEBUG_FIREBASE", "Đang lọc món theo CategoryId: " + currentCategoryId);
+            query = db.collection("foods").whereEqualTo("categoryId", currentCategoryId);
+        } else {
+            // Trường hợp 2: Không có ID (Xem tất cả) -> Lấy TOÀN BỘ món ăn
+            Log.d("DEBUG_FIREBASE", "CategoryId rỗng -> Đang lấy TẤT CẢ món ăn");
+            query = db.collection("foods");
         }
 
-        Log.d("DEBUG_FIREBASE", "Đang lấy món ăn với categoryId: " + currentCategoryId);
-
-        // Query Firestore: Tìm trong collection 'foods' có 'categoryId' bằng với ID nhận được
-        db.collection("foods")
-                .whereEqualTo("categoryId", currentCategoryId)
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        foodList.clear();
-                        for (DocumentSnapshot document : task.getResult()) {
-                            try {
-                                Food food = document.toObject(Food.class);
-                                if (food != null) {
-                                    food.setId(document.getId()); // Lưu ID document
-                                    foodList.add(food);
-                                }
-                            } catch (Exception e) {
-                                Log.e("DEBUG_FIREBASE", "Lỗi convert data: " + e.getMessage());
-                            }
+        // Thực hiện truy vấn
+        query.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                foodList.clear();
+                for (DocumentSnapshot document : task.getResult()) {
+                    try {
+                        Food food = document.toObject(Food.class);
+                        if (food != null) {
+                            food.setId(document.getId()); // Lưu ID document để xử lý click
+                            foodList.add(food);
                         }
-                        adapter.notifyDataSetChanged();
-
-                        Log.d("DEBUG_FIREBASE", "Tìm thấy " + foodList.size() + " món.");
-                        
-                        if (foodList.isEmpty()) {
-                            Toast.makeText(this, "Chưa có món nào trong danh mục này!", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Log.e("DEBUG_FIREBASE", "Lỗi query: ", task.getException());
-                        Toast.makeText(this, "Lỗi kết nối server!", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Log.e("DEBUG_FIREBASE", "Lỗi convert data: " + e.getMessage());
                     }
-                });
+                }
+                adapter.notifyDataSetChanged();
+
+                Log.d("DEBUG_FIREBASE", "Tìm thấy " + foodList.size() + " món.");
+
+                if (foodList.isEmpty()) {
+                    Toast.makeText(this, "Chưa có món nào!", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Log.e("DEBUG_FIREBASE", "Lỗi query: ", task.getException());
+                Toast.makeText(this, "Lỗi kết nối server!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     // --- Xử lý sự kiện từ Adapter (Interface) ---
