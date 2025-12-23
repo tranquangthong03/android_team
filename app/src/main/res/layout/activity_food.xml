@@ -22,7 +22,7 @@
             app:contentScrim="#FF9800"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:expandedTitleMarginStart="20dp"
-            app:expandedTitleMarginBottom="30dp">
+            app:expandedTitleMarginBottom="40dp">
 
             <ImageView
                 android:id="@+id/imgCategoryBanner"
