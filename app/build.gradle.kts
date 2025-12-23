@@ -44,7 +44,7 @@
         // Navigation Component
         implementation("androidx.navigation:navigation-fragment:2.7.7")
         implementation("androidx.navigation:navigation-ui:2.7.7")
-        implementation(libs.recyclerview)
+        implementation("androidx.recyclerview:recyclerview:1.3.2")
 
         // Test
         testImplementation("junit:junit:4.13.2")
@@ -58,4 +58,5 @@
         // Thư viện Glide (để load ảnh từ URL)
         implementation("com.github.bumptech.glide:glide:4.16.0")
         implementation("org.osmdroid:osmdroid-android:6.1.18")
+
     }

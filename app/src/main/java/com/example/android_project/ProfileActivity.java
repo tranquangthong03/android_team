@@ -37,6 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         initViews();
         setupEvents();
         loadUserProfile();
+        
     }
 
     private void initViews() {
