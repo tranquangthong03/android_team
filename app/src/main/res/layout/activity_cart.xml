@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#111222"
-        android:backgroundTint="@color/bg_card"
+        android:backgroundTint="@color/primary_light"
         android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toTopOf="@id/summaryPanel"
@@ -28,15 +28,13 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnBackCart"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:background="@drawable/bg_circle_dark"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_arrow_back__vector"
-                app:tint="#ffffff"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                app:tint="@color/black" />
 
             <TextView
                 android:layout_width="0dp"
