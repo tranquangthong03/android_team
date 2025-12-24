@@ -40,15 +40,15 @@
         implementation("com.google.android.material:material:1.12.0")
         implementation("androidx.activity:activity:1.9.3")
         implementation("androidx.constraintlayout:constraintlayout:2.2.0")
-    
+        implementation("com.google.firebase:firebase-database")
         // Navigation Component
         implementation("androidx.navigation:navigation-fragment:2.7.7")
         implementation("androidx.navigation:navigation-ui:2.7.7")
-        implementation(libs.recyclerview)
         implementation(libs.credentials)
         implementation(libs.credentials.play.services.auth)
         implementation(libs.googleid)
 
+        implementation(libs.recyclerview)
         // Test
         testImplementation("junit:junit:4.13.2")
         androidTestImplementation("androidx.test.ext:junit:1.2.1")
@@ -61,4 +61,5 @@
         // Thư viện Glide (để load ảnh từ URL)
         implementation("com.github.bumptech.glide:glide:4.16.0")
         implementation("org.osmdroid:osmdroid-android:6.1.18")
+
     }
