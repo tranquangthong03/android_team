@@ -3161,6 +3161,7 @@ drawable faq
 drawable favourite
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_bg_top_dark
 drawable home
 drawable ic_arrow_back
 drawable ic_arrow_back__vector
@@ -3474,6 +3475,7 @@ id btnBackSearch
 id btnCart
 id btnConfirmLink
 id btnEditProfile
+id btnFavorite
 id btnHome
 id btnLogout
 id btnMinus
@@ -3489,7 +3491,6 @@ id btnPlusCart
 id btnProfileCart
 id btnProfileFavorite
 id btnRemove
-id btnSearch
 id btnSearchMain
 id btnSettings
 id btnSupport
@@ -3965,7 +3966,6 @@ id title_template
 id toggle
 id toolbar
 id top
-id topBar
 id topPanel
 id touch_outside
 id transitionToEnd
@@ -3993,6 +3993,7 @@ id txtDone
 id txtFee
 id txtFoodName
 id txtGreeting
+id txtItems
 id txtMethod
 id txtName
 id txtNameCart
@@ -4002,6 +4003,7 @@ id txtPriceCart
 id txtQtyCart
 id txtQuantity
 id txtRating
+id txtReceiver
 id txtRestaurant
 id txtSeeAllCategories
 id txtSlogan

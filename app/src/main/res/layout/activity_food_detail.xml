@@ -2,139 +2,237 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F6FA">
+    android:background="#F5F5F5">
 
-    <!-- Thanh trên cùng -->
-    <LinearLayout
-        android:id="@+id/topBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageButton
-            android:id="@+id/btnBackNHLienKet"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="@drawable/bg_circle_light"
-            android:src="@drawable/ic_arrow_back__vector"
-            app:tint="#333" />
-
-        <TextView
-            android:id="@+id/txtCategory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="BURGER"
-            android:textStyle="bold"
-            android:textColor="#222"
-            android:gravity="center"
-            app:layout_constraintHorizontal_weight="1"/>
-
-        <ImageButton
-            android:id="@+id/btnSearch"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="@drawable/bg_circle_dark"
-            android:src="@drawable/ic_search"
-            app:tint="#FFFFFF"/>
-
-    </LinearLayout>
-
-    <!-- Ảnh món ăn -->
     <ImageView
         android:id="@+id/imgFood"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
+        android:src="@drawable/burger_image"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/gradient_bg_top_dark"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+        android:id="@+id/btnBackNHLienKet"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_circle_light"
+        android:padding="10dp"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="#333"
+        android:elevation="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_circle_light"
+        android:padding="10dp"
+        android:src="@drawable/favourite"
+        app:tint="#FF3B30"
+        android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/bg_image_card"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Nội dung -->
-    <LinearLayout
-        android:id="@+id/content"
-        android:layout_width="0dp"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:padding="20dp"
+        android:layout_marginTop="-40dp"
+        android:background="@drawable/bg_rounded_top_sheet"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/imgFood"
-        app:layout_constraintBottom_toTopOf="@id/bottomBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/bottomBar">
 
-        <TextView
-            android:id="@+id/txtFoodName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Burger Bistro"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#222"/>
-
-        <TextView
-            android:id="@+id/txtRestaurant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rose Garden"
-            android:textColor="#888"
-            android:layout_marginTop="4dp"/>
-
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="$40"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#FF8A00"/>
-
-        <TextView
-            android:id="@+id/txtDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Juicy beef burger with cheese, tomato and special sauce."
-            android:textColor="#555"/>
-
-        <!-- chọn số lượng -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="start">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtFoodName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burger Bò Phô Mai"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#222"/>
+
+                    <TextView
+                        android:id="@+id/txtRestaurant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nhà hàng Rose Garden"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$40"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_star" app:tint="#FFC107"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4.8" android:textStyle="bold" android:layout_marginStart="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(120+)" android:textSize="12sp" android:textColor="#888" android:layout_marginStart="2dp"/>
+                </LinearLayout>
+
+                <View android:layout_width="1dp" android:layout_height="12dp" android:background="#CCC" android:layout_marginHorizontal="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_time" app:tint="@color/primary"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20-30 phút" android:textSize="13sp" android:layout_marginStart="4dp" android:textColor="#555"/>
+                </LinearLayout>
+
+                <View android:layout_width="1dp" android:layout_height="12dp" android:background="#CCC" android:layout_marginHorizontal="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_delivery" app:tint="#4CAF50"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FreeShip" android:textSize="13sp" android:layout_marginStart="4dp" android:textColor="#4CAF50" android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0" android:layout_marginVertical="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
-                android:textColor="#444"
-                android:textSize="16sp"/>
+                android:text="Mô tả món ăn"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#222"/>
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Thịt bò nướng than hoa thơm lừng, kết hợp cùng phô mai Cheddar tan chảy, rau xà lách tươi ngon và sốt bí truyền đặc biệt."
+                android:textColor="#666"
+                android:lineSpacingExtra="4dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn kích thước"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#222"
+                android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:text="S" android:gravity="center" android:padding="10dp"
+                    android:background="@drawable/bg_search_input" android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:text="M" android:gravity="center" android:padding="10dp"
+                    android:background="@drawable/payment_method_selected_bg" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginHorizontal="12dp"/>
+                <TextView
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                    android:text="L" android:gravity="center" android:padding="10dp"
+                    android:background="@drawable/bg_search_input" android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="20dp"
+        app:cardCornerRadius="24dp"
+        android:layout_marginBottom="-20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="40dp"
+            android:gravity="center_vertical"
+            android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginStart="16dp"
                 android:background="@drawable/bg_qty_box"
-                android:padding="4dp">
+                android:gravity="center_vertical"
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
 
                 <ImageButton
                     android:id="@+id/btnMinus"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:background="@android:color/transparent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/ic_minus"
-                    app:tint="#333"/>
+                    app:tint="#444"/>
 
                 <TextView
                     android:id="@+id/txtQuantity"
@@ -142,54 +240,53 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="1"
+                    android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="#fff"/>
+                    android:textColor="#222"/>
 
                 <ImageButton
                     android:id="@+id/btnPlus"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:background="@android:color/transparent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/ic_plus"
-                    app:tint="#333"/>
+                    app:tint="@color/primary"/>
             </LinearLayout>
+
+            <Space android:layout_width="16dp" android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/btnAddToCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="@drawable/button_bg"
+                android:gravity="center"
+                android:paddingVertical="14dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thêm vào giỏ"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- $40"
+                    android:textColor="#FFF"
+                    android:textSize="14sp"
+                    android:layout_marginStart="8dp"
+                    android:alpha="0.9"/>
+            </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Thanh dưới cùng -->
-    <LinearLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@drawable/bg_bottom_bar"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:id="@+id/txtTotal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Total: $40"
-            android:textColor="#222"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/btnAddToCart"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="ADD TO CART"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:backgroundTint="#FF8A00"
-            android:textColor="#FFF"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

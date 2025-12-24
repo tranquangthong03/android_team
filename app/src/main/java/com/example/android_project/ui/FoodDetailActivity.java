@@ -22,7 +22,7 @@ public class FoodDetailActivity extends AppCompatActivity {
     private ImageView imgFood;
     private TextView txtFoodName, txtRestaurant, txtPrice, txtDesc, txtQuantity, txtTotal;
     private ImageButton btnBack, btnMinus, btnPlus;
-    private Button btnAddToCart;
+  private android.view.View btnAddToCart;
 
     private int quantity = 1;
     private Food food;

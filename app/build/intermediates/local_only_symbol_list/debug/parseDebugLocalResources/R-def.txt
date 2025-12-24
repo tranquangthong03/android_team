@@ -58,6 +58,7 @@ drawable edittext_background
 drawable facebook
 drawable faq
 drawable favourite
+drawable gradient_bg_top_dark
 drawable home
 drawable ic_arrow_back
 drawable ic_arrow_back__vector
@@ -144,6 +145,7 @@ id btnBackSearch
 id btnCart
 id btnConfirmLink
 id btnEditProfile
+id btnFavorite
 id btnHome
 id btnLogout
 id btnMinus
@@ -159,7 +161,6 @@ id btnPlusCart
 id btnProfileCart
 id btnProfileFavorite
 id btnRemove
-id btnSearch
 id btnSearchMain
 id btnSettings
 id btnSupport
@@ -185,7 +186,6 @@ id cb_remember_me
 id collapsingToolbar
 id container_linked
 id container_other
-id content
 id description
 id edtAccountName
 id edtAccountNumber
@@ -252,7 +252,6 @@ id text_address
 id text_type
 id title
 id toolbar
-id topBar
 id tvEmail
 id tvName
 id tvTitle
@@ -267,6 +266,7 @@ id txtDone
 id txtFee
 id txtFoodName
 id txtGreeting
+id txtItems
 id txtMethod
 id txtName
 id txtNameCart
@@ -276,6 +276,7 @@ id txtPriceCart
 id txtQtyCart
 id txtQuantity
 id txtRating
+id txtReceiver
 id txtRestaurant
 id txtSeeAllCategories
 id txtSlogan
