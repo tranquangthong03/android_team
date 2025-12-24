@@ -3102,6 +3102,7 @@ drawable bg_circle_primary
 drawable bg_circle_red
 drawable bg_image_card
 drawable bg_qty_box
+drawable bg_red_badge
 drawable bg_rounded_card
 drawable bg_rounded_top_sheet
 drawable bg_search_input
@@ -3143,6 +3144,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable customer
 drawable delete
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3211,6 +3213,7 @@ drawable ic_star
 drawable ic_time
 drawable ic_visa
 drawable indeterminate_static
+drawable invoice
 drawable logout
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3408,10 +3411,12 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_profileFragment_to_addressFragment
 id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addressFragment
 id address_container
 id adjust_height
 id adjust_width
@@ -3767,6 +3772,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nav_controller_view_tag
+id nav_graph
 id nav_host_fragment_container
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3823,6 +3829,7 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id profileFragment
 id progress_circular
 id progress_horizontal
 id radio
@@ -4261,6 +4268,7 @@ layout tatca_phuongthuc_thanhtoan_activity
 layout viewholder_category
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation nav_graph
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 string abc_action_bar_home_description

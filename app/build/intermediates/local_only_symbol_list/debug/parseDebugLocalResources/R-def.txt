@@ -36,6 +36,7 @@ drawable bg_circle_primary
 drawable bg_circle_red
 drawable bg_image_card
 drawable bg_qty_box
+drawable bg_red_badge
 drawable bg_rounded_card
 drawable bg_rounded_top_sheet
 drawable bg_search_input
@@ -47,6 +48,7 @@ drawable cart
 drawable cash_on_delivery
 drawable check_circle
 drawable circle
+drawable customer
 drawable delete
 drawable dot_selected
 drawable dot_unselected
@@ -82,6 +84,7 @@ drawable ic_search
 drawable ic_star
 drawable ic_time
 drawable ic_visa
+drawable invoice
 drawable logout
 drawable momo_icon
 drawable notification
@@ -119,6 +122,8 @@ font sfp_display_regular
 font sfp_display_semibold
 font sfp_display_thin
 font sfp_display_ultralight_italic
+id action_profileFragment_to_addressFragment
+id addressFragment
 id address_container
 id appBarLayout
 id bank_full_name
@@ -221,7 +226,9 @@ id layout_momo
 id main
 id mainLayout
 id map
+id nav_graph
 id nextBtn
+id profileFragment
 id rcCart
 id rcOrders
 id rcPayment
@@ -312,6 +319,7 @@ layout tatca_phuongthuc_thanhtoan_activity
 layout viewholder_category
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation nav_graph
 string app_name
 string category_burger
 string gcm_defaultSenderId
