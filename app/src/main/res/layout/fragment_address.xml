@@ -21,7 +21,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Address"
+        android:text="Địa chỉ của tôi"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -33,7 +33,7 @@
         android:id="@+id/btn_add_address"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:text="ADD NEW ADDRESS"
+        android:text="Thêm địa chỉ mới"
         android:backgroundTint="#FFA500"
         android:textColor="@android:color/white"
         android:layout_margin="16dp"
@@ -55,4 +55,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_address" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

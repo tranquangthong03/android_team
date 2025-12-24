@@ -46,12 +46,10 @@
             android:layout_height="24dp"
             android:src="@drawable/edit"
             android:scaleType="centerCrop"
-            app:layout_constraintEnd_toStartOf="@id/icon_delete"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginEnd="16dp"/>
 
         <ImageView
-            android:id="@+id/icon_delete"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/delete"
