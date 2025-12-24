@@ -3481,6 +3481,7 @@ int id btnTrackOrder 0x7f09008a
 int id btn_add_address 0x7f09008b
 int id btn_addresses 0x7f09008c
 int id btn_back 0x7f09008d
+int id btn_back_forgot 0x7f0902ad
 int id btn_back_login 0x7f09008e
 int id btn_back_signup 0x7f09008f
 int id btn_cart 0x7f090090
@@ -3494,6 +3495,7 @@ int id btn_notifications 0x7f090097
 int id btn_orders 0x7f090098
 int id btn_payment 0x7f090099
 int id btn_personal_info 0x7f09009a
+int id btn_send_reset 0x7f0902ae
 int id btn_sign_up 0x7f09009b
 int id bubble_description 0x7f09009c
 int id bubble_image 0x7f09009d
@@ -3596,6 +3598,7 @@ int id enterAlways 0x7f0900fd
 int id enterAlwaysCollapsed 0x7f0900fe
 int id escape 0x7f0900ff
 int id etSearch 0x7f090100
+int id et_email_forgot 0x7f0902af
 int id et_email_login 0x7f090101
 int id et_email_signup 0x7f090102
 int id et_name 0x7f090103
@@ -3637,6 +3640,7 @@ int id header 0x7f090126
 int id headerContainer 0x7f090127
 int id headerLayout 0x7f090128
 int id header_container 0x7f090129
+int id header_container_forgot 0x7f0902b1
 int id header_container_login 0x7f09012a
 int id header_title 0x7f09012b
 int id hide_ime_id 0x7f09012c
@@ -4145,6 +4149,7 @@ int layout activity_address 0x7f0c001d
 int layout activity_cart 0x7f0c001e
 int layout activity_food 0x7f0c001f
 int layout activity_food_detail 0x7f0c0020
+int layout activity_forgot_password 0x7f0c008d
 int layout activity_home 0x7f0c0021
 int layout activity_invoice 0x7f0c0022
 int layout activity_log_in 0x7f0c0023

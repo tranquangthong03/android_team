@@ -3482,6 +3482,7 @@ id btnTrackOrder
 id btn_add_address
 id btn_addresses
 id btn_back
+id btn_back_forgot
 id btn_back_login
 id btn_back_signup
 id btn_cart
@@ -3495,6 +3496,7 @@ id btn_notifications
 id btn_orders
 id btn_payment
 id btn_personal_info
+id btn_send_reset
 id btn_sign_up
 id bubble_description
 id bubble_image
@@ -3597,6 +3599,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id etSearch
+id et_email_forgot
 id et_email_login
 id et_email_signup
 id et_name
@@ -3638,6 +3641,7 @@ id header
 id headerContainer
 id headerLayout
 id header_container
+id header_container_forgot
 id header_container_login
 id header_title
 id hide_ime_id
@@ -4146,6 +4150,7 @@ layout activity_address
 layout activity_cart
 layout activity_food
 layout activity_food_detail
+layout activity_forgot_password
 layout activity_home
 layout activity_invoice
 layout activity_log_in

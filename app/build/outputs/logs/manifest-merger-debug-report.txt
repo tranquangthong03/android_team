@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-68:12
-INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-68:12
-INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-68:12
-INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-68:12
+ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:2:1-69:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\ASUS\.gradle\caches\8.13\transforms\d7027e6905b1cf2cc59b94d8d59111c1\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\ASUS\.gradle\caches\8.13\transforms\6cdbc54fb60c3ad58b75e24358c97e48\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\ASUS\.gradle\caches\8.13\transforms\67e081b647ea49e018517c10ef580274\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:17:1-22:12
@@ -169,8 +169,8 @@ ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app
 	android:name
 		ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:9:22-78
 application
-ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:11:5-66:19
-INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:11:5-66:19
+ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:11:5-67:19
+INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:11:5-67:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\ASUS\.gradle\caches\8.13\transforms\a54126df515efe2df0f532d2e6935686\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\ASUS\.gradle\caches\8.13\transforms\a54126df515efe2df0f532d2e6935686\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\ASUS\.gradle\caches\8.13\transforms\9c74957fba02debad67d8c28398ca611\transformed\constraintlayout-2.2.0\AndroidManifest.xml:7:5-20
@@ -363,6 +363,10 @@ activity#com.example.android_project.SearchActivity
 ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:65:9-52
 	android:name
 		ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:65:19-49
+activity#com.example.android_project.ForgotPasswordActivity
+ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:66:9-60
+	android:name
+		ADDED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml:66:19-57
 uses-sdk
 INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ASUS\Downloads\android_team-huuhung\android_team-huuhung\app\src\main\AndroidManifest.xml

@@ -54,9 +54,10 @@ public class LogInActivity extends AppCompatActivity {
         });
 
         // 4. Quên mật khẩu
-        forgotPassword.setOnClickListener(v ->
-                Toast.makeText(LogInActivity.this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show()
-        );
+        forgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LogInActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void handleLogin() {

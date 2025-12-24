@@ -8,6 +8,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_invoice.xml"
     },
     {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_forgot_password.xml"
+    },
+    {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
@@ -100,12 +104,12 @@
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\check_circle.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_search.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_add_payment.xml.flat",
@@ -178,6 +182,10 @@
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_twitter.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\twitter.png"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/layout_activity_forgot_password.xml.flat",
+        "source": "com.example.android_project.app-main-63:/layout/activity_forgot_password.xml"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_open_restaurant.png.flat",
@@ -370,10 +378,6 @@
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_edit.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\edit.png"
-    },
-    {
-        "merged": "com.example.android_project.app-debug-61:/layout_activity_sign_up.xml.flat",
-        "source": "com.example.android_project.app-main-63:/layout/activity_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sf_pro_display.xml.flat",

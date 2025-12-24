@@ -103,6 +103,7 @@
         <activity android:name="com.example.android_project.DanhSachNganHangActivity" />
         <activity android:name="com.example.android_project.MapsOsmActivity" />
         <activity android:name="com.example.android_project.SearchActivity" />
+        <activity android:name="com.example.android_project.ForgotPasswordActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
