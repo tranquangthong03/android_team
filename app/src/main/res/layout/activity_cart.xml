@@ -12,28 +12,29 @@
         android:id="@+id/cartPanel"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:background="#111222"
+        android:backgroundTint="@color/bg_card"
+        android:orientation="vertical"
         android:padding="20dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/summaryPanel"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btnBackCart"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:background="@drawable/bg_circle_dark"
-                android:src="@drawable/ic_arrow_back__vector"
                 android:contentDescription="@null"
+                android:src="@drawable/ic_arrow_back__vector"
                 app:tint="#ffffff"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -52,8 +53,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DONE"
-                android:textStyle="bold"
-                android:textColor="#45E58A" />
+                android:textColor="#45E58A"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- danh sách món -->
