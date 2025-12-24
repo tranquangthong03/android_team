@@ -5,12 +5,12 @@
     
     android {
         namespace = "com.example.android_project"
-        compileSdk = 36   // Nếu sync lỗi vì chưa cài SDK 36 thì tạm đổi thành 35 hoặc 34
+        compileSdk = 35   // Nếu sync lỗi vì chưa cài SDK 36 thì tạm đổi thành 35 hoặc 34
     
         defaultConfig {
             applicationId = "com.example.android_project"
             minSdk = 24
-            targetSdk = 36
+            targetSdk = 34
             versionCode = 1
             versionName = "1.0"
     
@@ -54,6 +54,8 @@
         implementation(platform("com.google.firebase:firebase-bom:34.6.0"))
         implementation("com.google.firebase:firebase-auth")
         implementation("com.google.firebase:firebase-analytics")
-
-
+        implementation("com.google.firebase:firebase-firestore")
+        // Thư viện Glide (để load ảnh từ URL)
+        implementation("com.github.bumptech.glide:glide:4.16.0")
+        implementation("org.osmdroid:osmdroid-android:6.1.18")
     }

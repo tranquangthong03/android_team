@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser; // Import thêm để lấy thông tin User
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -22,37 +23,39 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        // Firebase Auth
+        // Khởi tạo Firebase Auth
         auth = FirebaseAuth.getInstance();
 
-        // Ánh xạ input email + password
+        // Ánh xạ View (Đảm bảo ID khớp với layout XML của bạn)
         emailInput = findViewById(R.id.et_email_login);
         passwordInput = findViewById(R.id.et_password_login);
-
+        
         Button logInButton = findViewById(R.id.btn_log_in);
         TextView signUpPrompt = findViewById(R.id.tv_switch_to_signup);
         ImageButton backButton = findViewById(R.id.btn_back_login);
+        TextView forgotPassword = findViewById(R.id.tv_forgot_password);
 
-        // 1️⃣ Xử lý nút LOG IN
+        // 1. Sự kiện nút LOG IN
         logInButton.setOnClickListener(v -> handleLogin());
 
-        // 2️⃣ Chuyển sang SIGN UP
+        // 2. Chuyển sang SIGN UP
         signUpPrompt.setOnClickListener(v -> {
             Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
             startActivity(intent);
         });
 
-        // 3️⃣ Back về Onboarding
+        // 3. Back về Onboarding
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(LogInActivity.this, OnboardingActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            // Xóa cờ để tránh chồng chéo Activity không mong muốn
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
             finish();
         });
 
-        // 4️⃣ Quên mật khẩu
-        findViewById(R.id.tv_forgot_password).setOnClickListener(v ->
-                Toast.makeText(LogInActivity.this, "Tính năng này đang phát triển", Toast.LENGTH_SHORT).show()
+        // 4. Quên mật khẩu
+        forgotPassword.setOnClickListener(v ->
+                Toast.makeText(LogInActivity.this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show()
         );
     }
 
@@ -60,29 +63,52 @@ public class LogInActivity extends AppCompatActivity {
         String email = emailInput.getText().toString().trim();
         String password = passwordInput.getText().toString().trim();
 
-        // Kiểm tra dữ liệu
+        // Kiểm tra dữ liệu đầu vào
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Vui lòng nhập đầy đủ email và mật khẩu!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Đăng nhập Firebase
+        // Thực hiện đăng nhập Firebase
         auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(task -> {
+                .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(LogInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                         navigateToMainScreen();
                     } else {
-                        Toast.makeText(LogInActivity.this,
-                                "Đăng nhập thất bại: " + task.getException().getMessage(),
-                                Toast.LENGTH_LONG).show();
+                        // Hiển thị lỗi chi tiết (nếu có)
+                        String errorMsg = task.getException() != null ? task.getException().getMessage() : "Lỗi không xác định";
+                        Toast.makeText(LogInActivity.this, "Đăng nhập thất bại: " + errorMsg, Toast.LENGTH_LONG).show();
                     }
                 });
     }
 
     private void navigateToMainScreen() {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(LogInActivity.this, HomeActivity.class);
+
+        // --- LOGIC MỚI: Gửi tên người dùng sang HomeActivity ---
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            // Cách 1: Lấy tên hiển thị (nếu lúc đăng ký có lưu DisplayName)
+            String nameToDisplay = user.getDisplayName();
+
+            // Cách 2: Nếu chưa có tên, cắt lấy phần đầu của email (ví dụ: thong@gmail.com -> thong)
+            if (nameToDisplay == null || nameToDisplay.isEmpty()) {
+                String email = user.getEmail();
+                if (email != null && email.contains("@")) {
+                    nameToDisplay = email.split("@")[0];
+                } else {
+                    nameToDisplay = "User"; // Tên mặc định
+                }
+            }
+            
+            // Đóng gói tên vào Intent với khóa "USER_NAME" (phải khớp bên HomeActivity)
+            intent.putExtra("USER_NAME", nameToDisplay);
+        }
+
+        // Xóa LoginActivity khỏi Back Stack để user không bấm Back quay lại màn hình Login được
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        finish();
     }
 }

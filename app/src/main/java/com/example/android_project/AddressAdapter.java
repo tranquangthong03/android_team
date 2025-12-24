@@ -11,42 +11,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-// 1. Adapter cần kế thừa RecyclerView.Adapter
 public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressViewHolder> {
 
-    // 2. Danh sách dữ liệu
     private List<AddressModel> addressList;
+    // 1. Khai báo Interface để gửi sự kiện ra ngoài
+    private OnDeleteClickListener deleteListener;
 
-    public AddressAdapter(List<AddressModel> addressList) {
+    public interface OnDeleteClickListener {
+        void onDeleteClick(int position);
+    }
+
+    // 2. Cập nhật Constructor để nhận thêm Listener
+    public AddressAdapter(List<AddressModel> addressList, OnDeleteClickListener listener) {
         this.addressList = addressList;
+        this.deleteListener = listener;
     }
 
-    // 3. ViewHolder: Chứa các View trong file item_address.xml
-    public static class AddressViewHolder extends RecyclerView.ViewHolder {
-        ImageView iconType;
-        TextView textType;
-        TextView textAddress;
-        // (Bạn có thể thêm iconEdit, iconDelete ở đây nếu cần xử lý click)
-
-        public AddressViewHolder(@NonNull View itemView) {
-            super(itemView);
-            // Ánh xạ (tìm) các View bằng ID
-            iconType = itemView.findViewById(R.id.icon_type);
-            textType = itemView.findViewById(R.id.text_type);
-            textAddress = itemView.findViewById(R.id.text_address);
-        }
-    }
-
-    // 4. onCreateViewHolder: Tạo (inflate) layout cho mỗi hàng
     @NonNull
     @Override
     public AddressViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_address, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_address, parent, false);
         return new AddressViewHolder(view);
     }
 
-    // 5. onBindViewHolder: Gán dữ liệu từ List vào View
     @Override
     public void onBindViewHolder(@NonNull AddressViewHolder holder, int position) {
         AddressModel item = addressList.get(position);
@@ -54,11 +41,37 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
         holder.iconType.setImageResource(item.getIcon());
         holder.textType.setText(item.getType());
         holder.textAddress.setText(item.getAddress());
+
+        // 3. Bắt sự kiện click vào nút Xóa (thùng rác)
+        holder.btnDelete.setOnClickListener(v -> {
+            if (deleteListener != null) {
+                // Gửi vị trí (position) cần xóa ra ngoài Fragment xử lý
+                deleteListener.onDeleteClick(holder.getAdapterPosition());
+            }
+        });
     }
 
-    // 6. getItemCount: Trả về số lượng item trong List
     @Override
     public int getItemCount() {
         return addressList.size();
+    }
+
+    public static class AddressViewHolder extends RecyclerView.ViewHolder {
+        ImageView iconType;
+        TextView textType;
+        TextView textAddress;
+        ImageView btnDelete; // 4. Khai báo nút xóa
+
+        public AddressViewHolder(@NonNull View itemView) {
+            super(itemView);
+            iconType = itemView.findViewById(R.id.icon_type);
+            textType = itemView.findViewById(R.id.text_type);
+            textAddress = itemView.findViewById(R.id.text_address);
+
+            // 5. Ánh xạ nút xóa
+            // LƯU Ý: Bạn cần kiểm tra trong file item_address.xml xem ID của cái thùng rác là gì.
+            // Mình giả sử ID là btn_delete. Nếu khác, hãy sửa lại dòng dưới đây.
+            btnDelete = itemView.findViewById(R.id.btn_delete);
+        }
     }
 }

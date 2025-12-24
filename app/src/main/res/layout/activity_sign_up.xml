@@ -23,8 +23,8 @@
             android:layout_height="32dp"
             android:src="@drawable/ic_arrow_back__vector"
             android:background="@android:color/transparent"
-            android:tint="@android:color/white"
-            android:contentDescription="Quay lại" />
+            android:contentDescription="Quay lại"
+            app:tint="@android:color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,101 +52,120 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="-20dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            android:paddingTop="32dp"
-            android:background="@android:color/white">
+            android:layout_height="match_parent">
 
-            <TextView
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HỌ VÀ TÊN"
-                android:textColor="#808080" />
-
-            <EditText
-                android:id="@+id/et_name"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:inputType="textPersonName"
-                android:hint="ví dụ: Nguyễn Văn A"
-                android:background="@drawable/edittext_background"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:layout_marginBottom="24dp"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="EMAIL"
-                android:textColor="#808080" />
-
-            <EditText
-                android:id="@+id/et_email_signup"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:inputType="textEmailAddress"
-                android:hint="ví dụ: email@gmail.com"
-                android:background="@drawable/edittext_background"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:layout_marginBottom="24dp"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MẬT KHẨU"
-                android:textColor="#808080" />
-
-            <EditText
-                android:id="@+id/et_password_signup"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:inputType="textPassword"
-                android:background="@drawable/edittext_background"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:layout_marginBottom="24dp"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NHẬP LẠI MẬT KHẨU"
-                android:textColor="#808080" />
-
-            <EditText
-                android:id="@+id/et_retype_password_signup"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:inputType="textPassword"
-                android:background="@drawable/edittext_background"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:layout_marginBottom="32dp"
-                tools:ignore="RtlSymmetry" />
-
-            <Button
-                android:id="@+id/btn_sign_up"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ĐĂNG KÝ"
-                android:textColor="@android:color/white"
-                android:backgroundTint="#FF6600"
-                android:padding="16dp"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:orientation="vertical"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"
+                android:background="@android:color/white">
 
-        </LinearLayout>
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HỌ VÀ TÊN"
+                    android:textColor="#808080" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:inputType="textPersonName"
+                    android:hint="ví dụ: Nguyễn Văn A"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EMAIL"
+                    android:textColor="#808080" />
+
+                <EditText
+                    android:id="@+id/et_email_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:inputType="textEmailAddress"
+                    android:hint="ví dụ: email@gmail.com"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SỐ ĐIỆN THOẠI"
+                    android:textColor="#808080" />
+
+                <EditText
+                    android:id="@+id/et_phone_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:inputType="phone"
+                    android:hint="ví dụ: 0912345678"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MẬT KHẨU"
+                    android:textColor="#808080" />
+
+                <EditText
+                    android:id="@+id/et_password_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NHẬP LẠI MẬT KHẨU"
+                    android:textColor="#808080" />
+
+                <EditText
+                    android:id="@+id/et_retype_password_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edittext_background"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginBottom="32dp" />
+
+                <Button
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ĐĂNG KÝ"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#FF6600"
+                    android:padding="16dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
