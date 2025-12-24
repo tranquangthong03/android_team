@@ -64,6 +64,7 @@
         <activity android:name=".MapsOsmActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".EditProfileActivity" />
     </application>
 
 </manifest>

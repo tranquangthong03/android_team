@@ -160,6 +160,7 @@ id btnPlusCart
 id btnProfileCart
 id btnProfileFavorite
 id btnRemove
+id btnSave
 id btnSearchMain
 id btnSettings
 id btnSupport
@@ -188,6 +189,9 @@ id container_other
 id description
 id edtAccountName
 id edtAccountNumber
+id edtEmail
+id edtName
+id edtPhone
 id etSearch
 id et_email_forgot
 id et_email_login
@@ -220,7 +224,7 @@ id imgProfile
 id imgRes
 id img_cash_check
 id img_success
-id indicatorLayout
+id layoutDots
 id layoutQty
 id layoutSearch
 id layout_bank
@@ -293,6 +297,7 @@ id viewPager
 layout activity_add_payment
 layout activity_address
 layout activity_cart
+layout activity_edit_profile
 layout activity_food
 layout activity_food_detail
 layout activity_forgot_password
