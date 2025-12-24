@@ -199,7 +199,7 @@ public class FoodActivity extends AppCompatActivity implements FoodAdapter.FoodL
     public void onFoodClick(Food food) {
         Intent intent = new Intent(FoodActivity.this, FoodDetailActivity.class);
         // Key "object" phải khớp với code nhận bên FoodDetailActivity
-        intent.putExtra("object", food); 
+        intent.putExtra(FoodDetailActivity.EXTRA_FOOD, food); 
         // Hoặc nếu bên kia dùng key khác (ví dụ EXTRA_FOOD) thì dùng dòng dưới:
         // intent.putExtra(FoodDetailActivity.EXTRA_FOOD, food);
         startActivity(intent);
