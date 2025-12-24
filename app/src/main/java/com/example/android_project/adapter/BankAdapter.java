@@ -13,20 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.android_project.R;
 import com.example.android_project.models.Bank;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class BankAdapter extends RecyclerView.Adapter<BankAdapter.BankViewHolder> {
 
     private Context context;
-    private List<Bank> danhSachNganHang; // List để hiển thị
-    private List<Bank> danhSachNganHangFull; // List gốc không đổi
+    private List<Bank> danhSachNganHang;
 
     public BankAdapter(Context context, List<Bank> danhSachNganHang) {
         this.context = context;
         this.danhSachNganHang = danhSachNganHang;
-        this.danhSachNganHangFull = new ArrayList<>(danhSachNganHang);
     }
 
     @NonNull
@@ -47,22 +43,6 @@ public class BankAdapter extends RecyclerView.Adapter<BankAdapter.BankViewHolder
     @Override
     public int getItemCount() {
         return danhSachNganHang.size();
-    }
-
-    // Phương thức lọc danh sách
-    public void filter(String text) {
-        danhSachNganHang.clear();
-        if (text.isEmpty()) {
-            danhSachNganHang.addAll(danhSachNganHangFull);
-        } else {
-            text = text.toLowerCase(Locale.getDefault());
-            for (Bank item : danhSachNganHangFull) {
-                if (item.getTen().toLowerCase(Locale.getDefault()).contains(text)) {
-                    danhSachNganHang.add(item);
-                }
-            }
-        }
-        notifyDataSetChanged();
     }
 
     public static class BankViewHolder extends RecyclerView.ViewHolder {

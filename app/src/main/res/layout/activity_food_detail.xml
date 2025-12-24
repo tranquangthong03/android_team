@@ -21,7 +21,8 @@
             android:id="@+id/btnBackNHLienKet"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/ic_arrow_back__vector"
+            android:background="@drawable/bg_circle_light"
+            android:src="@drawable/ic_arrow_back__vector"
             app:tint="#333" />
 
         <TextView

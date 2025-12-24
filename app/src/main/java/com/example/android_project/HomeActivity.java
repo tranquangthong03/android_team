@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_project.data.CartManager;
-import com.example.android_project.models.CartItem;
 import com.example.android_project.models.CategoryDomain;
 import com.example.android_project.models.Food;
 import com.example.android_project.models.Restaurant;
@@ -23,25 +22,24 @@ import com.example.android_project.ui.FoodActivity;
 import com.example.android_project.ui.FoodAdapter;
 import com.example.android_project.ui.FoodDetailActivity;
 import com.example.android_project.ui.RestaurantAdapter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseAuth; // Import Auth
+import com.google.firebase.auth.FirebaseUser; // Import User
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
     // Khai báo các biến giao diện
     private RecyclerView rvCategories, rvPopularHome, rvRestaurants;
-    private TextView txtGreeting, txtSeeAll, txtCartBadge; // Thêm txtCartBadge
+    private TextView txtGreeting, txtSeeAll;
     private View btnCart, layoutSearch;
     private ImageView imgProfile;
 
     // Khai báo Firebase
     private FirebaseFirestore db;
-    private FirebaseAuth auth;
+    private FirebaseAuth auth; // Thêm biến Auth
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Khởi tạo Firebase
         db = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance(); // Khởi tạo Auth
 
         // 1. Ánh xạ View
         initViews();
@@ -70,10 +68,8 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Cập nhật lại tên mỗi khi quay lại trang này
+        // Cập nhật lại tên mỗi khi quay lại trang này (đề phòng vừa đổi tên xong)
         setupUserData();
-        // Cập nhật số lượng giỏ hàng
-        updateCartBadge();
     }
 
     private void initViews() {
@@ -86,58 +82,37 @@ public class HomeActivity extends AppCompatActivity {
         btnCart = findViewById(R.id.btnCart);
         layoutSearch = findViewById(R.id.layoutSearch);
         imgProfile = findViewById(R.id.imgProfile);
-        
-        // Ánh xạ badge
-        txtCartBadge = findViewById(R.id.txtCartBadge);
-    }
-
-    // --- HÀM CẬP NHẬT BADGE GIỎ HÀNG ---
-    private void updateCartBadge() {
-        if (txtCartBadge == null) return;
-
-        List<CartItem> cartItems = CartManager.getCartItems();
-        int distinctItemsCount = 0;
-        
-        if (cartItems != null) {
-            // Thay đổi logic ở đây: lấy số lượng dòng (size) thay vì cộng dồn quantity
-            distinctItemsCount = cartItems.size();
-        }
-
-        if (distinctItemsCount > 0) {
-            txtCartBadge.setVisibility(View.VISIBLE);
-            if (distinctItemsCount > 99) {
-                txtCartBadge.setText("99+");
-            } else {
-                txtCartBadge.setText(String.valueOf(distinctItemsCount));
-            }
-        } else {
-            txtCartBadge.setVisibility(View.GONE);
-        }
     }
 
     // --- HÀM QUAN TRỌNG: LẤY TÊN TỪ FIREBASE ---
     private void setupUserData() {
         FirebaseUser currentUser = auth.getCurrentUser();
 
+        // Nếu chưa đăng nhập
         if (currentUser == null) {
             txtGreeting.setText("Xin chào, bạn!");
             return;
         }
 
+        // Bước 1: Hiển thị tên tạm từ bộ nhớ máy (để đỡ bị trống trong lúc chờ mạng)
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String cachedName = prefs.getString("FULL_NAME", "bạn");
         txtGreeting.setText("Xin chào, " + cachedName + "!");
 
+        // Bước 2: Gọi lên Firestore để lấy tên chính xác nhất
         String uid = currentUser.getUid();
 
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
+                        // Lấy trường "name" từ Firestore (đã lưu lúc đăng ký)
                         String realName = documentSnapshot.getString("name");
 
                         if (realName != null && !realName.isEmpty()) {
+                            // Cập nhật giao diện
                             txtGreeting.setText("Xin chào, " + realName + "!");
 
+                            // Lưu lại vào bộ nhớ máy để lần sau mở app lên là có ngay
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putString("FULL_NAME", realName);
                             editor.apply();
@@ -145,6 +120,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 })
                 .addOnFailureListener(e -> {
+                    // Nếu lỗi mạng thì giữ nguyên tên tạm
                 });
     }
 
@@ -183,8 +159,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onAddToCartClick(Food food) {
                 CartManager.addToCart(food, 1);
                 Toast.makeText(HomeActivity.this, "Đã thêm " + food.getName() + " vào giỏ!", Toast.LENGTH_SHORT).show();
-                // Cập nhật badge ngay sau khi thêm
-                updateCartBadge();
             }
         });
         rvPopularHome.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -232,6 +206,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         if (layoutSearch != null) {
             layoutSearch.setOnClickListener(v -> {
+                // Chuyển sang màn hình tìm kiếm
                 Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
                 startActivity(intent);
             });

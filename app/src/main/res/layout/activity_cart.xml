@@ -12,29 +12,30 @@
         android:id="@+id/cartPanel"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#111222"
-        android:backgroundTint="@color/primary_light"
         android:orientation="vertical"
+        android:background="#111222"
         android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/summaryPanel"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <!-- header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/btnBackCart"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:contentDescription="@null"
+                android:background="@drawable/bg_circle_dark"
                 android:src="@drawable/ic_arrow_back__vector"
-                app:tint="@color/black" />
+                android:contentDescription="@null"
+                app:tint="#ffffff"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="0dp"
@@ -51,8 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DONE"
-                android:textColor="#45E58A"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#45E58A" />
         </LinearLayout>
 
         <!-- danh sách món -->
