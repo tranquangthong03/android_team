@@ -300,6 +300,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_back_button_circlegray.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/layout_activity_home.xml.flat",
+        "source": "com.example.android_project.app-main-63:/layout/activity_home.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -310,10 +314,6 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_image_card.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_image_card.xml"
-    },
-    {
-        "merged": "com.example.android_project.app-debug-61:/layout_fragment_profile.xml.flat",
-        "source": "com.example.android_project.app-main-63:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_order_history.xml.flat",

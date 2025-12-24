@@ -3512,6 +3512,7 @@ int id buttonPanel 0x7f0900a5
 int id cache_measures 0x7f0900a6
 int id callMeasure 0x7f0900a7
 int id cancel_button 0x7f0900a8
+int id cardAvatar 0x7f0902c5
 int id cardChip 0x7f0900a9
 int id cardNumbers 0x7f0900aa
 int id cardProfileInfo 0x7f0902bf

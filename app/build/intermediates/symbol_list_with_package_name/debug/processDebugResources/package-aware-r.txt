@@ -3513,6 +3513,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id cardAvatar
 id cardChip
 id cardNumbers
 id cardProfileInfo
