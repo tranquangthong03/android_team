@@ -17,11 +17,11 @@ import com.example.android_project.models.CartItem;
 
 import java.util.List;
 
-// Implement Interface ngay tại Activity để code gọn hơn
 public class CartActivity extends AppCompatActivity implements CartAdapter.CartListener {
 
     private RecyclerView rcCart;
     private TextView txtTotalCart;
+    private TextView txtDone; // 1. Khai báo biến cho nút Mua thêm
     private ImageButton btnBackCart;
     private Button btnPlaceOrder;
 
@@ -39,38 +39,39 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
     }
 
     private void initViews() {
-        // Đảm bảo ID này trùng với file xml activity_cart.xml
         rcCart = findViewById(R.id.rcCart);
         txtTotalCart = findViewById(R.id.txtTotalCart);
+        txtDone = findViewById(R.id.txtDone); // 2. Ánh xạ ID từ XML
         btnBackCart = findViewById(R.id.btnBackCart);
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
     }
 
     private void setupCart() {
-        // 1. Lấy dữ liệu từ CartManager
         cartItems = CartManager.getCartItems();
-
-        // 2. Khởi tạo Adapter
-        // Tham số 1: Context (this)
-        // Tham số 2: List dữ liệu (cartItems)
-        // Tham số 3: Listener (this - vì Activity đã implements CartListener)
         adapter = new CartAdapter(this, cartItems, this);
-
-        // 3. Setup RecyclerView
         rcCart.setLayoutManager(new LinearLayoutManager(this));
         rcCart.setAdapter(adapter);
-
-        // 4. Cập nhật tổng tiền ban đầu
         updateTotal();
     }
 
     private void setupEvents() {
-        // Nút back
+        // Nút Back (Quay lại màn hình trước đó)
         if (btnBackCart != null) {
             btnBackCart.setOnClickListener(v -> finish());
         }
 
-        // Chuyển qua trang Payment (Thanh toán)
+        // --- XỬ LÝ NÚT MUA THÊM ---
+        if (txtDone != null) {
+            txtDone.setOnClickListener(v -> {
+                // Chuyển sang FoodActivity
+                Intent intent = new Intent(CartActivity.this, FoodActivity.class);
+
+                startActivity(intent);
+                finish(); // Đóng trang giỏ hàng hiện tại
+            });
+        }
+
+        // Chuyển qua trang Thanh toán
         if (btnPlaceOrder != null) {
             btnPlaceOrder.setOnClickListener(v -> {
                 Intent intent = new Intent(CartActivity.this, PayMentActivity.class);
@@ -79,18 +80,15 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
         }
     }
 
-    // Hàm tính tổng tiền
     private void updateTotal() {
         double total = CartManager.getTotal();
         if (txtTotalCart != null) {
-            // Hiển thị tổng tiền (Bạn có thể format thêm nếu muốn)
             txtTotalCart.setText("$" + (int) total);
         }
     }
 
-    // Sự kiện khi tăng/giảm số lượng trong Adapter gọi về
     @Override
     public void onCartChanged() {
-        updateTotal(); // Gọi hàm cập nhật lại giá tiền hiển thị
+        updateTotal();
     }
 }

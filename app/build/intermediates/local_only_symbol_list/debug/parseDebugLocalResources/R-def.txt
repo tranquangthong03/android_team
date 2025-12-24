@@ -145,7 +145,6 @@ id btnBackSearch
 id btnCart
 id btnConfirmLink
 id btnEditProfile
-id btnFavorite
 id btnHome
 id btnLogout
 id btnMinus

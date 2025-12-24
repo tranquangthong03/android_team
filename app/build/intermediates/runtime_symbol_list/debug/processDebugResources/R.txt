@@ -3474,7 +3474,6 @@ int id btnBackSearch 0x7f09007e
 int id btnCart 0x7f09007f
 int id btnConfirmLink 0x7f090080
 int id btnEditProfile 0x7f090081
-int id btnFavorite 0x7f090082
 int id btnHome 0x7f090083
 int id btnLogout 0x7f090084
 int id btnMinus 0x7f090085
