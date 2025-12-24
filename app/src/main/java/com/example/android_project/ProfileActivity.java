@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.ImageView; // Import cho btnBack, btnHome
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import com.example.android_project.ui.CartActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,10 +18,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    // Khai báo các biến View tương ứng với XML mới
-    private TextView tvName, tvEmail;
-    private ImageView imgAvatar;
+    // 1. Khai báo biến View (Phải khớp với loại thẻ trong XML)
+    
+    // Nút điều hướng trên Header
+    private ImageView btnBack;
+    private ImageView btnHome;
 
+    // Thông tin User
+    private TextView tvName;
+    private TextView tvEmail;
+    
     // Nhóm 1: Tài khoản
     private LinearLayout btnEditProfile;
     private LinearLayout btnAddress;
@@ -42,37 +47,42 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Đảm bảo tên file layout đúng với file xml bạn đang dùng
-        setContentView(R.layout.fragment_profile);
+        // Đảm bảo tên file layout đúng là fragment_profile.xml
+        setContentView(R.layout.fragment_profile); 
 
         initViews();
         loadUserProfile();
         setupEvents();
     }
 
+    // 2. Ánh xạ ID từ XML sang Java
     private void initViews() {
-        // Ánh xạ View thông tin cá nhân
+        // Header Buttons
+        btnBack = findViewById(R.id.btnBack);
+        btnHome = findViewById(R.id.btnHome);
+
+        // User Info
         tvName = findViewById(R.id.tvName);
         tvEmail = findViewById(R.id.tvEmail);
-        imgAvatar = findViewById(R.id.imgAvatar);
 
-        // Ánh xạ các nút chức năng (Nhóm 1)
+        // Nhóm Tài khoản
         btnEditProfile = findViewById(R.id.btnEditProfile);
         btnAddress = findViewById(R.id.btnAddress);
         btnPaymentMethod = findViewById(R.id.btnPaymentMethod);
 
-        // Ánh xạ các nút chức năng (Nhóm 2)
+        // Nhóm Tiện ích
         btnProfileCart = findViewById(R.id.btnProfileCart);
         btnOrderHistory = findViewById(R.id.btnOrderHistory);
         btnProfileFavorite = findViewById(R.id.btnProfileFavorite);
         btnNotification = findViewById(R.id.btnNotification);
 
-        // Ánh xạ các nút chức năng (Nhóm 3)
+        // Nhóm Khác
         btnSettings = findViewById(R.id.btnSettings);
         btnSupport = findViewById(R.id.btnSupport);
         btnLogout = findViewById(R.id.btnLogout);
     }
 
+    // 3. Tải thông tin người dùng từ Firebase
     private void loadUserProfile() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) return;
@@ -86,77 +96,95 @@ public class ProfileActivity extends AppCompatActivity {
 
                         if (name != null) tvName.setText(name);
                         if (email != null) tvEmail.setText(email);
-
-                        // Nếu có ảnh avatar url từ Firebase, bạn có thể dùng Glide để load vào imgAvatar ở đây
                     }
                 })
-                .addOnFailureListener(e -> Toast.makeText(ProfileActivity.this, "Lỗi tải thông tin", Toast.LENGTH_SHORT).show());
+                .addOnFailureListener(e -> Toast.makeText(ProfileActivity.this, "Lỗi kết nối mạng", Toast.LENGTH_SHORT).show());
     }
 
+    // 4. Xử lý sự kiện Click (Event Code)
     private void setupEvents() {
-        // --- CÁC CHỨC NĂNG ĐÃ CÓ (Giữ nguyên logic cũ) ---
+        
+        // --- HEADER NAV ---
+        
+        // Nút Back: Quay lại màn hình trước
+        if (btnBack != null) {
+            btnBack.setOnClickListener(v -> finish());
+        }
 
-        // 1. Địa chỉ
-        btnAddress.setOnClickListener(v -> {
-            startActivity(new Intent(ProfileActivity.this, AddressActivity.class));
-        });
+        // Nút Home: Về trang chủ, xóa hết các trang cũ để tránh bị loop
+        if (btnHome != null) {
+            btnHome.setOnClickListener(v -> {
+                Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            });
+        }
 
-        // 2. Giỏ hàng
-        btnProfileCart.setOnClickListener(v -> {
-            startActivity(new Intent(ProfileActivity.this, CartActivity.class));
-        });
+        // --- NHÓM CHỨC NĂNG ---
 
-        // 3. Phương thức thanh toán (Lưu ý tên class PayMentActivity của bạn)
-        btnPaymentMethod.setOnClickListener(v -> {
-            startActivity(new Intent(ProfileActivity.this, PayMentActivity.class));
-        });
+        // Địa chỉ
+        if (btnAddress != null) {
+            btnAddress.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, AddressActivity.class)));
+        }
 
-        // 4. Lịch sử đơn hàng
-        btnOrderHistory.setOnClickListener(v -> {
-            startActivity(new Intent(ProfileActivity.this, OrderHistoryActivity.class));
-        });
+        // Giỏ hàng
+        if (btnProfileCart != null) {
+            btnProfileCart.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, CartActivity.class)));
+        }
 
-        // --- CÁC CHỨC NĂNG MỚI (Tạm thời Toast thông báo) ---
+        // Phương thức thanh toán (Chú ý tên class PayMentActivity của bạn)
+        if (btnPaymentMethod != null) {
+            btnPaymentMethod.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, PayMentActivity.class)));
+        }
 
-        // 5. Chỉnh sửa thông tin
-        btnEditProfile.setOnClickListener(v -> {
-            // Bạn có thể tạo EditProfileActivity sau
-            Toast.makeText(this, "Chức năng chỉnh sửa hồ sơ đang phát triển", Toast.LENGTH_SHORT).show();
-        });
+        // Lịch sử đơn hàng
+        if (btnOrderHistory != null) {
+            btnOrderHistory.setOnClickListener(v -> startActivity(new Intent(ProfileActivity.this, OrderHistoryActivity.class)));
+        }
 
-        // 6. Yêu thích
-        btnProfileFavorite.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng Yêu thích đang phát triển", Toast.LENGTH_SHORT).show();
-        });
+        // --- CÁC TÍNH NĂNG ĐANG PHÁT TRIỂN (TOAST) ---
+        
+        if (btnEditProfile != null) {
+            btnEditProfile.setOnClickListener(v -> Toast.makeText(ProfileActivity.this, "Tính năng Chỉnh sửa đang phát triển", Toast.LENGTH_SHORT).show());
+        }
+        
+        if (btnProfileFavorite != null) {
+            btnProfileFavorite.setOnClickListener(v -> Toast.makeText(ProfileActivity.this, "Danh sách Yêu thích trống", Toast.LENGTH_SHORT).show());
+        }
+        
+        if (btnNotification != null) {
+            btnNotification.setOnClickListener(v -> Toast.makeText(ProfileActivity.this, "Không có thông báo mới", Toast.LENGTH_SHORT).show());
+        }
 
-        // 7. Thông báo
-        btnNotification.setOnClickListener(v -> {
-            Toast.makeText(this, "Bạn không có thông báo mới", Toast.LENGTH_SHORT).show();
-        });
+        if (btnSettings != null) {
+            btnSettings.setOnClickListener(v -> Toast.makeText(ProfileActivity.this, "Cài đặt chung", Toast.LENGTH_SHORT).show());
+        }
 
-        // 8. Cài đặt
-        btnSettings.setOnClickListener(v -> {
-            Toast.makeText(this, "Mở màn hình Cài đặt", Toast.LENGTH_SHORT).show();
-        });
+        if (btnSupport != null) {
+            btnSupport.setOnClickListener(v -> Toast.makeText(ProfileActivity.this, "Liên hệ: support@fastbite.com", Toast.LENGTH_SHORT).show());
+        }
 
-        // 9. Hỗ trợ
-        btnSupport.setOnClickListener(v -> {
-            Toast.makeText(this, "Liên hệ hỗ trợ: 1900 xxxx", Toast.LENGTH_SHORT).show();
-        });
+        // --- ĐĂNG XUẤT ---
+        if (btnLogout != null) {
+            btnLogout.setOnClickListener(v -> {
+                // 1. Đăng xuất khỏi Firebase
+                FirebaseAuth.getInstance().signOut();
 
-        // --- ĐĂNG XUẤT (Logic cũ) ---
-        btnLogout.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.clear();
-            editor.apply();
+                // 2. Xóa dữ liệu lưu tạm (Shared Preferences) nếu có
+                SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear();
+                editor.apply();
 
-            Intent intent = new Intent(ProfileActivity.this, LogInActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
-            Toast.makeText(this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
-        });
+                // 3. Chuyển về màn hình Đăng nhập & Xóa lịch sử Activity
+                Intent intent = new Intent(ProfileActivity.this, LogInActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+                
+                Toast.makeText(ProfileActivity.this, "Đã đăng xuất", Toast.LENGTH_SHORT).show();
+            });
+        }
     }
 }

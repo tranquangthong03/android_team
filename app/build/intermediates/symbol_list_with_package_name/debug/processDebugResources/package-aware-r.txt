@@ -3094,6 +3094,7 @@ drawable arrow_to_right
 drawable avd_hide_password
 drawable avd_show_password
 drawable bank_card
+drawable bear
 drawable bg_bottom_bar
 drawable bg_category_modern
 drawable bg_circle_dark

@@ -28,6 +28,7 @@ drawable arrow_back
 drawable arrow_right
 drawable arrow_to_right
 drawable bank_card
+drawable bear
 drawable bg_bottom_bar
 drawable bg_category_modern
 drawable bg_circle_dark

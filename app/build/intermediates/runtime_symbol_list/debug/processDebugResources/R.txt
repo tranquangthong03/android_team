@@ -3093,6 +3093,7 @@ int drawable arrow_to_right 0x7f07007c
 int drawable avd_hide_password 0x7f07007d
 int drawable avd_show_password 0x7f07007e
 int drawable bank_card 0x7f07007f
+int drawable bear 0x7f07016f
 int drawable bg_bottom_bar 0x7f070080
 int drawable bg_category_modern 0x7f070081
 int drawable bg_circle_dark 0x7f070082

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_food_home.xml"
     },
     {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_setting.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\setting.png"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_order_history.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_order_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_setting.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\setting.png"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -96,16 +96,16 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_payment_activity.xml.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\payment_activity.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_back.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_back.png"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_arrow_back__vector.png.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_arrow_back__vector.png"
     },
     {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_back.png.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_back.png"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_payment_activity.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\payment_activity.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_circle_red.xml.flat",
@@ -338,6 +338,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_item_category.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bear.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bear.png"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_cash_on_delivery.png.flat",
