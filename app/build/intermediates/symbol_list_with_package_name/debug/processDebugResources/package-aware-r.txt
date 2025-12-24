@@ -3490,6 +3490,7 @@ id btnPlusCart
 id btnProfileCart
 id btnProfileFavorite
 id btnRemove
+id btnSave
 id btnSearchMain
 id btnSettings
 id btnSupport
@@ -3599,6 +3600,9 @@ id edit_query
 id edit_text_id
 id edtAccountName
 id edtAccountNumber
+id edtEmail
+id edtName
+id edtPhone
 id elastic
 id embed
 id end
@@ -3685,7 +3689,6 @@ id img_success
 id immediateStop
 id included
 id indeterminate
-id indicatorLayout
 id info
 id invisible
 id inward
@@ -3696,6 +3699,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutDots
 id layoutQty
 id layoutSearch
 id layout_bank
@@ -4161,6 +4165,7 @@ layout abc_tooltip
 layout activity_add_payment
 layout activity_address
 layout activity_cart
+layout activity_edit_profile
 layout activity_food
 layout activity_food_detail
 layout activity_forgot_password
