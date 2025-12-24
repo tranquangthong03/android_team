@@ -4,23 +4,6 @@
             "outputFile": "com.example.android_project.app-mergeDebugResources-59:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-main (1)\\android_team-main\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "16,17,18,15,30,25,20,21,3,4,5,7,8,9,23,27,13,11,12,29,26,31",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "523,565,607,480,977,804,656,705,56,98,145,194,238,287,756,886,434,338,385,929,844,1019",
-                        "endColumns": "41,41,47,42,41,39,48,49,41,46,47,43,48,49,46,41,44,46,48,47,41,41",
-                        "endOffsets": "560,602,650,518,1014,839,700,750,93,140,188,233,282,332,798,923,474,380,429,972,881,1056"
-                    },
-                    "to": {
-                        "startLines": "651,652,653,654,655,721,728,729,969,970,973,982,983,984,989,990,995,996,997,1000,1001,1002",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "33273,33315,33357,33405,33448,38134,38575,38624,56777,56819,57019,57617,57661,57710,58056,58103,58431,58476,58523,58693,58741,58783",
-                        "endColumns": "41,41,47,42,41,39,48,49,41,46,47,43,48,49,46,41,44,46,48,47,41,41",
-                        "endOffsets": "33310,33352,33400,33443,33485,38169,38619,38669,56814,56861,57062,57656,57705,57755,58098,58140,58471,58518,58567,58736,58778,58820"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\8.13\\transforms\\e669e977e8b2d8057df3ddd6f4d2672d\\transformed\\play-services-basement-18.8.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,7",
@@ -38,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-main (1)\\android_team-main\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,2,4,3",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "16,62,179,113",
-                        "endColumns": "45,50,67,65",
-                        "endOffsets": "57,108,242,174"
-                    },
-                    "to": {
-                        "startLines": "2038,2066,2264,2265",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "134381,137110,161086,161154",
-                        "endColumns": "45,50,67,65",
-                        "endOffsets": "134422,137156,161149,161215"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\8.13\\transforms\\8dc54e77e27c662a4841abefd61cb22e\\transformed\\credentials-1.2.0-rc01\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3",
@@ -69,6 +35,25 @@
                         "startOffsets": "134132,134214",
                         "endColumns": "81,83",
                         "endOffsets": "134209,134293"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-huuhung\\android_team-huuhung\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "103",
+                        "endLines": "30",
+                        "endColumns": "12",
+                        "endOffsets": "1194"
+                    },
+                    "to": {
+                        "startLines": "6481",
+                        "startColumns": "4",
+                        "startOffsets": "453855",
+                        "endLines": "6508",
+                        "endColumns": "12",
+                        "endOffsets": "454730"
                     }
                 },
                 {
@@ -108,6 +93,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-huuhung\\android_team-huuhung\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "16,17,18,15,30,25,20,21,3,4,5,7,8,9,23,27,13,11,12,29,26,31",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "523,565,607,480,977,804,656,705,56,98,145,194,238,287,756,886,434,338,385,929,844,1019",
+                        "endColumns": "41,41,47,42,41,39,48,49,41,46,47,43,48,49,46,41,44,46,48,47,41,41",
+                        "endOffsets": "560,602,650,518,1014,839,700,750,93,140,188,233,282,332,798,923,474,380,429,972,881,1056"
+                    },
+                    "to": {
+                        "startLines": "651,652,653,654,655,721,728,729,969,970,973,982,983,984,989,990,995,996,997,1000,1001,1002",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "33273,33315,33357,33405,33448,38134,38575,38624,56777,56819,57019,57617,57661,57710,58056,58103,58431,58476,58523,58693,58741,58783",
+                        "endColumns": "41,41,47,42,41,39,48,49,41,46,47,43,48,49,46,41,44,46,48,47,41,41",
+                        "endOffsets": "33310,33352,33400,33443,33485,38169,38619,38669,56814,56861,57062,57656,57705,57755,58098,58140,58471,58518,58567,58736,58778,58820"
+                    }
+                },
+                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\8.13\\transforms\\1626f80b6ec70cb9ca199e24de4af3be\\transformed\\transition-1.5.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
@@ -122,23 +124,6 @@
                         "startOffsets": "123010,123050,124404,124695,124750,126354,126399,126453,126509,126561,126613,126662,126723",
                         "endColumns": "39,46,42,54,46,44,53,55,51,51,48,60,49",
                         "endOffsets": "123045,123092,124442,124745,124792,126394,126448,126504,126556,126608,126657,126718,126768"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-main (1)\\android_team-main\\app\\build\\generated\\res\\processDebugGoogleServices\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,137,241,350,470,580",
-                        "endColumns": "81,103,108,119,109,78",
-                        "endOffsets": "132,236,345,465,575,654"
-                    },
-                    "to": {
-                        "startLines": "2116,2117,2118,2119,2120,2245",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "141711,141793,141897,142006,142126,159484",
-                        "endColumns": "81,103,108,119,109,78",
-                        "endOffsets": "141788,141892,142001,142121,142231,159558"
                     }
                 },
                 {
@@ -173,6 +158,25 @@
                         "startOffsets": "127055",
                         "endColumns": "49",
                         "endOffsets": "127100"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\8.13\\transforms\\c9850a05f7f16fb185ff769408d5cb96\\transformed\\recyclerview-1.3.2\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,111,170,218,274,349,425,497,563",
+                        "endLines": "2,3,4,5,6,7,8,9,30",
+                        "endColumns": "55,58,47,55,74,75,71,65,24",
+                        "endOffsets": "106,165,213,269,344,420,492,558,1398"
+                    },
+                    "to": {
+                        "startLines": "508,1149,1150,1151,1159,1160,1161,1857,12953",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "25699,68520,68579,68627,69294,69369,69445,123243,783545",
+                        "endLines": "508,1149,1150,1151,1159,1160,1161,1857,12973",
+                        "endColumns": "55,58,47,55,74,75,71,65,24",
+                        "endOffsets": "25750,68574,68622,68678,69364,69440,69512,123304,784380"
                     }
                 },
                 {
@@ -269,25 +273,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-main (1)\\android_team-main\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "103",
-                        "endLines": "30",
-                        "endColumns": "12",
-                        "endOffsets": "1194"
-                    },
-                    "to": {
-                        "startLines": "6481",
-                        "startColumns": "4",
-                        "startOffsets": "453855",
-                        "endLines": "6508",
-                        "endColumns": "12",
-                        "endOffsets": "454730"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\8.13\\transforms\\8c9aabba43c4a47c82be444f00095975\\transformed\\fragment-1.6.2\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,10",
@@ -321,6 +306,23 @@
                         "startOffsets": "126898",
                         "endColumns": "42",
                         "endOffsets": "126936"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-huuhung\\android_team-huuhung\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,2,4,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "16,62,179,113",
+                        "endColumns": "45,50,67,65",
+                        "endOffsets": "57,108,242,174"
+                    },
+                    "to": {
+                        "startLines": "2038,2066,2264,2265",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "134381,137110,161086,161154",
+                        "endColumns": "45,50,67,65",
+                        "endOffsets": "134422,137156,161149,161215"
                     }
                 },
                 {
@@ -450,6 +452,23 @@
                         "endLines": "35,670,671,672,673,1087,1088,1089,2321,5671,5674,5677,10440",
                         "endColumns": "51,60,61,61,63,58,56,53,12,12,12,12,24",
                         "endOffsets": "1687,34567,34629,34691,34755,64536,64593,64647,165030,398960,399086,399214,688066"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\Downloads\\android_team-huuhung\\android_team-huuhung\\app\\build\\generated\\res\\processDebugGoogleServices\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,137,241,350,470,580",
+                        "endColumns": "81,103,108,119,109,78",
+                        "endOffsets": "132,236,345,465,575,654"
+                    },
+                    "to": {
+                        "startLines": "2116,2117,2118,2119,2120,2245",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "141711,141793,141897,142006,142126,159484",
+                        "endColumns": "81,103,108,119,109,78",
+                        "endOffsets": "141788,141892,142001,142121,142231,159558"
                     }
                 },
                 {
@@ -596,25 +615,6 @@
                         "startOffsets": "127483,140030,158470,158546",
                         "endColumns": "52,56,75,86",
                         "endOffsets": "127531,140082,158541,158628"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\8.13\\transforms\\6d94db9e15c651f96d64ab9f55bfec7f\\transformed\\recyclerview-1.4.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,111,170,218,274,349,425,497,563",
-                        "endLines": "2,3,4,5,6,7,8,9,30",
-                        "endColumns": "55,58,47,55,74,75,71,65,24",
-                        "endOffsets": "106,165,213,269,344,420,492,558,1398"
-                    },
-                    "to": {
-                        "startLines": "508,1149,1150,1151,1159,1160,1161,1857,12953",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "25699,68520,68579,68627,69294,69369,69445,123243,783545",
-                        "endLines": "508,1149,1150,1151,1159,1160,1161,1857,12973",
-                        "endColumns": "55,58,47,55,74,75,71,65,24",
-                        "endOffsets": "25750,68574,68622,68678,69364,69440,69512,123304,784380"
                     }
                 },
                 {

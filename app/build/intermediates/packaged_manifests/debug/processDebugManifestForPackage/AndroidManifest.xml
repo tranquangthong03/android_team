@@ -58,6 +58,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.Android_Project" >
         <activity
+            android:name="com.example.android_project.OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.android_project.InvoiceActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.android_project.AddPaymentActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.android_project.HomeActivity"
             android:exported="false" />
         <activity
@@ -93,6 +102,7 @@
         <activity android:name="com.example.android_project.PayCongratActivity" />
         <activity android:name="com.example.android_project.DanhSachNganHangActivity" />
         <activity android:name="com.example.android_project.MapsOsmActivity" />
+        <activity android:name="com.example.android_project.SearchActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
@@ -136,6 +146,12 @@
             android:exported="false" >
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
