@@ -22,8 +22,8 @@ import com.example.android_project.ui.FoodActivity;
 import com.example.android_project.ui.FoodAdapter;
 import com.example.android_project.ui.FoodDetailActivity;
 import com.example.android_project.ui.RestaurantAdapter;
-import com.google.firebase.auth.FirebaseAuth; // Import Auth
-import com.google.firebase.auth.FirebaseUser; // Import User
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
     // Khai báo Firebase
     private FirebaseFirestore db;
-    private FirebaseAuth auth; // Thêm biến Auth
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Khởi tạo Firebase
         db = FirebaseFirestore.getInstance();
-        auth = FirebaseAuth.getInstance(); // Khởi tạo Auth
+        auth = FirebaseAuth.getInstance();
 
         // 1. Ánh xạ View
         initViews();
@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Cập nhật lại tên mỗi khi quay lại trang này (đề phòng vừa đổi tên xong)
+        // Cập nhật lại tên mỗi khi quay lại trang này
         setupUserData();
     }
 
@@ -84,35 +84,29 @@ public class HomeActivity extends AppCompatActivity {
         imgProfile = findViewById(R.id.imgProfile);
     }
 
-    // --- HÀM QUAN TRỌNG: LẤY TÊN TỪ FIREBASE ---
+    // --- LẤY TÊN TỪ FIREBASE ---
     private void setupUserData() {
         FirebaseUser currentUser = auth.getCurrentUser();
 
-        // Nếu chưa đăng nhập
         if (currentUser == null) {
             txtGreeting.setText("Xin chào, bạn!");
             return;
         }
 
-        // Bước 1: Hiển thị tên tạm từ bộ nhớ máy (để đỡ bị trống trong lúc chờ mạng)
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String cachedName = prefs.getString("FULL_NAME", "bạn");
         txtGreeting.setText("Xin chào, " + cachedName + "!");
 
-        // Bước 2: Gọi lên Firestore để lấy tên chính xác nhất
         String uid = currentUser.getUid();
 
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        // Lấy trường "name" từ Firestore (đã lưu lúc đăng ký)
                         String realName = documentSnapshot.getString("name");
 
                         if (realName != null && !realName.isEmpty()) {
-                            // Cập nhật giao diện
                             txtGreeting.setText("Xin chào, " + realName + "!");
 
-                            // Lưu lại vào bộ nhớ máy để lần sau mở app lên là có ngay
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putString("FULL_NAME", realName);
                             editor.apply();
@@ -120,11 +114,10 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 })
                 .addOnFailureListener(e -> {
-                    // Nếu lỗi mạng thì giữ nguyên tên tạm
                 });
     }
 
-    // --- PHẦN 1: CATEGORIES ---
+    // --- PHẦN 1: CATEGORIES (ĐÃ SỬA LOGIC ID) ---
     private void setupCategories() {
         ArrayList<CategoryDomain> categoryList = new ArrayList<>();
         CategoryAdapter adapter = new CategoryAdapter(this, categoryList);
@@ -135,8 +128,12 @@ public class HomeActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 categoryList.clear();
                 for (QueryDocumentSnapshot document : task.getResult()) {
+                    // 1. Firebase tự động map field "id" (vd: "drink") vào object
                     CategoryDomain category = document.toObject(CategoryDomain.class);
-                    category.setId(document.getId());
+
+                    // ĐÃ XÓA DÒNG setID() ĐỂ KHÔNG BỊ GHI ĐÈ BẰNG ID CỦA DOCUMENT
+                    // category.setId(document.getId()); <-- Xóa dòng này
+
                     categoryList.add(category);
                 }
                 adapter.notifyDataSetChanged();
@@ -206,7 +203,6 @@ public class HomeActivity extends AppCompatActivity {
         }
         if (layoutSearch != null) {
             layoutSearch.setOnClickListener(v -> {
-                // Chuyển sang màn hình tìm kiếm
                 Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
                 startActivity(intent);
             });
