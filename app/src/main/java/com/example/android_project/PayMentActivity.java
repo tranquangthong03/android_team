@@ -98,7 +98,8 @@ public class PayMentActivity extends AppCompatActivity {
         rcPayment.setAdapter(adapter);
 
         if (txtTotalPayment != null) {
-            txtTotalPayment.setText("$" + (int) CartManager.getTotal());
+            // --- SỬA Ở ĐÂY: Hiển thị giá dạng .000vnđ ---
+            txtTotalPayment.setText((int) CartManager.getTotal() + ".000vnđ");
         }
     }
 
