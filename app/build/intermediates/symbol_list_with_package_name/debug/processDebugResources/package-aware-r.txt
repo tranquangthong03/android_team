@@ -1507,6 +1507,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color icon_tint_dark
 color icon_tint_light
 color m3_appbar_overlay_color
@@ -3089,7 +3090,6 @@ drawable abc_vector_test
 drawable address
 drawable apple
 drawable arrow_back
-drawable arrow_right
 drawable arrow_to_right
 drawable avd_hide_password
 drawable avd_show_password
@@ -3301,7 +3301,6 @@ drawable onboarding1
 drawable onboarding2
 drawable onboarding3
 drawable onboarding4
-drawable open_restaurant
 drawable osm_ic_center_map
 drawable osm_ic_follow_me
 drawable osm_ic_follow_me_on
@@ -4278,6 +4277,7 @@ layout support_simple_spinner_dropdown_item
 layout tatca_phuongthuc_thanhtoan_activity
 layout viewholder_category
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description

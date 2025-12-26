@@ -1506,6 +1506,7 @@ int color foreground_material_dark 0x7f050070
 int color foreground_material_light 0x7f050071
 int color highlighted_text_material_dark 0x7f050072
 int color highlighted_text_material_light 0x7f050073
+int color ic_launcher_background 0x7f05032a
 int color icon_tint_dark 0x7f050074
 int color icon_tint_light 0x7f050075
 int color m3_appbar_overlay_color 0x7f050076
@@ -3088,7 +3089,6 @@ int drawable abc_vector_test 0x7f070077
 int drawable address 0x7f070078
 int drawable apple 0x7f070079
 int drawable arrow_back 0x7f07007a
-int drawable arrow_right 0x7f07007b
 int drawable arrow_to_right 0x7f07007c
 int drawable avd_hide_password 0x7f07007d
 int drawable avd_show_password 0x7f07007e
@@ -3300,7 +3300,6 @@ int drawable onboarding1 0x7f07014b
 int drawable onboarding2 0x7f07014c
 int drawable onboarding3 0x7f07014d
 int drawable onboarding4 0x7f07014e
-int drawable open_restaurant 0x7f07014f
 int drawable osm_ic_center_map 0x7f070150
 int drawable osm_ic_follow_me 0x7f070151
 int drawable osm_ic_follow_me_on 0x7f070152
@@ -4277,6 +4276,7 @@ int layout support_simple_spinner_dropdown_item 0x7f0c008b
 int layout tatca_phuongthuc_thanhtoan_activity 0x7f0c008c
 int layout viewholder_category 0x7f0c008d
 int mipmap ic_launcher 0x7f0e0000
+int mipmap ic_launcher_foreground 0x7f0e0002
 int mipmap ic_launcher_round 0x7f0e0001
 int navigation nav_graph 0x7f0f0000
 int plurals mtrl_badge_content_description 0x7f100000

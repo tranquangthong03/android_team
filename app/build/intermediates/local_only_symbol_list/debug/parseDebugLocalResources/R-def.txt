@@ -6,6 +6,7 @@ color bg_gray_light
 color bg_light
 color black
 color error
+color ic_launcher_background
 color icon_tint_dark
 color icon_tint_light
 color primary
@@ -25,7 +26,6 @@ color white
 drawable address
 drawable apple
 drawable arrow_back
-drawable arrow_right
 drawable arrow_to_right
 drawable bank_card
 drawable bear
@@ -94,7 +94,6 @@ drawable onboarding1
 drawable onboarding2
 drawable onboarding3
 drawable onboarding4
-drawable open_restaurant
 drawable payment
 drawable payment_method_bg
 drawable payment_method_selected_bg
@@ -328,6 +327,7 @@ layout payment_congrat
 layout tatca_phuongthuc_thanhtoan_activity
 layout viewholder_category
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 string app_name

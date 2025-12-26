@@ -55,9 +55,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 .error(R.drawable.ic_launcher_background)       // Ảnh hiển thị nếu link lỗi
                 .into(holder.imgFood);
 
-        // 2. Gán dữ liệu Text
         holder.txtName.setText(item.getFood().getName());
-        holder.txtPrice.setText("$" + (int) item.getFood().getPrice());
+
+        holder.txtPrice.setText((int) item.getFood().getPrice() + ".000vnđ");
+
         holder.txtQty.setText(String.valueOf(item.getQuantity()));
 
         // 3. Sự kiện nút Tăng (+)

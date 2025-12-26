@@ -6,6 +6,7 @@
     <color name="bg_light">#F3F4F6</color>
     <color name="black">#FF000000</color>
     <color name="error">#FF4D4D</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
     <color name="icon_tint_dark">#1A1A1A</color>
     <color name="icon_tint_light">#FFFFFF</color>
     <color name="primary">#FF8A00</color>

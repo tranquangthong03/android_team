@@ -12,6 +12,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\home.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_edit.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\edit.png"
     },
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_rounded_top_sheet.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_rounded_top_sheet.xml"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_onboarding1.jpg.flat",
@@ -60,6 +68,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\momo_icon.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_back.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_back.png"
     },
@@ -70,6 +82,10 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_circle.png.flat",
@@ -84,8 +100,16 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_circle_light.xml"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_onboarding2.jpg.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\onboarding2.jpg"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\font_sfp_display_regular.otf.flat",
@@ -140,6 +164,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_find.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\xml\\backup_rules.xml"
     },
@@ -164,6 +192,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\font\\sfp_display_ultralight_italic.otf"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_back_button_circlegray.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_back_button_circlegray.png"
     },
@@ -178,6 +210,10 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_cart.xml.flat",
@@ -220,6 +256,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bank_card.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_bank_account.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_bank_account.png"
     },
@@ -234,6 +274,10 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_location_vector.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_location_vector.xml"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_card_gradient_bg.xml.flat",
@@ -274,6 +318,10 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_arrow_to_right.png.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\arrow_to_right.png"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_invoice.xml.flat",
@@ -432,6 +480,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\ic_circle_back.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -476,6 +528,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\rounded_image_bg.xml"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_payment_method_bg.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\payment_method_bg.xml"
     },
@@ -500,6 +556,10 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\favourite.png"
     },
     {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -510,6 +570,10 @@
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_bg_search_input.xml.flat",
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\drawable\\bg_search_input.xml"
+    },
+    {
+        "merged": "com.example.android_project.app-debug-61:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_payment.png.flat",
@@ -576,12 +640,12 @@
         "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_search.xml"
     },
     {
-        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_main.xml"
+        "merged": "com.example.android_project.app-debug-61:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.android_project.app-main-63:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.android_project.app-debug-61:/layout_item_onboarding.xml.flat",
-        "source": "com.example.android_project.app-main-63:/layout/item_onboarding.xml"
+        "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-main-63:\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\LENOVO\\.gradle\\daemon\\8.13\\com.example.android_project.app-debug-61:\\drawable_ic_plus.xml.flat",

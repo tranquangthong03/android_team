@@ -56,8 +56,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         // 1. Gán dữ liệu Text
         holder.txtName.setText(food.getName());
 
-        // Format giá tiền (ép kiểu int cho gọn hoặc dùng %.2f nếu muốn hiển thị số lẻ)
-        holder.txtPrice.setText("$" + (int) food.getPrice());
+        // ĐÃ SỬA: Dùng holder.txtPrice thay vì holder.fee
+        holder.txtPrice.setText((int)food.getPrice() + ".000vnđ");
 
         // Kiểm tra null vì layout nhỏ ở Home có thể không có TextView này
         if (holder.txtRestaurant != null) {
@@ -97,12 +97,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Ánh xạ ID (Đảm bảo các ID này tồn tại trong các file xml item_food và item_food_home)
+            // Ánh xạ ID
             imgFood = itemView.findViewById(R.id.imgFood);
             txtName = itemView.findViewById(R.id.txtName);
-            txtPrice = itemView.findViewById(R.id.txtPrice);
-            txtRestaurant = itemView.findViewById(R.id.txtRestaurant); // Có thể null ở layout nhỏ
-            btnAdd = itemView.findViewById(R.id.btnAdd); // Nút cộng (+)
+            txtPrice = itemView.findViewById(R.id.txtPrice); // Tên biến là txtPrice
+            txtRestaurant = itemView.findViewById(R.id.txtRestaurant);
+            btnAdd = itemView.findViewById(R.id.btnAdd);
         }
     }
 

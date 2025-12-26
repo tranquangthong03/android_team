@@ -42,7 +42,9 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
 
         holder.txtOrderId.setText("Đơn hàng #" + shortId);
         holder.txtDate.setText(order.getDate());
-        holder.txtTotal.setText("$" + (int)order.getTotalPrice());
+
+        holder.txtTotal.setText((int)order.getTotalPrice() + ".000vnđ");
+
         holder.txtStatus.setText(order.getStatus());
 
         // Click vào dòng đơn hàng -> Xem chi tiết (Dùng lại InvoiceActivity)

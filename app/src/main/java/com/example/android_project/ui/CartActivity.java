@@ -21,7 +21,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
 
     private RecyclerView rcCart;
     private TextView txtTotalCart;
-    private TextView txtDone; // 1. Khai báo biến cho nút Mua thêm
+    private TextView txtDone;
     private ImageButton btnBackCart;
     private Button btnPlaceOrder;
 
@@ -41,7 +41,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
     private void initViews() {
         rcCart = findViewById(R.id.rcCart);
         txtTotalCart = findViewById(R.id.txtTotalCart);
-        txtDone = findViewById(R.id.txtDone); // 2. Ánh xạ ID từ XML
+        txtDone = findViewById(R.id.txtDone);
         btnBackCart = findViewById(R.id.btnBackCart);
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
     }
@@ -63,9 +63,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
         // --- XỬ LÝ NÚT MUA THÊM ---
         if (txtDone != null) {
             txtDone.setOnClickListener(v -> {
-                // Chuyển sang FoodActivity
                 Intent intent = new Intent(CartActivity.this, FoodActivity.class);
-
                 startActivity(intent);
                 finish(); // Đóng trang giỏ hàng hiện tại
             });
@@ -83,7 +81,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartL
     private void updateTotal() {
         double total = CartManager.getTotal();
         if (txtTotalCart != null) {
-            txtTotalCart.setText("$" + (int) total);
+            // --- SỬA Ở ĐÂY: Hiển thị giá dạng .000vnđ ---
+            txtTotalCart.setText((int) total + ".000vnđ");
         }
     }
 

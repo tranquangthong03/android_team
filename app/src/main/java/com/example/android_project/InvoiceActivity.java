@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,19 +30,23 @@ public class InvoiceActivity extends AppCompatActivity {
         TextView txtDate = findViewById(R.id.txtDate);
         TextView txtAmount = findViewById(R.id.txtAmount);
         TextView txtMethod = findViewById(R.id.txtMethod);
-        txtReceiver = findViewById(R.id.txtReceiver); // View mới
-        txtItems = findViewById(R.id.txtItems);       // View mới
+        txtReceiver = findViewById(R.id.txtReceiver);
+        txtItems = findViewById(R.id.txtItems);
         Button btnHome = findViewById(R.id.btnHome);
 
         // 2. Nhận dữ liệu Order
         Order order = (Order) getIntent().getSerializableExtra("ORDER_DATA");
 
         if (order != null) {
-            // Hiển thị thông tin cơ bản
-            txtOrderId.setText("#" + (order.getOrderId().length() > 8 ? order.getOrderId().substring(0, 8).toUpperCase() : order.getOrderId()));
+
+            String shortId = order.getOrderId();
+            if (shortId.length() > 8) shortId = shortId.substring(0, 8).toUpperCase();
+            txtOrderId.setText("#" + shortId);
+
             txtDate.setText(order.getDate());
             txtMethod.setText(order.getPaymentMethod());
-            txtAmount.setText("$" + (int)order.getTotalPrice());
+
+            txtAmount.setText((int)order.getTotalPrice() + ".000vnđ");
 
             // 3. Xử lý hiển thị danh sách món ăn (Gộp số lượng)
             displayOrderItems(order.getItems());
@@ -105,7 +108,6 @@ public class InvoiceActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
                         String name = documentSnapshot.getString("name");
-                        // Nếu không có field "name", thử lấy "email" hoặc để mặc định
                         txtReceiver.setText(name != null ? name : "Khách hàng");
                     } else {
                         txtReceiver.setText("Khách hàng");
